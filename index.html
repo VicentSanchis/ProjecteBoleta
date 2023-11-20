@@ -114,18 +114,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#dades-variables-identificadors">
-    Dades Variables identificadors
+<a class="md-nav__link" href="#tema-3-el-llenguatge-java">
+    Tema 3. El llenguatge Java
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#operadors-i-expressions">
-    Operadors i expressions
-  </a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#estructures">
-    Estructures
+<a class="md-nav__link" href="#tema-4-programacio-modular">
+    Tema 4. Programació Modular
   </a>
 </li>
 </ul>
@@ -149,7 +144,9 @@
 <summary>Avís Important</summary>
 <p>Aquest projecte anirà fent-se en paral·lel mentre s'explica la sintaxi del llenguatge Java al (Tema 3)[https://vicentsanchis.github.io/Programacio/Tema%2003.%20El%20llenguatge%20Java/], per tant la majoria d'activitats i tasques estaran relacionades amb els coneixements que aneu adquirint durant aquest tema.</p>
 </details>
-<h2 id="dades-variables-identificadors">Dades Variables identificadors</h2>
+<h2 id="tema-3-el-llenguatge-java">Tema 3. El llenguatge Java</h2>
+<p>En aquest tema 3 hem vist bàsicament la sintaxi de Java. És per tant el tema més dens que hem vist de moment i amb molts conceptes que assolir. A continuació i basant-nos en aquest xicotet projecte, revisarem un a un aquestos conceptes construint pas a pas el projecte.  Si no recordes algun concepte vist a classe, et recomane que revises els apartats mentre anem mirant-los. Comencem per les dades, variables i identificadors.</p>
+<h3 id="dades-variables-identificadors">Dades Variables identificadors</h3>
 <p>El <strong>primer</strong> que has de fer és molt senzill, obre l'entorn de desenvolupament integrat de <strong>Processing</strong>, copia el codi que tens a continuació i apega'l a l'editor. Després guarda'l amb el nom <strong>ProjecteBola.pde</strong> per exemple.</p>
 <details class="info">
 <summary>Codi base sobre el que construirem el projecte</summary>
@@ -216,7 +213,6 @@
 <span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
-<h3 id="identificadors">Identificadors</h3>
 <p>Si executes el codi que has copiat amb el <strong>Processing IDE</strong> veuras que només ix una pantalla de 640 pixels per 480 pixels i res més. No et preocupes, és normal. Ara anirem poc a poc afegint el codi necessari per anar construint el nostre joc.</p>
 <details class="question">
 <summary>Activitat 1. Identificadors del nostre projecte</summary>
@@ -230,7 +226,6 @@
 </code></pre></div>
 <p>Per a cadascuna de futures variables anteriors tria un identificador seguint les normes de creació d'identificadors vistes a classe i que siga significatiu.</p>
 </details>
-<h3 id="variables">Variables</h3>
 <p>Una vegada ja tenim els identificadors escollits ens quedaria posar-los al nostre projecte. És a dir, has de declarar les variables associades als identificadors de l'activitat anterior al nostre projecte. Recorda que declarar una variable bàsicament consisteix en associar-li a l'identificador el <strong>tipus de dades</strong> adequat.</p>
 <details class="question">
 <summary>Activitat 2. Declaració de variables al projecte</summary>
@@ -259,7 +254,7 @@
 </code></pre></div></td></tr></table></div>
 <p>Recorda que aquesta activitat l'has de fer amb <strong>Processing IDE</strong>. Guarda el fitxer resultant amb el nom següent: <strong>ProjecteBola.pde</strong></p>
 </details>
-<h2 id="operadors-i-expressions">Operadors i expressions</h2>
+<h3 id="operadors-i-expressions">Operadors i expressions</h3>
 <p>Ja tens les variables necessàries per poder començar amb el projecte declarades al teu fitxer <strong>ProjecteBola.pde</strong> ara per poder seguir amb el joc, has de donar-los algun valor inicial a les <strong>variables declarades</strong> a l'activitat anterior. Recorda que per donar valor a una variable s'han d'utilitzar dues coses que has vist al tema 3: l'operador assignació <strong>=</strong> i un <strong>literal</strong> del mateix tipus que siga la variable a la qual vols donar valor.</p>
 <p>Les <strong>assignacions de valors inicials</strong> a les variables del nostre projecte es faran dins del <strong>setup</strong>. Teniu en compte que és en aquest mètode en el que es solen configurar les aplicacions, per tant, és un bon lloc per poder donar-los a les variables el seu valor inicial amb el que començaran quan s'execute l'app.</p>
 <details class="question">
@@ -323,7 +318,7 @@
 </code></pre></div></td></tr></table></div>
 <p>Què passa si al mètode draw intentes canviar-li el valor a alguna constant? Prova-ho.</p>
 </details>
-<h2 id="estructures">Estructures</h2>
+<h3 id="estructures">Estructures</h3>
 <p>Abans de continuar amb l'exemple de la boleta anem a refrescar un poc la memòria sobre les <strong>fases de desenvolupament de programari</strong> que varem veure al primer tema i la tècnica de disseny de diagrames de flux i la aplicarem al nostre projecte.</p>
 <h4 id="1-fase-danalisi-o-que-volem-fer">1. Fase d'analisi o què volem fer</h4>
 <p>Es pretén fer una aplicació amb una pantalla de grandària 640 píxels d'ample  i 480 píxels d'alt amb fons blanc i una boleta de 20 píxels de diametre al mig de la pantalla en la seua posició inicial. Una vegada arranque l'aplicació la boleta anirà caent aplicant la llei de la gravetat tenint en compte que la seua velocitat inicial és zero. Quan arribe al terra, la bola desapareixerà i s'acabarà el programa.</p>
@@ -390,17 +385,18 @@
 </details>
 <p>Si has llegit i entès l'explicació anterior sobre el <strong>Moviment rectilini uniformement accelerat</strong>, fes l'activitat 4 on per primera vegada es veurà la boleta en moviment.</p>
 <details class="question">
-<summary>Activitat 4. Fer caure la boleta</summary>
+<summary>Activitat 5. Fer caure la boleta</summary>
 <p>Escriu un programa en Java amb <strong>Processing IDE</strong> en base a les especificacions anteriors i que resolga el problema de la boleta. És a dir, que a l'inici el programa dibuixe una boleta a la posició <strong>x=320</strong> i <strong>y=50</strong> i que com a conseqüència de la força de la gravetat vaja caiguen fins desapareixer de la pantalla de la nostra aplicació.</p>
 <p>Les <strong>variables</strong> que determinen la posició x i y de la boleta han de tenir <strong>precisió flotant</strong> (float) ja que com has pogut observar a l'apartat del moviment rectilini uniformement accelerat, les distintes operacions que s'han de fer utilitzen decimals.</p>
 <p><center>
 <img alt="Boleta" src="assets/Boleta.gif"/>
 </center></p>
+<p><strong>CONSIDERACIÓ:</strong> Penses que la grandària de la boleta podria ser una constant?</p>
 </details>
 <p>Abans de passar a la següent secció, millorem el que ja tenim fet. El que es preten amb aquesta activitat és que el punt d'inici de la boleta no siga sempre el mateix i varie cada vegada que s'arranque el joc. 
 Llig i fes la següent activitat:</p>
 <details class="question">
-<summary>Activitat 5. Augmentem la precisió de la boleta</summary>
+<summary>Activitat 6. Augmentem la precisió de la boleta</summary>
 <p>En aquesta activitat anem a fer que la boleta no aparega sempre a la posició x=320, y=50 si no que cada vegada que arranquem l'aplicació, aparega en un lloc diferent. </p>
 <p>Per tal d'aconseguir aquesta aleatorietat, utilitzarem la funció de Processing IDE <strong>random</strong>. </p>
 <p>A l'API de Processing, <a href="https://processing.org/reference/">Processing Reference</a>, entre altres tenim una funció <strong>random(low, high)</strong> que genera nombres aleatoris dintre del rang low-hight que se li passa per paràmetre, és a dir, si volem que aquesta funció ens torne un valor aleatori entre 0 i 100, hauríem de cridar-la de la següent forma:</p>
@@ -415,7 +411,7 @@ Llig i fes la següent activitat:</p>
 </code></pre></div></td></tr></table></div>
 <p>Finalment fes que la gravetat també tinga major precissió i assigna-li un valor de 0.0098.</p>
 </details>
-<h3 id="estructura-de-seleccio-simple">Estructura de selecció simple</h3>
+<h4 id="estructura-de-seleccio-simple">Estructura de selecció simple</h4>
 <p>Fent ús de les estructures de selecció vistes al tema 3, farem que el nostre joc siga més eficient i precís. Si has fet les activitats anteriors hauràs pogut observar que la boleta desapareix per la part de baix de la nostra aplicació i no la tornem a veure. Anem a corregir este comportament utilitzant una estructura de selecció <strong>if</strong></p>
 <p>Continuem amb la boleta i ampliem funcionalitats i millorem el diagrama de flux de la fase de disseny</p>
 <div class="mermaid">graph LR
@@ -434,7 +430,7 @@ Llig i fes la següent activitat:</p>
 </div>
 <p>El primer que farem en aquesta secció és que la boleta no desaparega. Fins ara la nostra boleta apareix en un lloc <strong>random</strong> de la finestra de l'aplicació i comença a caure fins que desapareix. Hem d'evitar això com mostra el diagrama de flux.</p>
 <details class="question">
-<summary>Activitat 6. Que no desaparega la boleta</summary>
+<summary>Activitat 7. Que no desaparega la boleta</summary>
 <p>Hem d'aconseguir que la boleta no desaparega quan arribe a la part de baix de l'aplicació sino torne a apareixer per dalt. Què significa que la boleta ha arribat al terra? o dit d'una altra manera, com sabem que la boleta ha arribat baix del tot? Per què la el valor de la variable que indica la posició a l'eix Y de la boleta és major que l'alt de la nostra aplicació, és a dir: 240. Per tant podem deduir que: "Si la posició Y de la boleta és major que 240 aleshores la fem apareixer per dalt..."</p>
 <p>Com podeu observar, l'afirmació anterior és un <strong>if</strong>, si posY és major (&gt;) altura aleshores fes apareixer per dalt de nou la boleta. Però quines són les accions a realitzar per tal que la boleta aparega per dalt? tornar a posar la posició Y de la boleta a 0.</p>
 <p>Un problema que ens trobarem ací és que no podem ja utilitzar la variable de sistema <strong>frameCount</strong> ja que quan la boleta torne a apareixer per dalt el número de frames (el que utilitzem com a unitat de temps) ha de començar de zero una altra vegada. La solució és crear una variable <strong>numFrames</strong> com a global que s'inicialitze a zero al setup i cada vegada que haja d'apareixer per dalt, es torna a assignar un zero a aquesta variable.</p>
@@ -509,7 +505,7 @@ Llig i fes la següent activitat:</p>
 <kbd style="border:1px solid black;"><img alt="Boleta" src="assets/Act319.gif"/></kbd>
 </center></p>
 </details>
-<h3 id="el-depurador-de-processing-ide">El depurador de Processing IDE</h3>
+<h4 id="el-depurador-de-processing-ide">El depurador de Processing IDE</h4>
 <p>Ha arribat el moment que aprengues com funciona el depurador que és una eina molt important per a desenvolupar codi. El depurador o <strong>debugger</strong> és una eina molt important i necessària que porten tots els entorns de desenvolupament integrat com Processing. Aquesta eina ens permet executar el codi pas a pas al mateix temps que podem monitoritzar el valor de les variables, l'estat dels diferent objectes que formen part de la nostra aplicació. </p>
 <p><center>
 <kbd style="border:1px solid silver;"><img alt="Debugger" src="assets/Debugger.png"/></kbd>
@@ -519,11 +515,11 @@ Llig i fes la següent activitat:</p>
 <p>Finalment és molt important també per a la depuració de codi el terme <strong>breakpoint</strong> per fer que el depurador pare en un lloc específic del nostre codi, li ho hem d'indicar amb punts de ruptura o breakpoints. Per poder posar un breakpoint només hem de fer clic sobre el número de la línia sobre la que volem que s'apare l'execució del programa.  Per tal de llevar-lo tornem a punxar sobre la mateixa línia.</p>
 <p>Una vegada hages provat el depurador de Processing IDE i tingues més o menys clar com funciona, fes l'activitat següent.</p>
 <details class="question">
-<summary>Activitat 7. Correcció d'errades amb el depurador</summary>
+<summary>Activitat 8. Correcció d'errades amb el depurador</summary>
 <p>Com hauràs vist quan has executat el codi, el comportament del que fa el nostre codi amb la boleta no és el que esperavem, o almenys jo ho imaginava d'una altra manera. Revisa-ho i canvia alguns detalls. Fes una depuració línia a línia del codi amb el <strong>Debugger</strong> de Processing IDE i deixa l'aplicació com a tu t'agradaria.</p>
 <p>Pista: igual quan torna a apareixer per dalt la velocitat no deuria ser zero...</p>
 </details>
-<h3 id="estructura-de-seleccio-doble">Estructura de selecció doble</h3>
+<h4 id="estructura-de-seleccio-doble">Estructura de selecció doble</h4>
 <p>Per tal de treballar <strong>l'estructura condicional doble</strong> que acabem de veure ampliarem les funcionalitat de la nostra aplicació. Ara volem que quan la boleta estiga a certa distància terra es pinte de color roig i quan estiga a més d'eixa distància, siga negra.  </p>
 <p>El diagrama de flux amb els <strong>nous requeriments</strong> quedaria així:</p>
 <div class="mermaid">graph LR
@@ -542,7 +538,7 @@ Llig i fes la següent activitat:</p>
 </div>
 <p>Estudia amb detall el diagrama de flux anterior i fes la següent activitat.</p>
 <details class="question">
-<summary>Activitat 8. Boleta de dos colors</summary>
+<summary>Activitat 9. Boleta de dos colors</summary>
 <p>Observa el diagrama de flux anterior i modifica el codi de que ja tens per tal d'afegir-li les noves funcionalitats. La distància a partir de la qual la boleta es faria roja podria ser per exemple 100 pixels. Finalment l'aplicació quedaria de la següent forma:</p>
 <p><center>
 <kbd style="border:1px solid black;"><img alt="Boleta" src="assets/Act322.gif"/></kbd>
@@ -552,7 +548,7 @@ Llig i fes la següent activitat:</p>
 <kbd style="border:1px solid black;"><img alt="Boleta" src="assets/Act322b.gif"/></kbd>
 </center></p>
 </details>
-<h3 id="estructura-de-seleccio-niada">Estructura de selecció niada</h3>
+<h4 id="estructura-de-seleccio-niada">Estructura de selecció niada</h4>
 <p>Per tal de treballar l'estructura de selecció niada farem que la boleta no només tinga dos colors sino que puga tindra 7 colors que aniran canviant d'acord amb l'altura de la pantalla en la qual es troba.</p>
 <div class="mermaid">graph LR
     Ini((Inici))--&gt;A[Establir Dimensions\nAmple=640\nAlt=480\nposX=320\nposY=50\nGRV=0.98];
@@ -576,7 +572,7 @@ Llig i fes la següent activitat:</p>
     B--&gt;C;
 </div>
 <details class="question">
-<summary>Activitat 9. Canvi de color de la boleta segons l'altura en la que es troba</summary>
+<summary>Activitat 10. Canvi de color de la boleta segons l'altura en la que es troba</summary>
 <p>Anem a fer que en el nostre projecte de <strong>la boleta que cau</strong>, aquesta canvie de color segons l'altura de la pantalla a la qual es troba. </p>
 <p>Tenint en compte que la nostra pantalla té una altura de 240 píxels, dividirem la nostra pantalla en 6 franges de 40 píxels d'altura cadascuna (6*40=240). Mentre la bola estiga passant per la primera franja (0-40) aquesta serà de color roig, a la segona franja (40-80) la pintarem de color taronja. A la tercera (80-120) groga, (120-160) verda, (160-200) blava i finalment a l'última franja (200-240) serà de color morat.</p>
 <p>Traduit al llenguatge natural podria ser: si la posició (posY) de la boleta esta entre 0 i 40 pinta-la de roig, sino si la boleta esta entre 40 i 40 pinta-la de taronja sino si ....</p>
@@ -586,10 +582,10 @@ Llig i fes la següent activitat:</p>
 </center></p>
 <p><strong>Ampliació:</strong> Observa els codis rgb dels colors i intenta que el canvi de color de la boleta siga gradual i no de cop.</p>
 </details>
-<h3 id="estructura-de-seleccio-multiple">Estructura de selecció múltiple</h3>
+<h4 id="estructura-de-seleccio-multiple">Estructura de selecció múltiple</h4>
 <p>Treballem a continuació l'estructura de selecció múltiple: <strong>switch case</strong>. Per poder treballar amb el switch li afegirem alguna funcionalitat nova al nostre joc. Es tracta de poder interaccionar amb la boleta, és a dir, es pretén que quan premem al teclat algun cursor (dalt, baix, esquerra, dreta) la boleta es menege en eixa direcció o se li done alguna classe d'impuls cap a eixa direcció concreta.</p>
 <p>Per poder aconseguir això hem d'usar un <strong>esdeveniment</strong> que ens ofereix la llibreria de <strong>Processing IDE</strong>. Aquest esdeveniment es diu <strong>keyPressed</strong> i ve en forma de funció en la que podem escriure tot el codi que necessite.</p>
-<p>Abans de passar a fer l'activitat 10, entra al <strong>Reference de Processing IDE</strong>, investiga bé què és això del <strong>keyPressed</strong>, com funciona i quines coses es podrien fer.</p>
+<p>Abans de passar a fer l'activitat 11, entra al <strong>Reference de Processing IDE</strong>, investiga bé què és això del <strong>keyPressed</strong>, com funciona i quines coses es podrien fer.</p>
 <details class="danger">
 <summary>Algunes consideracions</summary>
 <p>Abans de programar el codi necessari per controlar el moviment de la boleta a la següent activitat, t'has de fer lse següents qüestions:</p>
@@ -601,7 +597,7 @@ Llig i fes la següent activitat:</p>
 </ol>
 </details>
 <details class="question">
-<summary>Activitat 10. Boleta amb cursors</summary>
+<summary>Activitat 11. Boleta amb cursors</summary>
 <p>Seguint amb l'exemple de la boleta en Processing IDE, completa el següent codi per tal que quan premem un cursor del nostre teclat, la boleta comence a menejar-se en eixa direcció. A l'inici de l'aplicació, la boleta estarà parada.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -682,6 +678,7 @@ Llig i fes la següent activitat:</p>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
+<h2 id="tema-4-programacio-modular">Tema 4. Programació Modular</h2>
 </article>
 </div>
 </div>
