@@ -114,13 +114,13 @@
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tema-3-el-llenguatge-java">
-    Tema 3. El llenguatge Java
+<a class="md-nav__link" href="#el-llenguatge-java">
+    El llenguatge Java
   </a>
 </li>
 <li class="md-nav__item">
-<a class="md-nav__link" href="#tema-4-programacio-modular">
-    Tema 4. Programació Modular
+<a class="md-nav__link" href="#programacio-modular">
+    Programació Modular
   </a>
 </li>
 </ul>
@@ -136,18 +136,14 @@
 <h1 id="projecte-bola-de-drac">Projecte Bola de Drac</h1>
 <p>El projecte de la <strong>bola de drac</strong> és un xicotet joc que desenvoluparem a classe amb <strong>Java i Processing IDE</strong>. En aquest projecte es pretén  simular un <strong>sistema de físiques</strong> molt simple en el que una bola caurà poc a poc gràcies a la força de la gravetat com mostra la imatge següent:</p>
 <p><center>
-<img alt="Boleta que cau" src="assets/Boleta.gif"/>
+<img alt="drawing" src="assets/bolaDrac.gif" style="border:4px solid silver;" width="400"/>
 </center></p>
 <p>Poc a poc i al mateix temps que anem assolint els coneixements necessaris anirem ampliant les funcionalitats de la bola, per exemple que puga <strong>rebotar</strong> quan toque les vores de l'aplicació, que pugam utilitzar els cursors al joc per impulsar o <strong>moure la bola.</strong></p>
 <p>Finalment i si ens dona temps es poden afegir també <strong>obstacles, enemics i animacions...</strong></p>
-<details class="danger">
-<summary>Avís Important</summary>
-<p>Aquest projecte anirà fent-se en paral·lel mentre s'explica la sintaxi del llenguatge Java al (Tema 3)[https://vicentsanchis.github.io/Programacio/Tema%2003.%20El%20llenguatge%20Java/], per tant la majoria d'activitats i tasques estaran relacionades amb els coneixements que aneu adquirint durant aquest tema.</p>
-</details>
-<h2 id="tema-3-el-llenguatge-java">Tema 3. El llenguatge Java</h2>
+<h2 id="el-llenguatge-java">El llenguatge Java</h2>
 <p>En aquest tema 3 hem vist bàsicament la sintaxi de Java. És per tant el tema més dens que hem vist de moment i amb molts conceptes que assolir. A continuació i basant-nos en aquest xicotet projecte, revisarem un a un aquestos conceptes construint pas a pas el projecte.  Si no recordes algun concepte vist a classe, et recomane que revises els apartats mentre anem mirant-los. Comencem per les dades, variables i identificadors.</p>
 <h3 id="dades-variables-identificadors">Dades Variables identificadors</h3>
-<p>El <strong>primer</strong> que has de fer és molt senzill, obre l'entorn de desenvolupament integrat de <strong>Processing</strong>, copia el codi que tens a continuació i apega'l a l'editor. Després guarda'l amb el nom <strong>ProjecteBola.pde</strong> per exemple.</p>
+<p>El <strong>primer</strong> que has de fer és molt senzill, obre l'entorn de desenvolupament integrat de <strong>Processing IDE</strong>, copia el codi que tens a continuació i apega'l a l'editor. Aquest codi serà la <strong>base</strong> per al projecte de la boleta que desenvoluparem pas a pas. Finalment guarda'l amb el nom <strong>ProjecteBola.pde</strong> per exemple.</p>
 <details class="info">
 <summary>Codi base sobre el que construirem el projecte</summary>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -331,12 +327,12 @@
 <h4 id="2-fase-de-disseny">2. Fase de disseny</h4>
 <p>Basant-nos en l'especificació de la fase d'analisi anterior i els requeriments que hem aconseguit treure, dissenyem el nostre algorisme utilitzant, per exemple, la tècnica dels <strong>diagrames de flux</strong>. Un possible resultat podria ser el següent:</p>
 <div class="mermaid">graph LR
-    Ini((Inici))--&gt;A[Establir Dimensions\nAmple=640\nAlt=480];
+    Ini((Inici))--&gt;A[GRV=0.098];
+    A--&gt;B[Establir Dimensions\nAmple=640\nAlt=480];
     style Ini fill:#0F0;
-    A--&gt;B[Establir Posició Inicial\nposX=320\nposY=50];
-    B--&gt;C[GRV=0.098];
+    B--&gt;C[Establir Posició Inicial\nposX=320\nposY=50];
     C--&gt;D[Actualitzar Posició Bola];
-    D--&gt;E[Dibuixar Bola];
+    D--&gt;E[Dibuixar Bola\n];
     E--draw: Bucle Joc--&gt;D;
 </div>
 <h4 id="3-fase-dimplementacio">3. Fase d'implementació</h4>
@@ -379,9 +375,10 @@
 <span class="n">vf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
 <span class="n">vf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span>
 <span class="n">vf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posy</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">vf</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
 </code></pre></div>
 <p>I axí successivament fins que la boleta acabaria desapareixent per la part de baix de la nostra aplicació.</p>
+<p>En conclusió, eixa instrucció del diagrama de flux anterior que hi posa <strong>Actualitzar Posició Bola</strong> en realitat seria: Vf=V0+GRV*(frameCount/frameRate) i posY = posY + vf.</p>
 </details>
 <p>Si has llegit i entès l'explicació anterior sobre el <strong>Moviment rectilini uniformement accelerat</strong>, fes l'activitat 4 on per primera vegada es veurà la boleta en moviment.</p>
 <details class="question">
@@ -415,11 +412,11 @@ Llig i fes la següent activitat:</p>
 <p>Fent ús de les estructures de selecció vistes al tema 3, farem que el nostre joc siga més eficient i precís. Si has fet les activitats anteriors hauràs pogut observar que la boleta desapareix per la part de baix de la nostra aplicació i no la tornem a veure. Anem a corregir este comportament utilitzant una estructura de selecció <strong>if</strong></p>
 <p>Continuem amb la boleta i ampliem funcionalitats i millorem el diagrama de flux de la fase de disseny</p>
 <div class="mermaid">graph LR
-        Ini((Inici))--&gt;A[Establir Dimensions\nAmple=640\nAlt=480];
+        Ini((Inici))--&gt;A[GRV=0.098f];
+        A--&gt;B[Establir Dimensions\nAmple=640\nAlt=480];
         style Ini fill:#0F0;
-        A--&gt;B[Establir Posició Inicial\nposX=320\nposY=50];
-        B--&gt;C[GRV=0.98f];
-        C--&gt;E[Actualitzar Posició Bola];
+        B--&gt;C[Establir Posició Inicial\nposX=320\nposY=50];
+        C--&gt;E[Actualitzar Posició Bola\nvF=V0+GRV*t\nposY=posY+vF];
         E--&gt;F{Ha tocat terra?};
         F--&gt;|SI|G[posX=0];
         G--&gt;H[velocitat = 0];
@@ -464,15 +461,11 @@ Llig i fes la següent activitat:</p>
 <span class="normal">27</span>
 <span class="normal">28</span>
 <span class="normal">29</span>
-<span class="normal">30</span>
-<span class="normal">31</span>
-<span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// Constants</span>
+<span class="normal">30</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// Constants</span>
 <span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">GRV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w">   </span><span class="c1">// Força de la gravetat</span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">TAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">  </span><span class="c1">// Tamany de la boleta</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">TAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span><span class="p">;</span><span class="w">  </span><span class="c1">// Grandària de la boleta</span>
 
 <span class="w">    </span><span class="c1">// Variables Globals</span>
-<span class="w">    </span><span class="kt">int</span><span class="w">   </span><span class="n">numFrames</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">velocitat</span><span class="p">;</span><span class="w">              </span><span class="c1">// Velocitat inicial de l'objecte quan arranquem el programa.</span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Variables que determinen la posició de la boleta en un escenari de dues dimensions</span>
 
@@ -482,7 +475,6 @@ Llig i fes la següent activitat:</p>
 <span class="w">        </span><span class="n">posX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició X inicial</span>
 <span class="w">        </span><span class="n">posY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">440</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició Y inicial</span>
 <span class="w">        </span><span class="n">velocitat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat inicial</span>
-<span class="w">        </span><span class="n">numFrames</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Variable necessària per controlar l'acceleració.</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="c1">// Metode draw: bucle del joc, aquest mètode s'executa de forma continua</span>
@@ -494,8 +486,7 @@ Llig i fes la següent activitat:</p>
 
 <span class="w">        </span><span class="c1">// Actualitzem la posició utilitzant la velocitat</span>
 <span class="w">        </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velocitat</span><span class="p">;</span>
-<span class="w">        </span><span class="n">velocitat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocitat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">G</span><span class="o">*</span><span class="n">numFrames</span><span class="p">;</span><span class="w">  </span><span class="c1">// Vf = Vo + acc*temps;</span>
-<span class="w">        </span><span class="n">numFrames</span><span class="w"> </span><span class="o">++</span><span class="p">;</span>
+<span class="w">        </span><span class="n">velocitat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velocitat</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">G</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w">  </span><span class="c1">// Vf = Vo + acc*temps;</span>
 
 <span class="w">        </span><span class="c1">// Codi if que controle si ha arribat al terra o no.</span>
 <span class="w">        </span><span class="c1">// if...</span>
@@ -520,21 +511,21 @@ Llig i fes la següent activitat:</p>
 <p>Pista: igual quan torna a apareixer per dalt la velocitat no deuria ser zero...</p>
 </details>
 <h4 id="estructura-de-seleccio-doble">Estructura de selecció doble</h4>
-<p>Per tal de treballar <strong>l'estructura condicional doble</strong> que acabem de veure ampliarem les funcionalitat de la nostra aplicació. Ara volem que quan la boleta estiga a certa distància terra es pinte de color roig i quan estiga a més d'eixa distància, siga negra.  </p>
+<p>Per tal de treballar <strong>l'estructura condicional doble</strong> que acabem de veure ampliarem les funcionalitat de la nostra aplicació. Ara volem que quan la boleta estiga tocant terra es pinte de color roig i quan no toque el terra, que siga de color negre.</p>
 <p>El diagrama de flux amb els <strong>nous requeriments</strong> quedaria així:</p>
 <div class="mermaid">graph LR
-        Ini((Inici))--&gt;A[Establir Dimensions\nAmple=640\nAlt=480];
-        style Ini fill:#0F0;
-        A--&gt;B[Establir Posició Inicial\nposX=320\nposY=50];
-        B--&gt;C[GRV=0.98];
-        C--&gt;E[Actualitzar Posició Bola];
-        E--&gt;F{A menys de xx píxels?};
-        F--&gt;|SI|G[posX=0\nPintaRoig];
-        G--&gt;H[velocitat = 0];
-        H--&gt;D[Dibuixar Bola];        
-        F--&gt;|NO|I[PintaNegre];
-        I--&gt;D;
-        D--Draw: Bucle Joc--&gt;E;
+    Ini((Inici))--&gt;A[GRV=0.98f];
+    style Ini fill:#0F0;
+    A--&gt;B[Establir Dimensions\nAmple=640\nAlt=480];
+    B--&gt;C[Establir Posició Inicial\nposX=320\nposY=50];
+    C--&gt;D[Actualitzar Posició Bola\nvF=V0+GRV*t\nposY=posY+vF];
+    D--&gt;F{Toca terra?};
+    F--&gt;|SI|G[posX=0\nPintaRoig];
+    F--&gt;|NO|H[PintaNegre];
+    G--&gt;M[Velocitat=0];
+    H--&gt;I[Dibuixar Bola];
+    M--&gt;I;
+    I--Draw: bucle joc--&gt;D;
 </div>
 <p>Estudia amb detall el diagrama de flux anterior i fes la següent activitat.</p>
 <details class="question">
@@ -549,11 +540,11 @@ Llig i fes la següent activitat:</p>
 </center></p>
 </details>
 <h4 id="estructura-de-seleccio-niada">Estructura de selecció niada</h4>
-<p>Per tal de treballar l'estructura de selecció niada farem que la boleta no només tinga dos colors sino que puga tindra 7 colors que aniran canviant d'acord amb l'altura de la pantalla en la qual es troba.</p>
+<p>Com recordaràs el que hem donat al tema 3, l'estructura de selecció niada és una estructura de programació en la que poden haver més d'una condició. A l'apartat anterior només hi havia una condició: toca terra o no. Per tal de treballar l'estructura de selecció niada farem que la boleta no només tinga dos colors sino que puga tindra 7 colors que aniran canviant d'acord amb l'altura de la pantalla en la qual es troba.</p>
 <div class="mermaid">graph LR
-    Ini((Inici))--&gt;A[Establir Dimensions\nAmple=640\nAlt=480\nposX=320\nposY=50\nGRV=0.98];
+    Ini((Inici))--&gt;A[GRV=0.98f\nEstablir Dimensions\nAmple=640\nAlt=480\nposX=320\nposY=50];
     style Ini fill:#0F0;
-    A--&gt;C[Actualitzar Posició Bola];
+    A--&gt;C[Actualitzar Posició Bola\nvF=V0+GRV*t\nposY=posY+vF];
     C--&gt;D{Entre A i B};
     D--&gt;|SI|E[PintaRoig];
     E--&gt;B;
@@ -586,20 +577,78 @@ Llig i fes la següent activitat:</p>
 <p>Treballem a continuació l'estructura de selecció múltiple: <strong>switch case</strong>. Per poder treballar amb el switch li afegirem alguna funcionalitat nova al nostre joc. Es tracta de poder interaccionar amb la boleta, és a dir, es pretén que quan premem al teclat algun cursor (dalt, baix, esquerra, dreta) la boleta es menege en eixa direcció o se li done alguna classe d'impuls cap a eixa direcció concreta.</p>
 <p>Per poder aconseguir això hem d'usar un <strong>esdeveniment</strong> que ens ofereix la llibreria de <strong>Processing IDE</strong>. Aquest esdeveniment es diu <strong>keyPressed</strong> i ve en forma de funció en la que podem escriure tot el codi que necessite.</p>
 <p>Abans de passar a fer l'activitat 11, entra al <strong>Reference de Processing IDE</strong>, investiga bé què és això del <strong>keyPressed</strong>, com funciona i quines coses es podrien fer.</p>
-<details class="danger">
+<details class="danger" open="open">
 <summary>Algunes consideracions</summary>
-<p>Abans de programar el codi necessari per controlar el moviment de la boleta a la següent activitat, t'has de fer lse següents qüestions:</p>
+<p>Abans de programar el codi necessari per controlar el moviment de la <strong>boleta</strong> a la següent activitat, has de fer-te lse següents qüestions:</p>
 <ol>
-<li>Què pense que passarà si premo un cursor qualsevol (amunt, avall, dreta o esquerra)?</li>
-<li>Si vull que la boleta no pare de moure's, he de deixar el botó apretat?</li>
-<li>Si premo el botó dret només una vegada, es mourà només durant un frame o continuarà movent-se mentre no li indique el contrari?</li>
+<li>Què pense que passarà si prem un cursor qualsevol (amunt, avall, dreta o esquerra)?</li>
+<li>Si vull que la boleta no pare de moure's, he de deixar el botó pres?</li>
+<li>Si prem el botó dret només una vegada, es mourà només durant un frame o continuarà movent-se mentre no li indique el contrari?</li>
 <li>Puc parar la boleta? Com ho faria?</li>
 </ol>
 </details>
+<p>Per continuar amb el projecte de la boleta, canviarem un poc el diagrama de flux. Com pots observar a continuació, la gravetat ja no existeix, ara la boleta apareixerà al mig de la pantalla de la nostra aplicació i no començarà a moure's fins que premem algun cursor del teclat seguint la lògica del joc de la serp.</p>
+<p>Per tal de poder implementar aquest tipus de moviment, necessitem de dues variables més que ens indiquen en quina direcció està anant la nostra boleta. Mira la taula a continuació i després fes l'activitat 11.</p>
+<table>
+<thead>
+<tr>
+<th align="center">dirX</th>
+<th align="center">dirY</th>
+<th align="center">On Va</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">0</td>
+<td align="center">0</td>
+<td align="center">Parat</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">-1</td>
+<td align="center">Avall</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">1</td>
+<td align="center">Amunt</td>
+</tr>
+<tr>
+<td align="center">1</td>
+<td align="center">0</td>
+<td align="center">Dreta</td>
+</tr>
+<tr>
+<td align="center">-1</td>
+<td align="center">0</td>
+<td align="center">Esquerra</td>
+</tr>
+</tbody>
+</table>
+<div class="mermaid">graph LR
+    Ini((Inici))--&gt;A[Establir Dimensions\nAmple=640\nAlt=480\nEstablir Posició \nposX=320\nposY=240\nEstablir Direcció\ndirX=0\ndirY=0];
+    style Ini fill:#0F0;    
+    A--&gt;B[Actualitzar Posició\nposX+=dirX*vel\nposY+=dirY*vel];
+    B--&gt;C[Dibuixar Bola];
+    C--&gt;D{Tecla apretada?};
+    D--&gt;|NO|C;
+    D--&gt;|SI|E{Esdeveniment\nkeyPressed};
+    E--&gt;|UP|F[Amunt\ndirX=0\ndirY=-1];
+    E--&gt;|DOWN|G[Avall\ndirX=0\ndirY=1];
+    E--&gt;|LEFT|H[Esquerra\ndirX=-1\ndirY=0];
+    E--&gt;|RIGHT|I[Dreta\ndirX=1\ndirY=0];
+    F--&gt;J(fa:fa-spinner);
+    G--&gt;J;
+    H--&gt;J;
+    I--&gt;J;
+    J--Draw: bucle joc--&gt;C;
+</div>
 <details class="question">
 <summary>Activitat 11. Boleta amb cursors</summary>
-<p>Seguint amb l'exemple de la boleta en Processing IDE, completa el següent codi per tal que quan premem un cursor del nostre teclat, la boleta comence a menejar-se en eixa direcció. A l'inici de l'aplicació, la boleta estarà parada.</p>
-<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<p>A partir de l'activitat 9 li donarem interactivitat amb l'usuari a la nostra boleta.</p>
+<p>Per fer la base del nostre joc, seguirem la lògica del joc de la serp com ja he comentat abans. Aquell joc en que una serp persegueix boletes que apareixen aleatòriament a la pantalla i conforme "se les menja" va creixent augmentant la dificultat (ja veurem com).</p>
+<p>Completa el següent codi per tal que quan premem un cursor del nostre teclat, la boleta comence a menejar-se en eixa direcció. A l'inici de l'aplicació, la boleta estarà parada.</p>
+<p><div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
 <span class="normal"> 4</span>
@@ -637,14 +686,21 @@ Llig i fes la següent activitat:</p>
 <span class="normal">36</span>
 <span class="normal">37</span>
 <span class="normal">38</span>
-<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">dirX</span><span class="p">,</span><span class="w"> </span><span class="n">dirY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span><span class="w">  </span>
+<span class="c1">// Compte que ací hem afegit les variables dirX i dirY </span>
+<span class="c1">// necessàries per indicar en quina direcció va la boleta</span>
+
 
 <span class="c1">// Configuració de l'aplicació (només s'executa una vegada al principi)</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">  </span><span class="c1">// Grandària de monitor estàndard VGA</span>
 <span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
 <span class="w">    </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dirX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dirY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="w">    </span><span class="n">vel</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
@@ -652,9 +708,6 @@ Llig i fes la següent activitat:</p>
 <span class="w">    </span><span class="n">clear</span><span class="p">();</span>
 <span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
 <span class="w">    </span><span class="n">ellipse</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
-
-<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">posX</span><span class="w"> </span><span class="o">&gt;=</span><span class="w"> </span><span class="mi">640</span><span class="w"> </span><span class="p">)</span>
-<span class="w">        </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <span class="p">}</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -677,8 +730,70 @@ Llig i fes la següent activitat:</p>
 <span class="w">    </span><span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<center>
+<kbd style="width:400px;border:1px solid black;"><img alt="Boleta amb Cursors" src="assets/boletaAmbCursors.gif"/></kbd>
+</center></p>
 </details>
-<h2 id="tema-4-programacio-modular">Tema 4. Programació Modular</h2>
+<h2 id="programacio-modular">Programació Modular</h2>
+<p>Com has pogut observar en els diagrames de flux que hem anat fent al nostre projecte, va augmentant en complexitat i cada vegada són més difícils de interpretar. Ha arribat l'hora de <strong>modularitzar</strong> el nostre joc.</p>
+<p>Basant-nos en el diagrama de flux anterior observa el següent diagrama simplificat.</p>
+<div class="mermaid">graph LR
+    Ini((Inici))--&gt;A[Inicialitzar App];
+    style Ini fill:#0F0;
+    A--&gt;B[Actualitzar Boleta];
+    B--&gt;C[Dibuixar Bola];
+    C--&gt;D[Comprovar Pulsacions];
+    D--Draw: bucle joc--&gt;C;    
+</div>
+<p>Com pots observar, hem simplificat molt el diagrama anterior però hauria de continuar funcionant igualment. El que hem fet ha sigut substituir els conjunts d'instruccions del diagrama anterior per funcionalitats més genèriques. Així:</p>
+<p><strong>1. Inicialitzar App:</strong> s'encarregarà de establir dimensions, establir la posició i la direcció inicial de la boleta.<br/>
+<strong>2. Actualitzar Boleta:</strong> s'encarregarà de en base als valors que tinguen dirX, dirY i velocitat de modificar els valors de posX i posY com hem vist en activitats anteriors.<br/>
+<strong>3. Dibuixar boleta:</strong> s'encarregarà de dibuixar la boleta al lloc de l'aplicació que li corresponga.<br/>
+<strong>4. Comprovar pulsacions:</strong> s'encarregarà de gestionar els esdeveniments de teclats. Bàsicament seria keyPressed.<br/></p>
+<details class="question">
+<summary>Activitat 12. Modularització</summary>
+<p>Seguint a partir del codi que hem desenvolupat a l'activitat 11, has de modularitzar el codi creant les següents funcions: inicialitzarJoc, actualitzarPosicio, dibuixar.</p>
+<p>De moment la funcionalitat de <strong>comprovar pulsacions</strong> s'encarregarà el mètode de l'API de Processing <strong>keyPressed</strong>.</p>
+</details>
+<h3 id="parametres">Paràmetres</h3>
+<p>Com hem vist al tema 4, les funcions en programació permeten la seua parametrització, és a dir, poder condicionar el funcionament dels mètodes mitjançant l'ús de paràmetres i arguments. La qüestió és si podem o no utiltzar aquesta característica de la programació modular a la nostra aplicació. Llig i fes l'activitat 13.</p>
+<details class="question">
+<summary>Activitat 13. Parametrizació</summary>
+<p>Revisa el codi que has escrit a l'activitat 12 de modularització i raona el següent.
+Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametritzat?</p>
+<p>Reescriu el codi parametritzant les funcions que consideres necessàries i raona el motiu en els comentaris de documentació al codi.</p>
+</details>
+<h3 id="pas-dobjectes-a-funcions">Pas d'objectes a funcions</h3>
+<p>Un dels apartats que hem vist al tema de programació modular és l'ús d'objectes i funcions. Com que nosaltres encara no hem entrat en <strong>Programació Orientada a Objectes</strong> no entrarem massa en detall del que és una classe, un objecte i/o una instància però sí que ens introduirem un poc en el món dels objectes.</p>
+<p>Anem a utilitzar l'objecte <a href="https://processing.org/reference/PVector.html">PVector</a> que ens proporciona l'API de Processing per treballar amb vectors de coordenades. </p>
+<p>Llig l'article <a href="https://processing.org/reference/PVector.html">PVector</a> de la guia de Processing IDE i després fes la següent activitat.</p>
+<details class="question">
+<summary>Activitat 14. Ús d'objectes i funcions</summary>
+<p>Com hauràs llegit a l'article <strong>PVector</strong> és una classe que s'utilitza  per representar vectors de dos o tres dimensions. En el nostre cas necessitariem fer ús del vector de dues dimensions per raons obvies.</p>
+<p>Hauries de declarar dos PVectors, un per la posició de la boleta i un altre per a la direcció de la boleta.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Exemple de com es declara un objecte de la classe PVector</span>
+<span class="n">Pvector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span>
+
+<span class="c1">// Exemple de com s'inicia un objecte de la classe PVector</span>
+<span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w">  </span>
+<span class="c1">// On 'a' i 'b' són els valors que s'assignaran a la coordenada x i y respectivament.</span>
+
+<span class="c1">// També es podria declarar un vector buit i assignar-li les coordenades a posteriori</span>
+<span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">();</span>
+<span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+</details>
 </article>
 </div>
 </div>
