@@ -756,7 +756,7 @@ Llig i fes la següent activitat:</p>
 <p>De moment la funcionalitat de <strong>comprovar pulsacions</strong> s'encarregarà el mètode de l'API de Processing <strong>keyPressed</strong>.</p>
 </details>
 <h3 id="parametres">Paràmetres</h3>
-<p>Com hem vist al tema 4, les funcions en programació permeten la seua parametrització, és a dir, poder condicionar el funcionament dels mètodes mitjançant l'ús de paràmetres i arguments. La qüestió és si podem o no utiltzar aquesta característica de la programació modular a la nostra aplicació. Llig i fes l'activitat 13.</p>
+<p>Com hem vist al tema 4, les funcions en programació permeten la seua parametrització, és a dir, poder condicionar el funcionament dels mètodes mitjançant l'ús de paràmetres i arguments. La qüestió és si podem o no utilitzar aquesta característica de la programació modular a la nostra aplicació. Llig i fes l'activitat 13.</p>
 <details class="question">
 <summary>Activitat 13. Parametrizació</summary>
 <p>Revisa el codi que has escrit a l'activitat 12 de modularització i raona el següent.
@@ -793,6 +793,31 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 <span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
+</details>
+<h3 id="sobre-el-return">Sobre el return</h3>
+<p>Si has arribat a aquest punt, segurament t'hauràs donat compte que la boleta quan arriba a algun dels extrems de la pantalla: dalt, baix, esquerra o dreta; la boleta desapareix i no torna a apereixer a no ser que li canviem la direcció i posem la contraria que tenia quan ha desaparegut.</p>
+<p>Per tal de solucionar aquest problema crearem un mètode <strong>comprovaLimits</strong> que s'ecarregara per a cada frame de comprovar si la boleta ha superat algun dels límits del nostre joc. Aquest mètode bàsicament farà el següent:</p>
+<div class="mermaid">graph LR
+    Ini((Inici))--&gt;A{Supera\nlímit superior?};
+    style Ini fill:#0F0;
+    A--&gt;|SI|B[return true];
+    A--&gt;|NO|C{Supera\nlímit inferior?};
+    C--&gt;|SI|B;
+    C--&gt;|NO|D{Supera\nlímit esquerre?};
+    D--&gt;|SI|B;
+    D--&gt;|NO|E{Supera\nlímit dret?};
+    E--&gt;|SI|B;
+    E--&gt;|NO|F[return false];
+    F--&gt;Fin((Fi));
+    style Fin fill:#F00;
+    B--&gt;Fin;
+</div>
+<p>Finalment només ens quedaria saber que fer quan la boleta a arribat algun dels límits de la pantalla. S'hauria de parar? Hauria de rebotar? En cas de rebotar, en quina direcció ho faria? Pren tu eixes decisions.</p>
+<p>El que sí està clar és que la funció ha de tornar un valor booleà que ens indique si la boleta ha superat algun marge (true) o no (false)</p>
+<details class="question">
+<summary>Activitat 15. Detecció de vores</summary>
+<p>Seguint el exemple que hem posat al diagrama de flux anterior, dissenya una funció que es podria dir <strong>comprovaLimits</strong> que ens retorne un valor true en cas que la boleta desaparega per algun límit i false en cas contrari.</p>
+<p>En el bucle de joc hauràs de cridar a dita funció per comprovar a cada frame si la boleta toca o no algun límit de l'aplicació. Al mateix temps segons la resposta (true o false) que ens done la crida al mètode <strong>comprovaLimits</strong> haurem de prendre la decisió de què fem amb ella: parar, rebotar..</p>
 </details>
 </article>
 </div>
