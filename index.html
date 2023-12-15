@@ -6,10 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.3.1, mkdocs-material-8.5.0" name="generator"/>
+<meta content="mkdocs-1.4.3, mkdocs-material-9.1.15" name="generator"/>
 <title>Projecte Bola de Drac</title>
-<link href="assets/stylesheets/main.2e8b5541.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -17,7 +16,8 @@
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.9/mermaid.neutral.css" rel="stylesheet"/>
 <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
-<body data-md-color-accent="none" data-md-color-primary="none" data-md-color-scheme="" dir="ltr">
+<body dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
 <input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
 <label class="md-overlay" for="__drawer"></label>
@@ -28,7 +28,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header" data-md-component="header">
+<header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Projecte Bola de Drac" class="md-header__button md-logo" data-md-component="logo" href="." title="Projecte Bola de Drac">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
@@ -76,7 +76,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list"></ol>
+<ol class="md-search-result__list" role="presentation"></ol>
 </div>
 </div>
 </div>
@@ -99,7 +99,7 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           Index
           <span class="md-nav__icon md-icon"></span>
@@ -121,6 +121,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#programacio-modular">
     Programació Modular
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tipus-compostos-de-dades">
+    Tipus Compostos de Dades
   </a>
 </li>
 </ul>
@@ -183,30 +188,30 @@
 <span class="cm">     * @author Vicent Sanchis</span>
 <span class="cm">     * @since  10/10/2023</span>
 <span class="cm">     * @version 1.0</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="c1">// Constants</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="c1">// Constants</span>
 
-<span class="w">    </span><span class="c1">// Variables Globals</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Variables Globals</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * void setup</span>
 <span class="cm">     * Mètode de configuració de l'aplicació,  només s'executa una volta</span>
 <span class="cm">     * Ací solen anar les inicialitzacions i setup inicial</span>
 <span class="cm">     * @return void</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix el tamany de la pantalla de la nostra aplicació</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix el tamany de la pantalla de la nostra aplicació</span>
+<span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * void draw</span>
 <span class="cm">     * Mètode que s'executa tantes vegades per segon com fps estiga configurat</span>
 <span class="cm">     * També conegut com el bucle de joc. Ací va el principal del programa</span>
 <span class="cm">     * @return void</span>
-<span class="cm">     */</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="cm">     */</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <p>Si executes el codi que has copiat amb el <strong>Processing IDE</strong> veuras que només ix una pantalla de 640 pixels per 480 pixels i res més. No et preocupes, és normal. Ara anirem poc a poc afegint el codi necessari per anar construint el nostre joc.</p>
@@ -235,17 +240,17 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span><span class="w"></span>
-<span class="c1">// Declara les variables a continuació de l'exemple de velocitat</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">velX</span><span class="p">;</span><span class="w">  </span><span class="c1">// Exemple de declaració d'una variable 'velocitat'</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span>
+<span class="c1">// Declara les variables a continuació de l'exemple de velocitat</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">velX</span><span class="p">;</span><span class="w">  </span><span class="c1">// Exemple de declaració d'una variable 'velocitat'</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Recorda que aquesta activitat l'has de fer amb <strong>Processing IDE</strong>. Guarda el fitxer resultant amb el nom següent: <strong>ProjecteBola.pde</strong></p>
 </details>
@@ -265,17 +270,17 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span>
+<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Guarda aquesta activitat amb el nom de: <strong>ProjecteBola.pde</strong></p>
 </details>
@@ -297,19 +302,19 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara la constant a continuació</span><span class="w"></span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara la constant a continuació</span>
 
-<span class="c1">// Variables globals    </span><span class="w"></span>
-<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// Variables globals    </span>
+<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span>
+<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Què passa si al mètode draw intentes canviar-li el valor a alguna constant? Prova-ho.</p>
 </details>
@@ -350,34 +355,34 @@
 <summary>Moviment Rectilini Uniformement Accelerat</summary>
 <p>Per tal de fer els càlculs més simple i comprensibles, considerem que GRV val 1.
 Amb les formules del <strong>MRUA</strong> podem saber en tot moment on es troba la boleta. Si a l'inici la boleta es troba en la posició y=120 i la velocitat inicial a l'eix Y velY=0, passat una unitat de temps (1 frame) la distància recorreguda per part de la boleta seria:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 0</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 0</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">t</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 </code></pre></div>
 <p>És a dir, a l'instant zero la boleta es troba en la seua posició inicial i té una velocitat de 0 (pixels/frame). Lògic no?</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 1</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 1</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 2</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 2</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
 </code></pre></div>
 <p>És a dir, passada una unitat de temps (1 frame) la boleta haurà recorregut 3/60 pixels. Continuem:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 3</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span><span class="w"></span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="o">/</span><span class="mi">60</span><span class="w"></span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 3</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="o">/</span><span class="mi">60</span>
 </code></pre></div>
 <p>I axí successivament fins que la boleta acabaria desapareixent per la part de baix de la nostra aplicació.</p>
 <p>En conclusió, eixa instrucció del diagrama de flux anterior que hi posa <strong>Actualitzar Posició Bola</strong> en realitat seria: velY=velY+GRV*(frameCount/frameRate) i posY = posY + velY.</p>
@@ -400,13 +405,13 @@ Llig i fes la següent activitat:</p>
 <p>Per tal d'aconseguir aquesta aleatorietat, utilitzarem la funció de Processing IDE <strong>random</strong>. </p>
 <p>A l'API de Processing, <a href="https://processing.org/reference/">Processing Reference</a>, entre altres tenim una funció <strong>random(low, high)</strong> que genera nombres aleatoris dintre del rang low-hight que se li passa per paràmetre, és a dir, si volem que aquesta funció ens torne un valor aleatori entre 0 i 100, hauríem de cridar-la de la següent forma:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// Genera un nombre aleatori entre 0 i 100 i l'emmagatzema a f</span><span class="w"></span>
-<span class="kt">float</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">90</span><span class="p">);</span><span class="w"> </span><span class="c1">// Genera un nombre aleatori entre 50 i 90 i l'emmagatzema a m</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// Genera un nombre aleatori entre 0 i 100 i l'emmagatzema a f</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">90</span><span class="p">);</span><span class="w"> </span><span class="c1">// Genera un nombre aleatori entre 50 i 90 i l'emmagatzema a m</span>
 </code></pre></div></td></tr></table></div>
 <p>Primer fes que tant les variables que determinen la posició x i y de la boleta les genere la funció random i no siguen fixes.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Per exemple</span><span class="w"></span>
-<span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">640</span><span class="p">);</span><span class="w"></span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Per exemple</span>
+<span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">640</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>També fes que la gravetat també tinga major precisió i assigna-li un valor de 0.0098.</p>
 <p>Si executes prou vegades l'activitat 6 t'adonaràs que de vegades la boleta apareix en els extrems de la pantalla i de vegades tant baixeta que no s'arriba a apreciar el seu comportament. Investiga la funció <strong>random</strong> de Processing API i fes que la boleta aparega sempre entre els següents rangs:</p>
@@ -471,39 +476,39 @@ Llig i fes la següent activitat:</p>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// Constants</span><span class="w"></span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">GRV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.098f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Força de la gravetat</span><span class="w"></span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">TAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">     </span><span class="c1">// Grandària de la boleta</span><span class="w"></span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// Constants</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">GRV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.098f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Força de la gravetat</span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">TAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">     </span><span class="c1">// Grandària de la boleta</span>
 
-<span class="w">    </span><span class="c1">// Variables Globals</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">velX</span><span class="p">,</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Velocitat inicial de l'objecte quan arranquem el programa.</span><span class="w"></span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Variables que determinen la posició de la boleta en un escenari de dues dimensions</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Variables Globals</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">velX</span><span class="p">,</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Velocitat inicial de l'objecte quan arranquem el programa.</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Variables que determinen la posició de la boleta en un escenari de dues dimensions</span>
 
-<span class="w">    </span><span class="c1">// Mètode setup: inicialitza la nostra aplicació, dona valors inicials.</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">               </span><span class="c1">// Establir dimensions</span><span class="w"></span>
-<span class="w">        </span><span class="n">posX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició X inicial</span><span class="w"></span>
-<span class="w">        </span><span class="n">posY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">440</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició Y inicial</span><span class="w"></span>
-<span class="w">        </span><span class="n">velX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat X inicial</span><span class="w"></span>
-<span class="w">        </span><span class="n">velY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat Y inicial</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Mètode setup: inicialitza la nostra aplicació, dona valors inicials.</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">               </span><span class="c1">// Establir dimensions</span>
+<span class="w">        </span><span class="n">posX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició X inicial</span>
+<span class="w">        </span><span class="n">posY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">440</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició Y inicial</span>
+<span class="w">        </span><span class="n">velX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat X inicial</span>
+<span class="w">        </span><span class="n">velY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat Y inicial</span>
+<span class="w">    </span><span class="p">}</span>
 
-<span class="w">    </span><span class="c1">// Metode draw: bucle del joc, aquest mètode s'executa de forma continua</span><span class="w"></span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="w">        </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Metode draw: bucle del joc, aquest mètode s'executa de forma continua</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="n">clear</span><span class="p">();</span>
+<span class="w">        </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
 
-<span class="w">        </span><span class="c1">// Actualitzem la posició utilitzant la velocitat </span><span class="w"></span>
-<span class="w">        </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w">  </span><span class="c1">// Vf = Vo + acc*temps;</span><span class="w"></span>
-<span class="w">        </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Actualitzem la posició utilitzant la velocitat </span>
+<span class="w">        </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w">  </span><span class="c1">// Vf = Vo + acc*temps;</span>
+<span class="w">        </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span>
 
-<span class="w">        </span><span class="c1">// Codi if que controle si ha arribat al terra o no.</span><span class="w"></span>
-<span class="w">        </span><span class="c1">// if...</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Codi if que controle si ha arribat al terra o no.</span>
+<span class="w">        </span><span class="c1">// if...</span>
 
-<span class="w">        </span><span class="c1">// Dibuixem la boleta</span><span class="w"></span>
-<span class="w">        </span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="n">circle</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="n">posY</span><span class="p">,</span><span class="n">TAM</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// Dibuixem la boleta</span>
+<span class="w">        </span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">        </span><span class="n">circle</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="n">posY</span><span class="p">,</span><span class="n">TAM</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <center>
 <kbd style="border:1px solid black;"><img alt="Boleta" src="assets/Act319.gif"/></kbd>
@@ -692,47 +697,47 @@ Llig i fes la següent activitat:</p>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span><span class="w"></span>
+<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">dirX</span><span class="p">,</span><span class="w"> </span><span class="n">dirY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span><span class="w">  </span>
-<span class="c1">// Compte que ací hem afegit les variables dirX i dirY </span><span class="w"></span>
-<span class="c1">// necessàries per indicar en quina direcció va la boleta</span><span class="w"></span>
+<span class="c1">// Compte que ací hem afegit les variables dirX i dirY </span>
+<span class="c1">// necessàries per indicar en quina direcció va la boleta</span>
 
 
-<span class="c1">// Configuració de l'aplicació (només s'executa una vegada al principi)</span><span class="w"></span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">  </span><span class="c1">// Grandària de monitor estàndard VGA</span><span class="w"></span>
-<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">dirX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">dirY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="n">vel</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="c1">// Configuració de l'aplicació (només s'executa una vegada al principi)</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">  </span><span class="c1">// Grandària de monitor estàndard VGA</span>
+<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
+<span class="w">    </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dirX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">dirY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">    </span><span class="n">vel</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="n">ellipse</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="w">    </span><span class="n">ellipse</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
+<span class="p">}</span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keyCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">UP</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta es menege cap amunt</span><span class="w"></span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keyCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">UP</span><span class="p">:</span>
+<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta es menege cap amunt</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
 
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">DOWN</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta vaja cap avall.</span><span class="w"></span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">DOWN</span><span class="p">:</span>
+<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta vaja cap avall.</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
 
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">LEFT</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a l'esquerra.</span><span class="w"></span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">LEFT</span><span class="p">:</span>
+<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a l'esquerra.</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
 
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">RIGHT</span><span class="p">:</span><span class="w"></span>
-<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a la dreta.</span><span class="w"></span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">RIGHT</span><span class="p">:</span>
+<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a la dreta.</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <center>
 <kbd style="width:400px;border:1px solid black;"><img alt="Boleta amb Cursors" src="assets/boletaAmbCursors.gif"/></kbd>
@@ -788,17 +793,17 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Exemple de com es declara un objecte de la classe PVector</span><span class="w"></span>
-<span class="n">Pvector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span><span class="w"></span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Exemple de com es declara un objecte de la classe PVector</span>
+<span class="n">Pvector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span>
 
-<span class="c1">// Exemple de com s'inicia un objecte de la classe PVector</span><span class="w"></span>
+<span class="c1">// Exemple de com s'inicia un objecte de la classe PVector</span>
 <span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w">  </span>
-<span class="c1">// On 'a' i 'b' són els valors que s'assignaran a la coordenada x i y respectivament.</span><span class="w"></span>
+<span class="c1">// On 'a' i 'b' són els valors que s'assignaran a la coordenada x i y respectivament.</span>
 
-<span class="c1">// També es podria declarar un vector buit i assignar-li les coordenades a posteriori</span><span class="w"></span>
-<span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">();</span><span class="w"></span>
-<span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
-<span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
+<span class="c1">// També es podria declarar un vector buit i assignar-li les coordenades a posteriori</span>
+<span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">();</span>
+<span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
 </details>
 <h3 id="sobre-el-return">Sobre el return</h3>
@@ -842,9 +847,82 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <kbd style="width:400px;border:1px solid black;"><img alt="Boleta amb Cursors" src="assets/bolaRebota.gif"/></kbd>
 </center></p>
 </details>
-<!--## Tipus Compostos de Dades
+<h2 id="tipus-compostos-de-dades">Tipus Compostos de Dades</h2>
+<p>Aprofitant el que hem vist al tema de tipus compostos de dades, veiem com podem afegir-li més funcionalitats al nostre projecte de la boleta.</p>
+<p>Com que ja podem moure la boleta per la pantalla de la nostra aplicació amb els cursors, donem-li un objectiu al nostre personatge. Farem que la finalitat del joc siga que la nostra boleta persegueixi i <strong>es "menge" enemics</strong>. </p>
+<p>Suposem que aquestos enemics són <strong>cercles d'un color diferent</strong> al de la boleta que apareixen de forma aleatòria per la pantalla i es <strong>mantenen en la mateixa posició</strong> durant tot el joc, a més a més, en el moment que apareixen la boleta els ha de tocar per poder eliminar-los. Podriem fer, per exemple, que els enemics <strong>comencen a apareixer passat un temps</strong> i que vagen apareixent fins arribar a un màxim de 10 enemics en total. </p>
+<p>El joc <strong>acaba</strong> quan la boleta s'haja "menjat" a tots els enemics.</p>
+<p>Analitzem amb més profunditat el plantejament anterior i vegem quins podrien ser els seus requeriments. </p>
+<h3 id="requeriments">Requeriments</h3>
+<div class="highlight"><pre><span></span><code>1. Hem de guardar informació sobre la posició dels enemics.
+2. Els enemics apareixen de forma aleatòria a la pantalla cada cert temps en una posició aleatòria.
+3. Els enemics són estàtics. No es poden moure i mantenen sempre la mateixa posició.
+4. Hi haurà un màxim de 10 enemics de forma simultània al nostre joc.
+5. Per "menjar-se" un enemic, la boleta haurà de **col·lisionar** amb l'enemic.
+6. El joc finalitza quan la boleta s'ha menjat a tots els enemics.
+</code></pre></div>
+<p>D'alguna manera hem de poder guardar la informació necessària d'un <strong>conjunt</strong> d'enemics al nostre programa. Sembla lògic que usarem un array d'una dimensió per aquesta tasca, però quin tipus de dades ha de guardar aquest array. Si ho penses bé dels enemics només necessitem saber-ne la posició en la que es troben, és a dir, podriem usar un <strong>array de PVectors.</strong></p>
+<h3 id="diagrama-de-flux">Diagrama de flux</h3>
+<p>Veiem a continuació un possible <strong>disseny</strong> de les ampliacions de funcionalitats del nostre joc al <strong>diagrama de flux</strong></p>
+<div class="mermaid">graph LR
+    Ini((Inici))--&gt;A[Inicialitzar App];
+    style Ini fill:#0F0;
+    A--&gt;B[Actualitzar Boleta];
+    B--&gt;C[Actualitzar Enemics];
+    C--&gt;D[Dibuixar Boleta];
+    D--&gt;E[Dibuixar Enemics];
+    E--&gt;F[Comprovar col·lisions];
+    F--&gt;G["Comprovar pulsacions\n(keyPressed)"];
+    G--&gt;H{Queden enemics?};
+    H--&gt;|Si|I{Supera Limit?};
+    H--&gt;|No|J[Finalitzar Joc];
+    I--&gt;|Si|K[Rebota];
+    I--&gt;|No|B;    
+    J--&gt;Fi((Fi));
+    style Fi fill:#F00;
+    K--&gt;B;
 
-Com podriem utilitzar els **tipus compostos de dades** a la nostra aplicació?-->
+</div>
+<p>Com es pot observar al diagrama de flux anterior hi han poques diferències amb el que haviem fet a l'activitat 15. Apareixen les següents novetats: </p>
+<ul>
+<li><strong>Instruccions: </strong> Actualitzar enemics, Dibuixar enemics, Comprovar col·lisions, Finalitzar Joc.</li>
+<li><strong>Condicions: </strong> Queden enemics?</li>
+</ul>
+<p>En realitat, com ja hauràs imaginat, eixes noves instruccions en realitat <strong>són mètodes nous</strong> del nostre joc. Expliquem-los amb més detall:</p>
+<p><strong>1. Actualitzar enemics:</strong> aquest mètode, igual que feiem amb la boleta, actualitza la posició de l'enemic, és a dir, quan aquest apareix li assigna una posició aleatòria que és la que mantindrà durant tot el joc fins que se'l mengen. A banda d'açò, Actualitzar enemics també haurà de gestionar si han d'apareixer o no nous enemics o ja estan tots i també controlar l'interval de temps entre que aparega un enemic i el següent. És a dir, ha de controlar a partir de quan apareix el primer enemic i també com successivament van apareixent la resta.</p>
+<p><strong>2. Dibuixar enemics:</strong> aquest mètode haurà de recòrrer l'array amb les posicions dels enemics, en cas d'haver-ne alguna, i dibuixar els cercles (enemics) corresponents. </p>
+<p><strong>3. Comprovar col·lisions:</strong> aquest és possiblement el mètode més complex. A cada cicle del bucle del joc s'haurà de comprovar si la nostra boleta, com a conseqüència de la seua nova posició una vegada ja s'ha actualitzat, està col·lisionant amb algun enemic. Per saber si la boleta està col·lisionant amb algun enemic es pot saber de la següent manera: si la distància entre la posició de la boleta i la posició de l'enemic és menor que la suma del radi de la boleta i el de l'enemic, significa que s'estan tocant i per tant s'hauria d'eliminar l'enemic.  Per poder realitzar aquestos càlculs pots aprofitar les funcionalitats que ens ofereix el PVector de l'API de Processing. </p>
+<p><strong>4. Queden enemics:</strong> en aquesta condició s'ha de comprovar si ja hem menjat a tots els enemics i en aquest cas finalitzariem el joc. Compte que fins que no apareix el primer enemic es podria pensar que ja no queden enemics i finalitzar el joc sense haver-lo començat. Has de disssenyar bé aquest mètode per tal que això no passe.</p>
+<p><strong>5. Finalitzar joc:</strong> és un mètode que s'encarregaria de fer veure a l'usuari que la partida ja ha finalitzat, és a dir, el típic <strong>Gave Over</strong>.</p>
+<p>Alguns dubtes que potser t'estaràs preguntant:</p>
+<ul>
+<li><strong>Com guarde informació de la posició dels enemics?</strong>
+Has d'utilitzar un array de PVectors com s'ha comentat abans amb capacitat per a 10 elements. Cadascun d'aquestos PVectors tindran la informació de la posició d'un enemic. En cas que aquest siga null significaria que encara no ha aparegut.</li>
+<li><strong>En quin moment comence a mostrar enemics?</strong> Has de portar un control del temps, una bona manera pot ser utilitzar la variable frameCount de Processing però també hi ha altres alternatives com les funcions de temps de l'API de Processing. Per exemple, cada 60 frames podries considerar que ha passat un segon, encara que no seria massa precís. Mira les funcions de temps que ens permet usar Processing perquè es pot utilitzar també més endavant per fer un comptador de temps. Per exemple imagina que l'interval en el que apareixen els enemics és de 200 frames o de 5 segons, el primer enemic apareixeria passats 200 frames o 5 segons des de l'inici de l'aplicació. Una vegada a aparegut el primer enemic esperaria uns altres 200 frames o 5 segons per mostrar el següent i així successivament.</li>
+<li><strong>Com se si han aparegut o no?</strong> Com que tens un arrray de PVectors que t'indica la posició de tots els enemics, és fàcil deduir que si el contingut en la posició 2 de l'array és nul·la significa que enecara no ha aparegut.</li>
+<li><strong>Com s'eliminen enemics?</strong> Posant a null el contingut de l'array de PVectors seria una opció.</li>
+<li><strong>Com se si ja els he eliminat a tots?</strong> Deuries portar un comptador de col·lisions. Amb una variable global es podria solucionar.</li>
+</ul>
+<p>Passem a més detall i comencem ja a escriure codi. Mirem amb deteniment com implementariem per exemple la funció <strong>Actualitzar enemics</strong>. Un diagrama de flux per al detall d'aquest mètode podria ser el següent:</p>
+<div class="mermaid">flowchart LR
+subgraph \nACTUALITZAR ENEMICS\n
+    direction LR
+    Ini((Inici))--&gt;A{Queden enemics\nper mostrar?};
+    style Ini fill:#0F0;
+    A--&gt;|Si|B{Han passat\n'x' segons?};
+    A--&gt;|No|Fi((Fi));
+    style Fi fill:#F00;
+    B--&gt;|Si|C[Genera posició nova\nGuarda posició\nIncrementa contEnemics];
+    C--&gt;A;
+    B--&gt;|No|B;
+end
+</div>
+<p>Ara i abans de passar-se a fer l'activitat següent, hauries de dibuixar-te per a cadascun dels mètodes nous que han aparegut el seu diagrama de flux.</p>
+<details class="question">
+<summary>Activitat 16. Gestió d'enemics</summary>
+<p>A partir de l'especificació de requeriments anterior i el diagrama de flux de les noves funcionalitats del nostre joc. Implementa-les i afegeix-les al teu codi del projecte de la boleta.  </p>
+<p>Recorda que hauran d'apareixer de forma aleatòria i cada cert temps un màxim de 10 enemics que la nostra boleta s'haurà de menjar per considerar el joc acabat.</p>
+</details>
 </article>
 </div>
 </div>
@@ -867,8 +945,8 @@ Com podriem utilitzar els **tipus compostos de dades** a la nostra aplicació?--
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
-<script src="assets/javascripts/bundle.48f2be22.min.js"></script>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="assets/javascripts/bundle.b4d07000.min.js"></script>
 <script src="js/mathjax.js"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
