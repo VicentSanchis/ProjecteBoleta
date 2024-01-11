@@ -139,14 +139,14 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="projecte-bola-de-drac">Projecte Bola de Drac</h1>
-<p>El projecte de la <strong>bola de drac</strong> és un xicotet joc que desenvoluparem a classe amb <strong>Java i Processing IDE</strong>. En aquest projecte es pretén  simular un <strong>sistema de físiques</strong> molt simple en el que una bola caurà poc a poc gràcies a la força de la gravetat com mostra la imatge següent:</p>
+<p>El projecte de la <strong>bola de drac</strong> és un xicotet joc que desenvoluparem a classe amb <strong>Java i Processing IDE</strong>. En aquest projecte començarem simulant un <strong>sistema de físiques</strong> molt simple en el que una bola caurà poc a poc gràcies a la força de la gravetat. </p>
 <p><center>
 <kbd style="width:400px;border:1px solid black;"><img alt="Boleta amb Cursors" src="assets/bolaDrac.gif"/></kbd>
 </center></p>
 <p>Poc a poc i al mateix temps que anem assolint els coneixements necessaris ampliarem les funcionalitats de la bola, per exemple que puga <strong>rebotar</strong> quan toque les vores de l'aplicació, que puguem utilitzar els cursors al joc per impulsar o <strong>moure la bola.</strong></p>
-<p>Finalment i si ens dona temps es poden afegir també <strong>obstacles, enemics i animacions...</strong></p>
+<p>Finalment podriem afegir també <strong>obstacles, enemics i animacions...</strong></p>
 <h2 id="el-llenguatge-java">El llenguatge Java</h2>
-<p>En aquest tema 3 hem vist bàsicament la sintaxi de Java. És per tant el tema més dens que hem vist de moment i amb molts conceptes que assolir. A continuació i basant-nos en aquest xicotet projecte, revisarem un a un aquestos conceptes construint pas a pas el projecte.  Si no recordes algun concepte vist a classe, et recomane que revises els apartats mentre anem mirant-los. Comencem per les dades, variables i identificadors.</p>
+<p>En aquest tema 3 hem vist bàsicament la sintaxi de Java. És per tant el tema més dens que hem vist de moment i amb molts conceptes que assolir. A continuació i basant-nos en aquest xicotet projecte, revisarem un a un aquests conceptes construint pas a pas el projecte.  Si no recordes algun concepte vist a classe, et recomane que revises els apartats mentre anem mirant-los. Comencem per les dades, variables i identificadors.</p>
 <h3 id="dades-variables-identificadors">Dades Variables identificadors</h3>
 <p>El <strong>primer</strong> que has de fer és molt senzill, obre l'entorn de desenvolupament integrat de <strong>Processing IDE</strong>, copia el codi que tens a continuació i apega'l a l'editor. Aquest codi serà la <strong>base</strong> per al projecte de la boleta que desenvoluparem pas a pas. Finalment guarda'l amb el nom <strong>ProjecteBola.pde</strong> per exemple.</p>
 <details class="info">
@@ -181,18 +181,21 @@
 <span class="normal">28</span>
 <span class="normal">29</span>
 <span class="normal">30</span>
-<span class="normal">31</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="cm">/**</span>
+<span class="normal">31</span>
+<span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Projecte Bola de Drac</span>
+<span class="cm">     * ------------------------------------------------------------------------------------------------------</span>
 <span class="cm">     * Xicotet projecte de simulació d'un sistema de físiques que finalment acabarà convertint-se en un joc </span>
 <span class="cm">     * simple amb enemics, obstacles i puntuació</span>
 <span class="cm">     * @author Vicent Sanchis</span>
 <span class="cm">     * @since  10/10/2023</span>
 <span class="cm">     * @version 1.0</span>
 <span class="cm">     */</span>
+<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------</span>
 <span class="w">    </span><span class="c1">// Constants</span>
-
+<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------ </span>
 <span class="w">    </span><span class="c1">// Variables Globals</span>
-
+<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------</span>
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Mètode setup</span>
 <span class="cm">     * Mètode de configuració de l'aplicació,  només s'executa una volta</span>
@@ -202,7 +205,6 @@
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix la grandària de la pantalla de la nostra aplicació</span>
 <span class="w">    </span><span class="p">}</span>
-
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Mètode draw</span>
 <span class="cm">     * Mètode que s'executa tantes vegades per segon com fps estiga configurat</span>
@@ -256,9 +258,7 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span>
-<span class="c1">// Declara les variables a continuació de l'exemple de velocitat</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara les variables globals a la seua secció.</span>
 <span class="kt">int</span><span class="w"> </span><span class="n">velX</span><span class="p">;</span><span class="w">  </span><span class="c1">// Exemple de declaració d'una variable 'velocitat'</span>
 
 <span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
@@ -266,7 +266,7 @@
 <span class="p">}</span>
 <span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="n">clear</span><span class="p">();</span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Pinta el fons de blanc</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Recorda que aquesta activitat l'has de fer amb <strong>Processing IDE</strong>. Guarda el fitxer resultant amb el nom següent: <strong>ProjecteBola.pde</strong></p>
@@ -337,7 +337,7 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara la constant a continuació</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara la constant a la secció de constants</span>
 
 <span class="c1">// Variables globals    </span>
 <span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
@@ -351,7 +351,7 @@
 <span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>Què passa si al mètode draw intentes canviar-li el valor a alguna constant? Prova-ho.</p>
+<p>Què passa si al mètode draw intentes canviar-li el valor a alguna constant en temps d'execució? Prova-ho.</p>
 </div>
 <div class="tabbed-block">
 <p><a href="assets/Activitat4.pde">Descarrega la solució de l'activitat 4</a></p>
@@ -735,7 +735,7 @@ Llig i fes la següent activitat:</p>
     style Ini fill:#0F0;    
     A--&gt;B[Actualitzar Posició\nposX+=dirX*vel\nposY+=dirY*vel];
     B--&gt;C[Dibuixar Bola];
-    C--&gt;D{Tecla apretada?};
+    C--&gt;D{Tecla premuda?};
     D--&gt;|NO|C;
     D--&gt;|SI|E{Esdeveniment\nkeyPressed};
     E--&gt;|UP|F[Amunt\ndirX=0\ndirY=-1];
@@ -991,30 +991,31 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 </div>
 </details>
 <h2 id="tipus-compostos-de-dades">Tipus Compostos de Dades</h2>
-<p>Aprofitant el que hem vist al tema de tipus compostos de dades, veiem com podem afegir-li més funcionalitats al nostre projecte de la boleta.</p>
+<p>Aprofitant que al tema de tipus compostos de dades hem vist algunes col·leccions o conjunts (arrays i matrius), veiem com podem afegir-li més funcionalitats al nostre projecte de la boleta.</p>
 <p>Com que ja podem moure la boleta per la pantalla de la nostra aplicació amb els cursors, donem-li un objectiu al nostre personatge. Farem que la finalitat del joc siga que la nostra boleta persegueixi i <strong>es "menge" enemics</strong>. </p>
-<p>Suposem que aquestos enemics són <strong>cercles d'un color diferent</strong> al de la boleta que apareixen de forma aleatòria per la pantalla i es <strong>mantenen en la mateixa posició</strong> durant tot el joc, a més a més, en el moment que apareixen la boleta els ha de tocar per poder eliminar-los. Podriem fer, per exemple, que els enemics <strong>comencen a apareixer passat un temps</strong> i que vagen apareixent fins arribar a un màxim de 10 enemics en total. </p>
+<p>Suposem que aquests enemics són <strong>cercles d'un color diferent</strong> al de la boleta que apareixen de forma aleatòria per la pantalla i es <strong>mantenen en la mateixa posició</strong> durant tot el joc, a més a més, en el moment que apareixen la boleta els ha de tocar per poder eliminar-los. Podriem fer, per exemple, que els enemics <strong>comencen a apareixer passat un temps</strong> i que vagen apareixent fins arribar a un màxim de 10 enemics en total. </p>
 <p>El joc <strong>acaba</strong> quan la boleta s'haja "menjat" a tots els enemics.</p>
 <p>Analitzem amb més profunditat el plantejament anterior i vegem quins podrien ser els seus requeriments. </p>
 <h3 id="requeriments">Requeriments</h3>
-<div class="highlight"><pre><span></span><code>1. Hem de guardar informació sobre la posició dels enemics.
-2. Els enemics apareixen de forma aleatòria a la pantalla cada cert temps en una posició aleatòria.
-3. Els enemics són estàtics. No es poden moure i mantenen sempre la mateixa posició.
-4. Hi haurà un màxim de 10 enemics de forma simultània al nostre joc.
-5. Per "menjar-se" un enemic, la boleta haurà de **col·lisionar** amb l'enemic.
-6. El joc finalitza quan la boleta s'ha menjat a tots els enemics.
-</code></pre></div>
+<ol>
+<li>Hem de guardar informació sobre la posició dels enemics igual que feiem anb la boleta.</li>
+<li>Els enemics apareixen de forma aleatòria (posició) a la pantalla cada cert temps (interval) constant.</li>
+<li>Els enemics són estàtics. No es poden moure i mantenen sempre la mateixa posició. Simple de moment.</li>
+<li>Hi haurà un màxim de 10 enemics de forma simultània al nostre joc.</li>
+<li>Per "menjar-se" un enemic, la boleta haurà de <strong>col·lisionar</strong> amb l'enemic, és a dir, tocar-lo.</li>
+<li>El joc finalitza quan la boleta s'ha menjat a tots els enemics.</li>
+</ol>
 <p>D'alguna manera hem de poder guardar la informació necessària d'un <strong>conjunt</strong> d'enemics al nostre programa. Sembla lògic que usarem un array d'una dimensió per aquesta tasca, però quin tipus de dades ha de guardar aquest array. Si ho penses bé dels enemics només necessitem saber-ne la posició en la que es troben, és a dir, podriem usar un <strong>array de PVectors.</strong></p>
 <h3 id="diagrama-de-flux">Diagrama de flux</h3>
 <p>Veiem a continuació un possible <strong>disseny</strong> de les ampliacions de funcionalitats del nostre joc al <strong>diagrama de flux</strong></p>
 <div class="mermaid">graph LR
-    Ini((Inici))--&gt;A[Inicialitzar App];
+    Ini((Inici))--&gt;A["Inicialitzar App\n(setup)"];
     style Ini fill:#0F0;
-    A--&gt;B[Actualitzar Boleta];
-    B--&gt;C[Actualitzar Enemics];
-    C--&gt;D[Dibuixar Boleta];
-    D--&gt;E[Dibuixar Enemics];
-    E--&gt;F[Comprovar col·lisions];
+    A--&gt;B["Actualitza Boleta\n(draw)"];
+    B--&gt;C["Actualitza Enemics\n(draw)"];
+    C--&gt;D["Dibuixa Boleta\n(draw)"];
+    D--&gt;E["Dibuixa Enemics\n(draw)"];
+    E--&gt;F["Comprovar col·lisions\n(draw)"];
     F--&gt;G["Comprovar pulsacions\n(keyPressed)"];
     G--&gt;H{Queden enemics?};
     H--&gt;|Si|I{Supera Limit?};
@@ -1032,23 +1033,9 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <li><strong>Condicions: </strong> Queden enemics?</li>
 </ul>
 <p>En realitat, com ja hauràs imaginat, eixes noves instruccions en realitat <strong>són mètodes nous</strong> del nostre joc. Expliquem-los amb més detall:</p>
-<p><strong>1. Actualitzar enemics:</strong> aquest mètode, igual que feiem amb la boleta, actualitza la posició de l'enemic, és a dir, quan aquest apareix li assigna una posició aleatòria que és la que mantindrà durant tot el joc fins que se'l mengen. A banda d'açò, Actualitzar enemics també haurà de gestionar si han d'apareixer o no nous enemics o ja estan tots i també controlar l'interval de temps entre que aparega un enemic i el següent. És a dir, ha de controlar a partir de quan apareix el primer enemic i també com successivament van apareixent la resta.</p>
-<p><strong>2. Dibuixar enemics:</strong> aquest mètode haurà de recórrer l'array amb les posicions dels enemics, en cas d'haver-ne alguna, i dibuixar els cercles (enemics) corresponents. </p>
-<p><strong>3. Comprovar col·lisions:</strong> aquest és possiblement el mètode més complex. A cada cicle del bucle del joc s'haurà de comprovar si la nostra boleta, com a conseqüència de la seua nova posició una vegada ja s'ha actualitzat, està col·lisionant amb algun enemic. Per saber si la boleta està col·lisionant amb algun enemic es pot saber de la següent manera: si la distància entre la posició de la boleta i la posició de l'enemic és menor que la suma del radi de la boleta i el de l'enemic, significa que s'estan tocant i per tant s'hauria d'eliminar l'enemic.  Per poder realitzar aquestos càlculs pots aprofitar les funcionalitats que ens ofereix el PVector de l'API de Processing. </p>
-<p><strong>4. Queden enemics:</strong> en aquesta condició s'ha de comprovar si ja hem menjat a tots els enemics i en aquest cas finalitzariem el joc. Compte que fins que no apareix el primer enemic es podria pensar que ja no queden enemics i finalitzar el joc sense haver-lo començat. Has de dissenyar bé aquest mètode per tal que això no passe.</p>
-<p><strong>5. Finalitzar joc:</strong> és un mètode que s'encarregaria de fer veure a l'usuari que la partida ja ha finalitzat, és a dir, el típic <strong>Gave Over</strong>.</p>
-<p>Alguns dubtes que potser t'estaràs preguntant:</p>
-<ul>
-<li><strong>Com guarde informació de la posició dels enemics?</strong>
-Has d'utilitzar un array de PVectors com s'ha comentat abans amb capacitat per a 10 elements. Cadascun d'aquestos PVectors tindran la informació de la posició d'un enemic. En cas que aquest siga null significaria que encara no ha aparegut.</li>
-<li><strong>En quin moment comence a mostrar enemics?</strong> Has de portar un control del temps, una bona manera pot ser utilitzar la variable frameCount de Processing però també hi ha altres alternatives com les funcions de temps de l'API de Processing. Per exemple, cada 60 frames podries considerar que ha passat un segon, encara que no seria massa precís. Mira les funcions de temps que ens permet usar Processing perquè es pot utilitzar també més endavant per fer un comptador de temps. Per exemple imagina que l'interval en el que apareixen els enemics és de 200 frames o de 5 segons, el primer enemic apareixeria passats 200 frames o 5 segons des de l'inici de l'aplicació. Una vegada a aparegut el primer enemic esperaria uns altres 200 frames o 5 segons per mostrar el següent i així successivament.</li>
-<li><strong>Com se si han aparegut o no?</strong> Com que tens un arrray de PVectors que t'indica la posició de tots els enemics, és fàcil deduir que si el contingut en la posició 2 de l'array és nul·la significa que encara no ha aparegut.</li>
-<li><strong>Com s'eliminen enemics?</strong> Posant a null el contingut de l'array de PVectors seria una opció.</li>
-<li><strong>Com se si ja els he eliminat a tots?</strong> Deuries portar un comptador de col·lisions. Amb una variable global es podria solucionar.</li>
-</ul>
-<p>Passem a més detall i comencem ja a escriure codi. Mirem amb deteniment com implementariem per exemple la funció <strong>Actualitzar enemics</strong>. Un diagrama de flux per al detall d'aquest mètode podria ser el següent:</p>
+<p><strong>1. Actualitzar enemics:</strong> aquest mètode s'encarrega de gestionar la llista d'enemics assignant-los cada un cert interval de temps una posició a aquells que encara no hagen aparegut que no es modificarà durant tot el joc fins que se'l mengen. En definitiva, aquest mètode és el que porta el control del temps per tal d'anar assignant posicions aleatòries als enemics que van apareixent. També ha de tindre en compte que només es poden mostrar un màxim de 10 enemics al nostre joc.</p>
 <div class="mermaid">flowchart LR
-subgraph \nACTUALITZAR ENEMICS\n
+subgraph \nACTUALITZAR ENEMICS
     direction LR
     Ini((Inici))--&gt;A{Queden enemics\nper mostrar?};
     style Ini fill:#0F0;
@@ -1060,7 +1047,46 @@ subgraph \nACTUALITZAR ENEMICS\n
     B--&gt;|No|B;
 end
 </div>
-<p>Ara i abans de passar-se a fer l'activitat següent, hauries de dibuixar-te per a cadascun dels mètodes nous que han aparegut el seu diagrama de flux.</p>
+<p><strong>2. Dibuixar enemics:</strong> aquest mètode haurà de recórrer l'array amb les posicions dels enemics, en cas d'haver-ne alguna (recorda que és actualitzar enemics la que s'encarrega d'açò) i dibuixar els cercles (enemics) corresponents. </p>
+<div class="mermaid">flowchart LR
+subgraph \nDIBUIXAR ENEMICS
+    direction LR
+    Ini((Inici))--&gt;A[Obté Enemic de l'array];
+    style Ini fill:#0F0;
+    A--&gt;B[Dibuixa enemic];
+    B--&gt;C{Queden enemics\nper mostrar?};
+    C--&gt;|Si|A;
+    C--&gt;|No|Fi((Fi));
+    style Fi fill:#F00;
+end
+</div>
+<p><strong>3. Comprovar col·lisions:</strong> aquest és possiblement el mètode més complex. A cada cicle del bucle del joc s'haurà de comprovar si la nostra boleta, com a conseqüència de la seua nova posició una vegada ja s'ha actualitzat, està col·lisionant amb algun enemic. Per saber si la boleta està col·lisionant amb algun enemic es pot saber de la següent manera: si la distància entre la posició de la boleta i la posició de l'enemic és menor que la suma del radi de la boleta i el de l'enemic, significa que s'estan tocant i per tant s'hauria d'eliminar l'enemic.  Per poder realitzar aquests càlculs pots aprofitar les funcionalitats que ens ofereix el PVector de l'API de Processing. </p>
+<div class="mermaid">flowchart LR
+subgraph "\nCOMPROVA COL·LISIONS"
+    direction LR
+    Ini((Inici))--&gt;A[Obté Enemic de l'array];
+    style Ini fill:#0F0;
+    A--&gt;B{dist entre\n enemic i boleta\nmenor que\n suma radis?};
+    B--&gt;|Si|C[Elimina];
+    C--&gt;A;
+    B--&gt;|No|D{Queden enemics?};
+    D--&gt;|Si|A;
+    D--&gt;|No|Fi((Fi));
+    style Fi fill:#F00;
+end
+</div>
+<p><strong>4. Queden enemics:</strong> en aquesta condició s'ha de comprovar si ja hem menjat a tots els enemics i en aquest cas finalitzariem el joc. Compte que fins que no apareix el primer enemic es podria pensar que ja no queden enemics i finalitzar el joc sense haver-lo començat. Has de dissenyar bé aquest mètode per tal que això no passe. La millor forma es amb un comptador d'enemics morts que seria zero a l'inici de l'aplicació i 10 quan ens els hajam menjat a tots. El comptador de morts s'actualitzarà cada vegada que es detecte una col·lisió i es mate un enemic.</p>
+<p>En aquesta funció es podria aprofitar per mostrar un comptador per pantalla on s'indique el total d'enemics que s'ha menjat la boleta. </p>
+<p><strong>5. Finalitzar joc:</strong> és un mètode que s'encarregaria de fer veure a l'usuari que la partida ja ha finalitzat, és a dir, el típic <strong>Gave Over</strong>.  Bàsicament és una condició en alguna part del codi on es comprove si el total de morts és igual a 10, en cas de ser així, es mostrarà un missatge de <strong>GAME OVER</strong> enmig de la pantalla.</p>
+<p>Alguns dubtes que potser t'estaràs preguntant:</p>
+<ul>
+<li><strong>Com guarde informació de la posició dels enemics?</strong>
+Has d'utilitzar un array de PVectors com s'ha comentat abans amb capacitat per a 10 elements. Cadascun d'aquests PVectors tindran la informació de la posició d'un enemic. En cas que aquest siga null significaria que encara no ha aparegut.</li>
+<li><strong>En quin moment comence a mostrar enemics?</strong> Has de portar un control del temps, una bona manera pot ser utilitzar la variable frameCount de Processing però també hi ha altres alternatives com les funcions de temps de l'API de Processing. Per exemple, cada 60 frames podries considerar que ha passat un segon, encara que no seria massa precís. Mira les funcions de temps que ens permet usar Processing perquè es pot utilitzar també més endavant per fer un comptador de temps. Per exemple imagina que l'interval en el que apareixen els enemics és de 200 frames o de 5 segons, el primer enemic apareixeria passats 200 frames o 5 segons des de l'inici de l'aplicació. Una vegada a aparegut el primer enemic esperaria uns altres 200 frames o 5 segons per mostrar el següent i així successivament.</li>
+<li><strong>Com se si han aparegut o no?</strong> Com que tens un array de PVectors que t'indica la posició de tots els enemics, és fàcil deduir que si el contingut en la posició 2 de l'array és nul·la significa que encara no ha aparegut.</li>
+<li><strong>Com s'eliminen enemics?</strong> Posant a null el contingut de l'array de PVectors seria una opció.</li>
+<li><strong>Com se si ja els he eliminat a tots?</strong> Deuries portar un comptador de col·lisions. Amb una variable global es podria solucionar.</li>
+</ul>
 <details class="question">
 <summary>Activitat 16. Gestió d'enemics</summary>
 <div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio"/><input id="__tabbed_16_2" name="__tabbed_16" type="radio"/><div class="tabbed-labels"><label for="__tabbed_16_1">Problema</label><label for="__tabbed_16_2">Solució</label></div>
