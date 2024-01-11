@@ -194,17 +194,17 @@
 <span class="w">    </span><span class="c1">// Variables Globals</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * void setup</span>
+<span class="cm">     * Mètode setup</span>
 <span class="cm">     * Mètode de configuració de l'aplicació,  només s'executa una volta</span>
 <span class="cm">     * Ací solen anar les inicialitzacions i setup inicial</span>
 <span class="cm">     * @return void</span>
 <span class="cm">     */</span>
 <span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix el tamany de la pantalla de la nostra aplicació</span>
+<span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix la grandària de la pantalla de la nostra aplicació</span>
 <span class="w">    </span><span class="p">}</span>
 
 <span class="w">    </span><span class="cm">/**</span>
-<span class="cm">     * void draw</span>
+<span class="cm">     * Mètode draw</span>
 <span class="cm">     * Mètode que s'executa tantes vegades per segon com fps estiga configurat</span>
 <span class="cm">     * També conegut com el bucle de joc. Ací va el principal del programa</span>
 <span class="cm">     * @return void</span>
@@ -217,6 +217,9 @@
 <p>Si executes el codi que has copiat amb el <strong>Processing IDE</strong> veuras que només ix una pantalla de 640 pixels per 480 pixels i res més. No et preocupes, és normal. Ara anirem poc a poc afegint el codi necessari per anar construint el nostre joc.</p>
 <details class="question">
 <summary>Activitat 1. Identificadors del nostre projecte</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio"><input id="__tabbed_1_2" name="__tabbed_1" type="radio"><div class="tabbed-labels"><label for="__tabbed_1_1">Problema</label><label for="__tabbed_1_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>En aquest joc anem a necessitar una sèrie de variables on emmagatzemarem informació sobre:</p>
 <div class="highlight"><pre><span></span><code>1. Posició de la boleta (coordenada X):
 2. Posició de la boleta (coordenada Y):
@@ -225,10 +228,24 @@
 5. Color RGB de la boleta:
 </code></pre></div>
 <p>Per a cadascuna de futures variables anteriors tria un identificador seguint les normes de creació d'identificadors vistes a classe i que siga significatiu.</p>
+</div>
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code>1. Posició de la boleta (coordenada X): posX
+2. Posició de la boleta (coordenada Y): posY
+3. Velocitat de la boleta (coordenada X): velX
+4. Velocitat de la boleta (coordenada Y): velY
+5. Color RGB de la boleta: colorRGB (utilitzarem un tipus especial que es diu **color**)
+</code></pre></div>
+</div>
+</div>
+</input></input></div>
 </details>
 <p>Una vegada ja tenim els identificadors escollits ens quedaria posar-los al nostre projecte. És a dir, has de declarar les variables associades als identificadors de l'activitat anterior al nostre projecte. Recorda que declarar una variable bàsicament consisteix en associar-li a l'identificador el <strong>tipus de dades</strong> adequat.</p>
 <details class="question">
 <summary>Activitat 2. Declaració de variables al projecte</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:2"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio"><input id="__tabbed_2_2" name="__tabbed_2" type="radio"><div class="tabbed-labels"><label for="__tabbed_2_1">Problema</label><label for="__tabbed_2_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Llig el que hages respost a l'activitat anterior i declara com consideres dins del bloc de <strong>"Variables Globals"</strong> els identificadors que hages triat com a variables amb el <strong>tipus base</strong> que trobes que es necessite. Mira l'exemple de la variable velocitat si no saps per on començar.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -253,12 +270,21 @@
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Recorda que aquesta activitat l'has de fer amb <strong>Processing IDE</strong>. Guarda el fitxer resultant amb el nom següent: <strong>ProjecteBola.pde</strong></p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat2.pde">Descarrega la solució de l'activitat 2</a></p>
+</div>
+</div>
+</input></input></div>
 </details>
 <h3 id="operadors-i-expressions">Operadors i expressions</h3>
 <p>Ja tens les variables necessàries per poder començar amb el projecte declarades al teu fitxer <strong>ProjecteBola.pde</strong> ara per poder seguir amb el joc, has de donar-los algun valor inicial a les <strong>variables declarades</strong> a l'activitat anterior. Recorda que per donar valor a una variable s'han d'utilitzar dues coses que has vist al tema 3: l'operador assignació <strong>=</strong> i un <strong>literal</strong> del mateix tipus que siga la variable a la qual vols donar valor.</p>
 <p>Les <strong>assignacions de valors inicials</strong> a les variables del nostre projecte es faran dins del <strong>setup</strong>. Teniu en compte que és en aquest mètode en el que es solen configurar les aplicacions, per tant, és un bon lloc per poder donar-los a les variables el seu valor inicial amb el que començaran quan s'execute l'app.</p>
 <details class="question">
 <summary>Activitat 3. Inicialització de variables del projecte</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:2"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio"/><input id="__tabbed_3_2" name="__tabbed_3" type="radio"/><div class="tabbed-labels"><label for="__tabbed_3_1">Problema</label><label for="__tabbed_3_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Com que hem declarat totes les variables a la secció de <strong>'Variables Globals'</strong> per tal que se li puga assignar valor des de qualsevol lloc. Ara hauràs de assignar-li un valor literal a cada identificador declarat com hem vist. Fixa't en l'exemple de posX.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -283,11 +309,20 @@
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Guarda aquesta activitat amb el nom de: <strong>ProjecteBola.pde</strong></p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat3.pde">Descarrega la solució de l'activitat 3</a></p>
+</div>
+</div>
+</div>
 </details>
 <h3 id="constants">Constants</h3>
 <p>Com has vist al <a href="https://vicentsanchis.github.io/Programacio/Tema%2003.%20El%20llenguatge%20Java/">Tema 3</a> les <strong>constants</strong> són identificadors que representen valors immutables durant l'execució del programa. Trobes que podriem usar alguna constant al nostre projecte?. Mira l'activitat següent:</p>
 <details class="question">
 <summary>Activitat 4. Ús de constants al nostre projecte</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="4:2"><input checked="checked" id="__tabbed_4_1" name="__tabbed_4" type="radio"/><input id="__tabbed_4_2" name="__tabbed_4" type="radio"/><div class="tabbed-labels"><label for="__tabbed_4_1">Problema</label><label for="__tabbed_4_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>La finalitat del joc de la boleta, a banda de aprendre java, és simular les lleis de la gravetat amb una boleta. Dins de les lleis de la gravetat existeix una constant que és la força de la gravetat (9,8m/s²).</p>
 <p>Declara una constant amb nom 'GRV', o algun altre identificador significatiu i assigna-li el valor de la gravetat. Prova diversos valors de la gravetat fins que trobes aquell que siga més adequat.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -317,6 +352,12 @@
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Què passa si al mètode draw intentes canviar-li el valor a alguna constant? Prova-ho.</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat4.pde">Descarrega la solució de l'activitat 4</a></p>
+</div>
+</div>
+</div>
 </details>
 <h3 id="estructures">Estructures</h3>
 <p>Abans de continuar amb l'exemple de la boleta anem a refrescar un poc la memòria sobre les <strong>fases de desenvolupament de programari</strong> que varem veure al primer tema i la tècnica de disseny de diagrames de flux i la aplicarem al nostre projecte.</p>
@@ -390,17 +431,29 @@ Amb les formules del <strong>MRUA</strong> podem saber en tot moment on es troba
 <p>Si has llegit i entès l'explicació anterior sobre el <strong>Moviment rectilini uniformement accelerat</strong>, fes l'activitat 5 on per primera vegada es veurà la boleta en moviment.</p>
 <details class="question">
 <summary>Activitat 5. Fer caure la boleta</summary>
-<p>Escriu un programa en Java amb <strong>Processing IDE</strong> en base a les especificacions anteriors i que resolga el problema de la boleta. És a dir, que a l'inici el programa dibuixe una boleta a la posició <strong>x=320</strong> i <strong>y=50</strong> i que com a conseqüència de la força de la gravetat vaja caiguent fins desapareixer de la pantalla de la nostra aplicació.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="5:2"><input checked="checked" id="__tabbed_5_1" name="__tabbed_5" type="radio"/><input id="__tabbed_5_2" name="__tabbed_5" type="radio"/><div class="tabbed-labels"><label for="__tabbed_5_1">Problema</label><label for="__tabbed_5_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Escriu un programa en Java amb <strong>Processing IDE</strong> en base a les especificacions anteriors i que resolga el problema de la boleta. És a dir, que a l'inici el programa dibuixe una boleta a la posició <strong>x=320</strong> i <strong>y=50</strong> i que com a conseqüència de la força de la gravetat vaja caent fins desapareixer de la pantalla de la nostra aplicació.</p>
 <p>Les <strong>variables</strong> que determinen la posició i la velocitat de la boleta han de tenir <strong>precisió flotant</strong> (float) ja que com has pogut observar a l'apartat del moviment rectilini uniformement accelerat, les distintes operacions que s'han de fer utilitzen decimals.</p>
 <p><center>
 <img alt="Boleta" src="assets/Boleta.gif"/>
 </center></p>
 <p><strong>CONSIDERACIÓ:</strong> Penses que la grandària de la boleta podria ser una constant?</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat5.pde">Descarrega la solució de l'activitat 5</a></p>
+</div>
+</div>
+</div>
 </details>
 <p>Abans de passar a la següent secció, millorem el que ja tenim fet. El que es preten amb aquesta activitat és que el punt d'inici de la boleta no siga sempre el mateix i varie cada vegada que s'arranque el joc. 
 Llig i fes la següent activitat:</p>
 <details class="question">
 <summary>Activitat 6. Que la boleta  no aparega sempre al mateix lloc</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="6:2"><input checked="checked" id="__tabbed_6_1" name="__tabbed_6" type="radio"/><input id="__tabbed_6_2" name="__tabbed_6" type="radio"/><div class="tabbed-labels"><label for="__tabbed_6_1">Problema</label><label for="__tabbed_6_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>En aquesta activitat anem a fer que la boleta no aparega sempre a la posició x=320, y=50 si no que cada vegada que arranquem l'aplicació, aparega en un lloc diferent. </p>
 <p>Per tal d'aconseguir aquesta aleatorietat, utilitzarem la funció de Processing IDE <strong>random</strong>. </p>
 <p>A l'API de Processing, <a href="https://processing.org/reference/">Processing Reference</a>, entre altres tenim una funció <strong>random(low, high)</strong> que genera nombres aleatoris dintre del rang low-hight que se li passa per paràmetre, és a dir, si volem que aquesta funció ens torne un valor aleatori entre 0 i 100, hauríem de cridar-la de la següent forma:</p>
@@ -419,6 +472,12 @@ Llig i fes la següent activitat:</p>
 <li>posX entre 100 i 540</li>
 <li>posY entre 50 i 150</li>
 </ul>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat6.pde">Descarrega la solució de l'activitat 6</a></p>
+</div>
+</div>
+</div>
 </details>
 <h4 id="estructura-de-seleccio-simple">Estructura de selecció simple</h4>
 <p>Fent ús de les estructures de selecció vistes al tema 3, farem que el nostre joc siga més eficient i precís. Si has fet les activitats anteriors hauràs pogut observar que la boleta desapareix per la part de baix de la nostra aplicació i no la tornem a veure. Anem a corregir este comportament utilitzant una estructura de selecció <strong>if</strong></p>
@@ -440,6 +499,9 @@ Llig i fes la següent activitat:</p>
 <p>El primer que farem en aquesta secció és que la boleta no desaparega. Fins ara la nostra boleta apareix en un lloc <strong>random</strong> de la finestra de l'aplicació i comença a caure fins que desapareix. Hem d'evitar això com mostra el diagrama de flux.</p>
 <details class="question">
 <summary>Activitat 7. Que no desaparega la boleta</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="7:2"><input checked="checked" id="__tabbed_7_1" name="__tabbed_7" type="radio"/><input id="__tabbed_7_2" name="__tabbed_7" type="radio"/><div class="tabbed-labels"><label for="__tabbed_7_1">Problema</label><label for="__tabbed_7_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Hem d'aconseguir que la boleta torne a apareixer per dalt quan arribe desaparega per la part de baix de l'aplicació. Què significa que la boleta ha desaparegut per baix? o dit d'una altra manera, com sabem que la boleta ha desaparegut per complet? Per què la el valor de la variable que indica la posició a l'eix Y <strong>posY</strong> de la boleta és major que l'alt de la nostra aplicació més la meitat de la grandària de la boleta, és a dir: 495. Per tant podem deduir que: "Si la posició Y de la boleta és major que 495 aleshores la fem apareixer per dalt..."</p>
 <p>Com podeu observar, l'afirmació anterior és un <strong>if</strong>, si posY és major (&gt;) altura aleshores fes apareixer per dalt de nou la boleta. Però quines són les accions a realitzar per tal que la boleta aparega per dalt? tornar a posar la posició Y de la boleta a 0 menys la meitat de la seua grandària (TAM).</p>
 <p>També s'ha de reiniciar la velocitat a zero sino no pararà d'accelerar.</p>
@@ -513,6 +575,12 @@ Llig i fes la següent activitat:</p>
 <center>
 <kbd style="border:1px solid black;"><img alt="Boleta" src="assets/Act319.gif"/></kbd>
 </center></p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat7.pde">Descarrega la solució de l'activitat 7</a></p>
+</div>
+</div>
+</div>
 </details>
 <h4 id="el-depurador-de-processing-ide">El depurador de Processing IDE</h4>
 <p>Ha arribat el moment que aprengues com funciona el depurador que és una eina molt important per a desenvolupar codi. El depurador o <strong>debugger</strong> és una eina molt important i necessària que porten tots els entorns de desenvolupament integrat com Processing. Aquesta eina ens permet executar el codi pas a pas al mateix temps que podem monitoritzar el valor de les variables, l'estat dels diferent objectes que formen part de la nostra aplicació. </p>
@@ -525,10 +593,19 @@ Llig i fes la següent activitat:</p>
 <p>Una vegada hages provat el depurador de Processing IDE i tingues més o menys clar com funciona, fes l'activitat següent.</p>
 <details class="question">
 <summary>Activitat 8. Correcció d'errades amb el depurador</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="8:2"><input checked="checked" id="__tabbed_8_1" name="__tabbed_8" type="radio"/><input id="__tabbed_8_2" name="__tabbed_8" type="radio"/><div class="tabbed-labels"><label for="__tabbed_8_1">Problema</label><label for="__tabbed_8_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Com hauràs vist quan has executat el codi, el comportament del que fa el nostre codi amb la boleta no és el que esperavem, o almenys jo ho imaginava d'una altra manera. </p>
 <p>Dona la sensació que cada vegada que la boleta apareix a la part de dalt de la pantalla de l'aplicació, va cada vegada més de pressa. Per què?</p>
 <p>Revisa el codi, troba on està el problema i fes els canvis necessaris. Per facilitar la tasca, fes una depuració línia a línia del codi amb el <strong>Debugger</strong> de Processing IDE i deixa l'aplicació com a tu t'agradaria.</p>
 <p>Pista: igual quan torna a apareixer per dalt el temps es deuria resetejar a 0 i començar de zero. Ho està fent així? Com ho podries canviar?</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat8.pde">Descarrega la solució de l'activitat 8</a></p>
+</div>
+</div>
+</div>
 </details>
 <h4 id="estructura-de-seleccio-doble">Estructura de selecció doble</h4>
 <p>Per tal de treballar <strong>l'estructura condicional doble</strong> que acabem de veure ampliarem les funcionalitats de la nostra aplicació. Ara volem que quan la boleta comence de tocar terra es pinte de color roig i redueixca la seua velocitat en l'eix y en un 50%. Quan no estiga tocant terra, que siga de color negre. Has de tindre en compte que la boleta es dibuixa a partir del seu center (posX, posY) i que per tant la boleta començarà a tocar terra quan la distància que hi ha entre el centre de la boleta i terra siga menor o igual que l'altura de la nostra aplicació més la meitat de la seua grandària.</p>
@@ -552,10 +629,20 @@ Llig i fes la següent activitat:</p>
 <p>Estudia amb detall el diagrama de flux anterior i fes la següent activitat.</p>
 <details class="question">
 <summary>Activitat 9. Boleta de dos colors</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="9:2"><input checked="checked" id="__tabbed_9_1" name="__tabbed_9" type="radio"/><input id="__tabbed_9_2" name="__tabbed_9" type="radio"/><div class="tabbed-labels"><label for="__tabbed_9_1">Problema</label><label for="__tabbed_9_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Observa el diagrama de flux anterior i modifica el codi de que ja tens per tal d'afegir-li les noves funcionalitats. La distància a partir de la qual la boleta es faria roja és quan comença a tocar terra i per una altra banda has de comprovar també quan ha desaparegut completament. Concretament en el teu codi deuries tindre: una estructura de selecció  simple (la de l'activitat anterior) i una altra doble, la nova funcionalitat. Finalment l'aplicació quedaria de la següent forma:</p>
 <p><center>
 <kbd style="border:1px solid black;"><img alt="Boleta" src="assets/act9.gif"/></kbd>
 </center></p>
+<p>Algunes consideracions: has de canviar el tipus de posX i posY a float per augmentar la precisió.</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat9.pde">Descarrega la solució de l'activitat 9</a></p>
+</div>
+</div>
+</div>
 </details>
 <h4 id="estructura-de-seleccio-niada">Estructura de selecció niada</h4>
 <p>Com recordaràs el que hem donat al tema 3, l'estructura de selecció niada és una estructura de programació en la que poden haver més d'una condició. A l'activitat anterior teniem dues condicions: desapareixer i tocar terrà, en canvi no hem utilitzat l'estructura de selecció niada. Modifica el codi anterior i converteix una estructura simple i una doble en una estructura única estructura de selecció niada com mostra el següent diagrama de flux.</p>
@@ -577,9 +664,18 @@ Llig i fes la següent activitat:</p>
 </div>
 <details class="question">
 <summary>Activitat 10. Modifica el codi anterior</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="10:2"><input checked="checked" id="__tabbed_10_1" name="__tabbed_10" type="radio"/><input id="__tabbed_10_2" name="__tabbed_10" type="radio"/><div class="tabbed-labels"><label for="__tabbed_10_1">Problema</label><label for="__tabbed_10_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Observa el diagrama de flux anterior i modifica el codi de l'activitat 9 per tal que en lloc de tindre dues estructures condicionals en tinga una niada.</p>
 <p><strong>Ampliació:</strong> Fes que la boleta canvie de color segons l'altura en la que es trobe, per exemple: els primers 50 pixels que siga negra, els següents siga taronja, a partir del pixel 100 i fins el 150 groga, i així successivament sempre sense modificar el comportament anterior.</p>
 <p>Has d'entregar dos fitxers en aquesta activitat: <strong>Activitat10.pde i Activitat10Ampliada.pde</strong></p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat10.pde">Descarrega la solució de l'activitat 10</a></p>
+</div>
+</div>
+</div>
 </details>
 <h4 id="estructura-de-seleccio-multiple">Estructura de selecció múltiple</h4>
 <p>Treballem a continuació l'estructura de selecció múltiple: <strong>switch case</strong>. Per poder treballar amb el switch li afegirem alguna funcionalitat nova al nostre joc. Es tracta de poder interaccionar amb la boleta, és a dir, es pretén que quan premem al teclat algun cursor (dalt, baix, esquerra, dreta) la boleta es menege en eixa direcció o se li done alguna classe d'impuls cap a eixa direcció concreta.</p>
@@ -654,6 +750,9 @@ Llig i fes la següent activitat:</p>
 </div>
 <details class="question">
 <summary>Activitat 11. Boleta amb cursors</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="11:2"><input checked="checked" id="__tabbed_11_1" name="__tabbed_11" type="radio"/><input id="__tabbed_11_2" name="__tabbed_11" type="radio"/><div class="tabbed-labels"><label for="__tabbed_11_1">Problema</label><label for="__tabbed_11_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>A partir de l'activitat 9 li donarem interactivitat amb l'usuari a la nostra boleta.</p>
 <p>Per fer la base del nostre joc, seguirem la lògica del joc de la serp com ja he comentat abans. Aquell joc en que una serp persegueix boletes que apareixen aleatòriament a la pantalla i conforme "se les menja" va creixent augmentant la dificultat (ja veurem com).</p>
 <p>Completa el següent codi per tal que quan premem un cursor del nostre teclat, la boleta comence a menejar-se en eixa direcció. A l'inici de l'aplicació, la boleta estarà parada.</p>
@@ -697,8 +796,10 @@ Llig i fes la següent activitat:</p>
 <span class="normal">38</span>
 <span class="normal">39</span>
 <span class="normal">40</span>
-<span class="normal">41</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">dirX</span><span class="p">,</span><span class="w"> </span><span class="n">dirY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span><span class="w">  </span>
+<span class="normal">41</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span>
+<span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span>
+<span class="kt">int</span><span class="w"> </span><span class="n">dirX</span><span class="p">,</span><span class="w"> </span><span class="n">dirY</span><span class="p">;</span><span class="w"> </span>
 <span class="c1">// Compte que ací hem afegit les variables dirX i dirY </span>
 <span class="c1">// necessàries per indicar en quina direcció va la boleta</span>
 
@@ -742,6 +843,12 @@ Llig i fes la següent activitat:</p>
 <center>
 <kbd style="width:400px;border:1px solid black;"><img alt="Boleta amb Cursors" src="assets/boletaAmbCursors.gif"/></kbd>
 </center></p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat11.pde">Descarrega la solució de l'activitat 11</a></p>
+</div>
+</div>
+</div>
 </details>
 <h2 id="programacio-modular">Programació Modular</h2>
 <p>Com has pogut observar en els diagrames de flux que hem anat fent al nostre projecte, va augmentant en complexitat i cada vegada són més difícils de interpretar. Ha arribat l'hora de <strong>modularitzar</strong> el nostre joc.</p>
@@ -760,19 +867,37 @@ Llig i fes la següent activitat:</p>
 <strong>3. Dibuixar boleta:</strong> s'encarregarà de dibuixar la boleta al lloc de l'aplicació que li corresponga.<br/>
 <strong>4. Comprovar pulsacions:</strong> s'encarregarà de gestionar els esdeveniments de teclats. Bàsicament seria *<em>keyPressed.</em><br/></p>
 <details class="question">
-<summary>Activitat 12. Modularització</summary>
+<summary>Activitat 12. Modularitza el codi del projecte</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="12:2"><input checked="checked" id="__tabbed_12_1" name="__tabbed_12" type="radio"/><input id="__tabbed_12_2" name="__tabbed_12" type="radio"/><div class="tabbed-labels"><label for="__tabbed_12_1">Problema</label><label for="__tabbed_12_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Seguint a partir del codi que hem desenvolupat a l'activitat 11, has de modularitzar el codi creant les següents funcions: inicialitzarJoc, actualitzarPosicio, dibuixar.</p>
 <p>De moment la funcionalitat de <strong>comprovar pulsacions</strong> s'encarregarà el mètode de l'API de Processing <strong>keyPressed</strong>.</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat12.pde">Descarrega la solució de l'activitat 11</a></p>
+</div>
+</div>
+</div>
 </details>
 <h3 id="parametres">Paràmetres</h3>
 <p>Com hem vist al tema 4, les funcions en programació permeten la seua parametrització, és a dir, poder condicionar el funcionament dels mètodes mitjançant l'ús de paràmetres i arguments. La qüestió és si podem o no utilitzar aquesta característica de la programació modular a la nostra aplicació. </p>
 <p>Normalment la parametrització de mètodes serveix entre altres coses per evitar l'ús de les variables globals que a la llarga solen portar problemes.  En el nostre cas de moment algunes variables com les de posició i direcció de la boleta no podem evitar que siguen globals, però hi ha altres que igual seria convenient que no ho foren.</p>
 <p>Llig i fes l'activitat 13.</p>
 <details class="question">
-<summary>Activitat 13. Parametrizació</summary>
+<summary>Activitat 13. Parametrització de funcions</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="13:2"><input checked="checked" id="__tabbed_13_1" name="__tabbed_13" type="radio"/><input id="__tabbed_13_2" name="__tabbed_13" type="radio"/><div class="tabbed-labels"><label for="__tabbed_13_1">Problema</label><label for="__tabbed_13_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Revisa el codi que has escrit a l'activitat 12 de modularització i raona el següent.
 Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametritzat?</p>
 <p>Reescriu el codi parametritzant les funcions que consideres necessàries i raona el motiu en els comentaris de documentació al codi.</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat13.pde">Descarrega la solució de l'activitat 13</a></p>
+</div>
+</div>
+</div>
 </details>
 <h3 id="pas-dobjectes-a-funcions">Pas d'objectes a funcions</h3>
 <p>Un dels apartats que hem vist al tema de programació modular és l'ús d'objectes i funcions. Com que nosaltres encara no hem entrat en <strong>Programació Orientada a Objectes</strong> no entrarem massa en detall del que és una classe, un objecte i/o una instància però sí que ens introduirem un poc en el món dels objectes.</p>
@@ -781,6 +906,9 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <p>Has de tenir en compte que encara que els vectors de posició i direcció siguen variables globals, s'haurien de passar per paràmetre a aquells mètodes que ho necessiten.</p>
 <details class="question">
 <summary>Activitat 14. Ús d'objectes i funcions</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="14:2"><input checked="checked" id="__tabbed_14_1" name="__tabbed_14" type="radio"/><input id="__tabbed_14_2" name="__tabbed_14" type="radio"/><div class="tabbed-labels"><label for="__tabbed_14_1">Problema</label><label for="__tabbed_14_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Com hauràs llegit a l'article <strong>PVector</strong> és una classe que s'utilitza  per representar vectors de dos o tres dimensions. En el nostre cas necessitariem fer ús del vector de dues dimensions per raons obvies.</p>
 <p>Hauries de declarar dos PVectors, un per la posició de la boleta i un altre per a la direcció de la boleta.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
@@ -794,7 +922,7 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Exemple de com es declara un objecte de la classe PVector</span>
-<span class="n">Pvector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span>
+<span class="n">PVector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span>
 
 <span class="c1">// Exemple de com s'inicia un objecte de la classe PVector</span>
 <span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w">  </span>
@@ -805,10 +933,16 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
 <span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
 </code></pre></div></td></tr></table></div>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat14.pde">Descarrega la solució de l'activitat 14</a></p>
+</div>
+</div>
+</div>
 </details>
 <h3 id="sobre-el-return">Sobre el return</h3>
 <p>Si has arribat a aquest punt, segurament t'hauràs donat compte que la boleta quan arriba a algun dels extrems de la pantalla: dalt, baix, esquerra o dreta; la boleta desapareix i no torna a apareixer a no ser que li canviem la direcció i posem la contraria que tenia quan ha desaparegut.</p>
-<p>Per tal de solucionar aquest problema crearem un mètode <strong>superaLimits</strong> que s'ecarregara per a cada frame de comprovar si la boleta ha superat algun dels límits del nostre joc. Aquest mètode bàsicament farà el següent:</p>
+<p>Per tal de solucionar aquest problema crearem un mètode <strong>superaLimits</strong> que s'encarregarà per a cada frame de comprovar si la boleta ha superat algun dels límits del nostre joc. Aquest mètode bàsicament farà el següent:</p>
 <div class="mermaid">graph LR
     Ini((Inici))--&gt;A{Supera\nlímit superior?};
     style Ini fill:#0F0;
@@ -840,12 +974,21 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <p>El que sí està clar és que la funció ha de tornar un valor booleà que ens indique si la boleta ha superat algun marge (true) o no (false)</p>
 <details class="question">
 <summary>Activitat 15. Detecció de vores</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="15:2"><input checked="checked" id="__tabbed_15_1" name="__tabbed_15" type="radio"/><input id="__tabbed_15_2" name="__tabbed_15" type="radio"/><div class="tabbed-labels"><label for="__tabbed_15_1">Problema</label><label for="__tabbed_15_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>Seguint el exemple que hem posat al diagrama de flux anterior, dissenya una funció que es podria dir <strong>superaLimits</strong> que ens retorne un valor true en cas que la boleta desaparega per algun límit i false en cas contrari.</p>
 <p>En el bucle de joc hauràs de cridar a dita funció per comprovar a cada frame si la boleta toca o no algun límit de l'aplicació. Al mateix temps segons la resposta (true o false) que ens done la crida al mètode <strong>superaLimits</strong> haurem de prendre la decisió de què fem amb ella: parar, rebotar..</p>
 <p>Segueix el diagrama de flux anterior i implementa l'activitat.</p>
 <p><center>
 <kbd style="width:400px;border:1px solid black;"><img alt="Boleta amb Cursors" src="assets/bolaRebota.gif"/></kbd>
 </center></p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat15.pde">Descarrega la solució de l'activitat 15</a></p>
+</div>
+</div>
+</div>
 </details>
 <h2 id="tipus-compostos-de-dades">Tipus Compostos de Dades</h2>
 <p>Aprofitant el que hem vist al tema de tipus compostos de dades, veiem com podem afegir-li més funcionalitats al nostre projecte de la boleta.</p>
@@ -890,16 +1033,16 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 </ul>
 <p>En realitat, com ja hauràs imaginat, eixes noves instruccions en realitat <strong>són mètodes nous</strong> del nostre joc. Expliquem-los amb més detall:</p>
 <p><strong>1. Actualitzar enemics:</strong> aquest mètode, igual que feiem amb la boleta, actualitza la posició de l'enemic, és a dir, quan aquest apareix li assigna una posició aleatòria que és la que mantindrà durant tot el joc fins que se'l mengen. A banda d'açò, Actualitzar enemics també haurà de gestionar si han d'apareixer o no nous enemics o ja estan tots i també controlar l'interval de temps entre que aparega un enemic i el següent. És a dir, ha de controlar a partir de quan apareix el primer enemic i també com successivament van apareixent la resta.</p>
-<p><strong>2. Dibuixar enemics:</strong> aquest mètode haurà de recòrrer l'array amb les posicions dels enemics, en cas d'haver-ne alguna, i dibuixar els cercles (enemics) corresponents. </p>
+<p><strong>2. Dibuixar enemics:</strong> aquest mètode haurà de recórrer l'array amb les posicions dels enemics, en cas d'haver-ne alguna, i dibuixar els cercles (enemics) corresponents. </p>
 <p><strong>3. Comprovar col·lisions:</strong> aquest és possiblement el mètode més complex. A cada cicle del bucle del joc s'haurà de comprovar si la nostra boleta, com a conseqüència de la seua nova posició una vegada ja s'ha actualitzat, està col·lisionant amb algun enemic. Per saber si la boleta està col·lisionant amb algun enemic es pot saber de la següent manera: si la distància entre la posició de la boleta i la posició de l'enemic és menor que la suma del radi de la boleta i el de l'enemic, significa que s'estan tocant i per tant s'hauria d'eliminar l'enemic.  Per poder realitzar aquestos càlculs pots aprofitar les funcionalitats que ens ofereix el PVector de l'API de Processing. </p>
-<p><strong>4. Queden enemics:</strong> en aquesta condició s'ha de comprovar si ja hem menjat a tots els enemics i en aquest cas finalitzariem el joc. Compte que fins que no apareix el primer enemic es podria pensar que ja no queden enemics i finalitzar el joc sense haver-lo començat. Has de disssenyar bé aquest mètode per tal que això no passe.</p>
+<p><strong>4. Queden enemics:</strong> en aquesta condició s'ha de comprovar si ja hem menjat a tots els enemics i en aquest cas finalitzariem el joc. Compte que fins que no apareix el primer enemic es podria pensar que ja no queden enemics i finalitzar el joc sense haver-lo començat. Has de dissenyar bé aquest mètode per tal que això no passe.</p>
 <p><strong>5. Finalitzar joc:</strong> és un mètode que s'encarregaria de fer veure a l'usuari que la partida ja ha finalitzat, és a dir, el típic <strong>Gave Over</strong>.</p>
 <p>Alguns dubtes que potser t'estaràs preguntant:</p>
 <ul>
 <li><strong>Com guarde informació de la posició dels enemics?</strong>
 Has d'utilitzar un array de PVectors com s'ha comentat abans amb capacitat per a 10 elements. Cadascun d'aquestos PVectors tindran la informació de la posició d'un enemic. En cas que aquest siga null significaria que encara no ha aparegut.</li>
 <li><strong>En quin moment comence a mostrar enemics?</strong> Has de portar un control del temps, una bona manera pot ser utilitzar la variable frameCount de Processing però també hi ha altres alternatives com les funcions de temps de l'API de Processing. Per exemple, cada 60 frames podries considerar que ha passat un segon, encara que no seria massa precís. Mira les funcions de temps que ens permet usar Processing perquè es pot utilitzar també més endavant per fer un comptador de temps. Per exemple imagina que l'interval en el que apareixen els enemics és de 200 frames o de 5 segons, el primer enemic apareixeria passats 200 frames o 5 segons des de l'inici de l'aplicació. Una vegada a aparegut el primer enemic esperaria uns altres 200 frames o 5 segons per mostrar el següent i així successivament.</li>
-<li><strong>Com se si han aparegut o no?</strong> Com que tens un arrray de PVectors que t'indica la posició de tots els enemics, és fàcil deduir que si el contingut en la posició 2 de l'array és nul·la significa que enecara no ha aparegut.</li>
+<li><strong>Com se si han aparegut o no?</strong> Com que tens un arrray de PVectors que t'indica la posició de tots els enemics, és fàcil deduir que si el contingut en la posició 2 de l'array és nul·la significa que encara no ha aparegut.</li>
 <li><strong>Com s'eliminen enemics?</strong> Posant a null el contingut de l'array de PVectors seria una opció.</li>
 <li><strong>Com se si ja els he eliminat a tots?</strong> Deuries portar un comptador de col·lisions. Amb una variable global es podria solucionar.</li>
 </ul>
@@ -920,8 +1063,17 @@ end
 <p>Ara i abans de passar-se a fer l'activitat següent, hauries de dibuixar-te per a cadascun dels mètodes nous que han aparegut el seu diagrama de flux.</p>
 <details class="question">
 <summary>Activitat 16. Gestió d'enemics</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="16:2"><input checked="checked" id="__tabbed_16_1" name="__tabbed_16" type="radio"/><input id="__tabbed_16_2" name="__tabbed_16" type="radio"/><div class="tabbed-labels"><label for="__tabbed_16_1">Problema</label><label for="__tabbed_16_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
 <p>A partir de l'especificació de requeriments anterior i el diagrama de flux de les noves funcionalitats del nostre joc. Implementa-les i afegeix-les al teu codi del projecte de la boleta.  </p>
 <p>Recorda que hauran d'apareixer de forma aleatòria i cada cert temps un màxim de 10 enemics que la nostra boleta s'haurà de menjar per considerar el joc acabat.</p>
+</div>
+<div class="tabbed-block">
+<p>Encara no disponible</p>
+</div>
+</div>
+</div>
 </details>
 </article>
 </div>
