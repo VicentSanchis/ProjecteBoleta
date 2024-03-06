@@ -3,18 +3,43 @@
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/**:root > * {
+/**    --md-code-bg-color: rgb(60, 60, 60); /* Fondo oscuro para el código */
+/**    --md-code-hl-name-color: rgb(244, 62, 213); /* Color para nombres de funciones o variables */
+/**    --md-code-hl-operator-color: rgb(224, 202, 255); /* Color para operadores */
+/**    --md-code-hl-punctuation-color: rgb(129, 218, 247);  /*Color para signos de puntuación */
+/**    --md-code-hl-comment-color: rgb(0, 167, 69); /*Color para comentarios */
+/**    --md-code-hl-generic-color: rgb(44, 118, 255);  /*Color genérico */
+/**    --md-code-hl-variable-color: rgb(255, 62, 213); /*Color para variables */
+/** }**/
+ 
+
 h1 {
-    /*color: white !important;
-    /*color: rgba(0, 0, 0, 0.685) !important;*/
     font-weight: 400 !important;
     margin-bottom: 30px  !important;
     padding: 5px !important;
     text-align:center;
     color:#00137c !important;
-    border-bottom: 2px dotted blue;
+    border-bottom: 2px dotted blue; 
     border-top: 2px dotted blue;
-    /*background-color:#00137c;
-    border: 3px solid #1a224d;*/
+}
+
+[data-md-color-scheme="slate"] .md-nav__link--active {
+    color: white;
+}
+
+[data-md-color-scheme="slate"] .md-nav__link:hover {
+    color: rgb(255, 94, 255);
+}
+
+[data-md-color-scheme="slate"] h1{
+    font-weight: 400 !important;
+    margin-bottom: 30px  !important;
+    padding: 5px !important;
+    text-align:center;
+    color:#ffffff !important;
+    border-bottom: 2px dotted rgb(255, 255, 255);
+    border-top: 2px dotted rgb(255, 255, 255);
 }
 
 h2 {
@@ -24,34 +49,56 @@ h2 {
     padding-top: 0px !important;
 }
 
+[data-md-color-scheme="slate"] h2 {
+    border-bottom: 1px dotted #ffffff !important;
+    color: #ffffff;
+    margin-top: 0px !important;
+    padding-top: 0px !important;
+}
+
 h3 {
     color: #4051b5;
     border-bottom: 1px dotted #4051b5;
 }
+
+[data-md-color-scheme="slate"] h3 {
+    color: #ffffff;
+    border-bottom: 1px dotted #ffffff;
+}
+
 h4 {
     color: #4051b5;
-    /*border-bottom: 1px dotted #4051b5; */
     border-bottom: 1px dotted #4051b5;
 }
+
+[data-md-color-scheme="slate"] h4 {
+    color: #ffffff;
+    border-bottom: 1px dotted #ffffff;
+}
+
 p { 
-    text-align:justify;
+    text-align: justify;
 }
 
 p img {
     display: block;
     margin: 20px 20px;
     margin-bottom:30px;
-    /*-webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #0B325E, 5px 5px 15px 5px rgba(0,0,0,0); 
-    box-shadow: inset -1px 3px 8px 5px #1F87FF, 2px 5px 16px 0px #686969, 5px 5px 15px 5px rgba(0,0,0,0);*/
 }
 
 blockquote {
     border: 1px solid #bbccff;
     padding-right:20px;
     border-left: 6px solid #8a9cff !important;
-    background-color:lemonchiffon;
+    /*background-color:lemonchiffon;*/
     
 }
+
+[data-md-color-scheme="slate"] strong {
+    color:rgb(255, 255, 255);
+    /**color: rgb(255, 159, 255);**/
+}
+
 blockquote p {
     color:#314197;
 }
@@ -66,7 +113,7 @@ strong {
 
 ul li {
     text-align:justify;
-    /**list-style-type: none;**/
+
 }
 
 th {
@@ -74,6 +121,13 @@ th {
     color:white;
     font-weight: bolder;
 }
+
+[data-md-color-scheme="slate"] th {
+    background-color:#1d1d1d;
+    color:white;
+    font-weight: bolder;
+}
+
 .act {
     font-size:smaller;
     border: 1px solid rgb(97, 115, 204);
@@ -98,20 +152,16 @@ th {
     margin:8px;
 }
 
-:root {
-    --md-admonition-icon--code: url('../assets/img/code4.png');
-  }
-
-  .md-typeset .admonition.code,  .md-typeset details.code {
+.md-typeset .admonition.code,  .md-typeset details.code {
     border-color: rgb(66, 66, 66);
   }
 
   .md-typeset .code > .admonition-title,  .md-typeset .code > summary {
     background-color: rgba(0, 0, 0, 0.20);
     color:rgb(255, 255, 255);
-    color: black;
+    /*color: black;*/
   }
-  .md-typeset .code > .admonition-title::before,variables
+  .md-typeset .code > .admonition-title::before, variables
   .md-typeset .code > summary::before {
     /*background-color: rgb(43, 155, 70);*/
     background-color: rgb(0, 158, 0);
@@ -122,3 +172,12 @@ th {
             mask-image: var(--md-admonition-icon--code);
   }
 
+  pre {
+    overflow: none;
+  }
+
+
+
+
+  
+  
