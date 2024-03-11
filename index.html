@@ -6,10 +6,10 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.5.3, mkdocs-material-9.1.15" name="generator"/>
+<meta content="mkdocs-1.3.1, mkdocs-material-8.5.0" name="generator"/>
 <title>Projecte Bola de Drac</title>
-<link href="assets/stylesheets/main.26e3688c.min.css" rel="stylesheet"/>
-<link href="assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/main.2e8b5541.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/palette.cbb835fc.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
@@ -29,7 +29,7 @@
 </div>
 <div data-md-component="announce">
 </div>
-<header class="md-header md-header--shadow" data-md-component="header">
+<header class="md-header" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Projecte Bola de Drac" class="md-header__button md-logo" data-md-component="logo" href="." title="Projecte Bola de Drac">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
@@ -87,7 +87,7 @@
 <div class="md-search-result__meta">
             Initializing search
           </div>
-<ol class="md-search-result__list" role="presentation"></ol>
+<ol class="md-search-result__list"></ol>
 </div>
 </div>
 </div>
@@ -110,7 +110,7 @@
   </label>
 <ul class="md-nav__list" data-md-scrollfix="">
 <li class="md-nav__item md-nav__item--active">
-<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<input class="md-nav__toggle md-toggle" data-md-toggle="toc" id="__toc" type="checkbox"/>
 <label class="md-nav__link md-nav__link--active" for="__toc">
           Index
           <span class="md-nav__icon md-icon"></span>
@@ -142,6 +142,11 @@
 <li class="md-nav__item">
 <a class="md-nav__link" href="#programacio-orientada-a-objectes">
     Programació orientada a objectes
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classe-animator-reutilitzacio-de-classes">
+    Classe Animator - Reutilització de classes
   </a>
 </li>
 </ul>
@@ -206,30 +211,30 @@
 <span class="cm">     * @author Vicent Sanchis</span>
 <span class="cm">     * @since  10/10/2023</span>
 <span class="cm">     * @version 1.0</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------</span>
-<span class="w">    </span><span class="c1">// Constants</span>
-<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------ </span>
-<span class="w">    </span><span class="c1">// Variables Globals</span>
-<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Constants</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------ </span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Variables Globals</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// ------------------------------------------------------------------------------------------------------</span><span class="w"></span>
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Mètode setup</span>
 <span class="cm">     * Mètode de configuració de l'aplicació,  només s'executa una volta</span>
 <span class="cm">     * Ací solen anar les inicialitzacions i setup inicial</span>
 <span class="cm">     * @return void</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix la grandària de la pantalla de la nostra aplicació</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">size</span><span class="w"> </span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="w"> </span><span class="mi">480</span><span class="p">);</span><span class="w">   </span><span class="c1">// Defineix la grandària de la pantalla de la nostra aplicació</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 <span class="w">    </span><span class="cm">/**</span>
 <span class="cm">     * Mètode draw</span>
 <span class="cm">     * Mètode que s'executa tantes vegades per segon com fps estiga configurat</span>
 <span class="cm">     * També conegut com el bucle de joc. Ací va el principal del programa</span>
 <span class="cm">     * @return void</span>
-<span class="cm">     */</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="cm">     */</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
 
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </details>
 <p>Si executes el codi que has copiat amb el <strong>Processing IDE</strong> veuras que només ix una pantalla de 640 pixels per 480 pixels i res més. No et preocupes, és normal. Ara anirem poc a poc afegint el codi necessari per anar construint el nostre joc.</p>
@@ -274,16 +279,16 @@
 <span class="normal"> 7</span>
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
-<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara les variables globals a la seua secció.</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">velX</span><span class="p">;</span><span class="w">  </span><span class="c1">// Exemple de declaració d'una variable 'velocitat'</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara les variables globals a la seua secció.</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">velX</span><span class="p">;</span><span class="w">  </span><span class="c1">// Exemple de declaració d'una variable 'velocitat'</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span>
-<span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Pinta el fons de blanc</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w">  </span><span class="c1">// Pinta el fons de blanc</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Recorda que aquesta activitat l'has de fer amb <strong>Processing IDE</strong>. Guarda el fitxer resultant amb el nom següent: <strong>ProjecteBola.pde</strong></p>
 </div>
@@ -312,17 +317,17 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span>
-<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables Globals</span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span>
-<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Guarda aquesta activitat amb el nom de: <strong>ProjecteBola.pde</strong></p>
 </div>
@@ -353,19 +358,19 @@
 <span class="normal">10</span>
 <span class="normal">11</span>
 <span class="normal">12</span>
-<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara la constant a la secció de constants</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Declara la constant a la secció de constants</span><span class="w"></span>
 
-<span class="c1">// Variables globals    </span>
-<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
+<span class="c1">// Variables globals    </span><span class="w"></span>
+<span class="kt">int</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span>
-<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Què passa si al mètode draw intentes canviar-li el valor a alguna constant en temps d'execució? Prova-ho.</p>
 </div>
@@ -412,34 +417,34 @@
 <summary>Moviment Rectilini Uniformement Accelerat</summary>
 <p>Per tal de fer els càlculs més simple i comprensibles, considerem que GRV val 1.
 Amb les formules del <strong>MRUA</strong> podem saber en tot moment on es troba la boleta. Si a l'inici la boleta es troba en la posició y=120 i la velocitat inicial a l'eix Y velY=0, passat una unitat de temps (1 frame) la distància recorreguda per part de la boleta seria:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 0</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">t</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 0</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">a</span><span class="o">*</span><span class="n">t</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>És a dir, a l'instant zero la boleta es troba en la seua posició inicial i té una velocitat de 0 (pixels/frame). Lògic no?</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 1</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 1</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">)</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 2</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 2</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">2</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
 </code></pre></div>
 <p>És a dir, passada una unitat de temps (1 frame) la boleta haurà recorregut 3/60 pixels. Continuem:</p>
-<div class="highlight"><pre><span></span><code><span class="c1">// Frame 3</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span>
-<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span>
-<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="o">/</span><span class="mi">60</span>
+<div class="highlight"><pre><span></span><code><span class="c1">// Frame 3</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="o">*</span><span class="p">(</span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">);</span><span class="w"></span>
+<span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">3</span><span class="o">/</span><span class="mi">60</span><span class="p">;</span><span class="w"></span>
+<span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">6</span><span class="o">/</span><span class="mi">60</span><span class="w"></span>
 </code></pre></div>
 <p>I axí successivament fins que la boleta acabaria desapareixent per la part de baix de la nostra aplicació.</p>
 <p>En conclusió, eixa instrucció del diagrama de flux anterior que hi posa <strong>Actualitzar Posició Bola</strong> en realitat seria: velY=velY+GRV*(frameCount/frameRate) i posY = posY + velY.</p>
@@ -474,13 +479,13 @@ Llig i fes la següent activitat:</p>
 <p>Per tal d'aconseguir aquesta aleatorietat, utilitzarem la funció de Processing IDE <strong>random</strong>. </p>
 <p>A l'API de Processing, <a href="https://processing.org/reference/">Processing Reference</a>, entre altres tenim una funció <strong>random(low, high)</strong> que genera nombres aleatoris dintre del rang low-hight que se li passa per paràmetre, és a dir, si volem que aquesta funció ens torne un valor aleatori entre 0 i 100, hauríem de cridar-la de la següent forma:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// Genera un nombre aleatori entre 0 i 100 i l'emmagatzema a f</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">90</span><span class="p">);</span><span class="w"> </span><span class="c1">// Genera un nombre aleatori entre 50 i 90 i l'emmagatzema a m</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">float</span><span class="w"> </span><span class="n">f</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">100</span><span class="p">);</span><span class="w">   </span><span class="c1">// Genera un nombre aleatori entre 0 i 100 i l'emmagatzema a f</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span><span class="mi">90</span><span class="p">);</span><span class="w"> </span><span class="c1">// Genera un nombre aleatori entre 50 i 90 i l'emmagatzema a m</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>Primer fes que tant les variables que determinen la posició x i y de la boleta les genere la funció random i no siguen fixes.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
-<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Per exemple</span>
-<span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">640</span><span class="p">);</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Per exemple</span><span class="w"></span>
+<span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">640</span><span class="p">);</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p>També fes que la gravetat també tinga major precisió i assigna-li un valor de 0.0098.</p>
 <p>Si executes prou vegades l'activitat 6 t'adonaràs que de vegades la boleta apareix en els extrems de la pantalla i de vegades tant baixeta que no s'arriba a apreciar el seu comportament. Investiga la funció <strong>random</strong> de Processing API i fes que la boleta aparega sempre entre els següents rangs:</p>
@@ -554,39 +559,39 @@ Llig i fes la següent activitat:</p>
 <span class="normal">30</span>
 <span class="normal">31</span>
 <span class="normal">32</span>
-<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// Constants</span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">GRV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.098f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Força de la gravetat</span>
-<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">TAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">     </span><span class="c1">// Grandària de la boleta</span>
+<span class="normal">33</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="c1">// Constants</span><span class="w"></span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">GRV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.098f</span><span class="p">;</span><span class="w"> </span><span class="c1">// Força de la gravetat</span><span class="w"></span>
+<span class="w">    </span><span class="kd">final</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">int</span><span class="w">   </span><span class="n">TAM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">30</span><span class="p">;</span><span class="w">     </span><span class="c1">// Grandària de la boleta</span><span class="w"></span>
 
-<span class="w">    </span><span class="c1">// Variables Globals</span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">velX</span><span class="p">,</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Velocitat inicial de l'objecte quan arranquem el programa.</span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Variables que determinen la posició de la boleta en un escenari de dues dimensions</span>
+<span class="w">    </span><span class="c1">// Variables Globals</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">velX</span><span class="p">,</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Velocitat inicial de l'objecte quan arranquem el programa.</span><span class="w"></span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span><span class="w">             </span><span class="c1">// Variables que determinen la posició de la boleta en un escenari de dues dimensions</span><span class="w"></span>
 
-<span class="w">    </span><span class="c1">// Mètode setup: inicialitza la nostra aplicació, dona valors inicials.</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">               </span><span class="c1">// Establir dimensions</span>
-<span class="w">        </span><span class="n">posX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició X inicial</span>
-<span class="w">        </span><span class="n">posY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">440</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició Y inicial</span>
-<span class="w">        </span><span class="n">velX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat X inicial</span>
-<span class="w">        </span><span class="n">velY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat Y inicial</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="c1">// Mètode setup: inicialitza la nostra aplicació, dona valors inicials.</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">               </span><span class="c1">// Establir dimensions</span><span class="w"></span>
+<span class="w">        </span><span class="n">posX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">600</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició X inicial</span><span class="w"></span>
+<span class="w">        </span><span class="n">posY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">(</span><span class="mi">40</span><span class="p">,</span><span class="mi">440</span><span class="p">);</span><span class="w">  </span><span class="c1">// Establim posició Y inicial</span><span class="w"></span>
+<span class="w">        </span><span class="n">velX</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat X inicial</span><span class="w"></span>
+<span class="w">        </span><span class="n">velY</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w">               </span><span class="c1">// Establim la velocitat Y inicial</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-<span class="w">    </span><span class="c1">// Metode draw: bucle del joc, aquest mètode s'executa de forma continua</span>
-<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="n">clear</span><span class="p">();</span>
-<span class="w">        </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
+<span class="w">    </span><span class="c1">// Metode draw: bucle del joc, aquest mètode s'executa de forma continua</span><span class="w"></span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
 
-<span class="w">        </span><span class="c1">// Actualitzem la posició utilitzant la velocitat </span>
-<span class="w">        </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w">  </span><span class="c1">// Vf = Vo + acc*temps;</span>
-<span class="w">        </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span>
+<span class="w">        </span><span class="c1">// Actualitzem la posició utilitzant la velocitat </span><span class="w"></span>
+<span class="w">        </span><span class="n">velY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">velY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">GRV</span><span class="o">*</span><span class="p">(</span><span class="n">frameCount</span><span class="o">/</span><span class="n">frameRate</span><span class="p">);</span><span class="w">  </span><span class="c1">// Vf = Vo + acc*temps;</span><span class="w"></span>
+<span class="w">        </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posY</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">velY</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">        </span><span class="c1">// Codi if que controle si ha arribat al terra o no.</span>
-<span class="w">        </span><span class="c1">// if...</span>
+<span class="w">        </span><span class="c1">// Codi if que controle si ha arribat al terra o no.</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// if...</span><span class="w"></span>
 
-<span class="w">        </span><span class="c1">// Dibuixem la boleta</span>
-<span class="w">        </span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
-<span class="w">        </span><span class="n">circle</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="n">posY</span><span class="p">,</span><span class="n">TAM</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">        </span><span class="c1">// Dibuixem la boleta</span><span class="w"></span>
+<span class="w">        </span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">circle</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="n">posY</span><span class="p">,</span><span class="n">TAM</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <p><center>
 <img alt="Boleta" src="assets/Act319.gif"/>
@@ -815,48 +820,48 @@ Llig i fes la següent activitat:</p>
 <span class="normal">39</span>
 <span class="normal">40</span>
 <span class="normal">41</span>
-<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span>
-<span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span>
+<span class="normal">42</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Variables globals</span><span class="w"></span>
+<span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="n">vel</span><span class="p">;</span><span class="w"></span>
 <span class="kt">int</span><span class="w"> </span><span class="n">dirX</span><span class="p">,</span><span class="w"> </span><span class="n">dirY</span><span class="p">;</span><span class="w"> </span>
-<span class="c1">// Compte que ací hem afegit les variables dirX i dirY </span>
-<span class="c1">// necessàries per indicar en quina direcció va la boleta</span>
+<span class="c1">// Compte que ací hem afegit les variables dirX i dirY </span><span class="w"></span>
+<span class="c1">// necessàries per indicar en quina direcció va la boleta</span><span class="w"></span>
 
 
-<span class="c1">// Configuració de l'aplicació (només s'executa una vegada al principi)</span>
-<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">  </span><span class="c1">// Grandària de monitor estàndard VGA</span>
-<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span>
-<span class="w">    </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span>
-<span class="w">    </span><span class="n">dirX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="n">dirY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<span class="w">    </span><span class="n">vel</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span>
-<span class="p">}</span>
+<span class="c1">// Configuració de l'aplicació (només s'executa una vegada al principi)</span><span class="w"></span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">640</span><span class="p">,</span><span class="mi">480</span><span class="p">);</span><span class="w">  </span><span class="c1">// Grandària de monitor estàndard VGA</span><span class="w"></span>
+<span class="w">    </span><span class="n">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">320</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">50</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">dirX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">dirY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">vel</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="mi">3</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
-<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span>
-<span class="w">    </span><span class="n">ellipse</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span>
-<span class="p">}</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">255</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">ellipse</span><span class="p">(</span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w"> </span><span class="mi">30</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="kt">void</span><span class="w"> </span><span class="nf">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keyCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">UP</span><span class="p">:</span>
-<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta es menege cap amunt</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="kt">void</span><span class="w"> </span><span class="nf">keyPressed</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keyCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">UP</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta es menege cap amunt</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">DOWN</span><span class="p">:</span>
-<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta vaja cap avall.</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">DOWN</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Ací anirà el codi per que la boleta vaja cap avall.</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">LEFT</span><span class="p">:</span>
-<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a l'esquerra.</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">LEFT</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a l'esquerra.</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
 
-<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">RIGHT</span><span class="p">:</span>
-<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a la dreta.</span>
-<span class="w">        </span><span class="k">break</span><span class="p">;</span>
-<span class="w">    </span><span class="p">}</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">RIGHT</span><span class="p">:</span><span class="w"></span>
+<span class="w">            </span><span class="c1">// Codi per moure la boleta cap a la dreta.</span><span class="w"></span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 <center>
 <img alt="Boleta amb Cursors" src="assets/boletaAmbCursors.gif"/>
@@ -941,17 +946,17 @@ Hi ha algun mètode dels que he has escrit que siga susceptible de ser parametri
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Exemple de com es declara un objecte de la classe PVector</span>
-<span class="n">PVector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Exemple de com es declara un objecte de la classe PVector</span><span class="w"></span>
+<span class="n">PVector</span><span class="w"> </span><span class="n">nomVector</span><span class="p">;</span><span class="w"></span>
 
-<span class="c1">// Exemple de com s'inicia un objecte de la classe PVector</span>
+<span class="c1">// Exemple de com s'inicia un objecte de la classe PVector</span><span class="w"></span>
 <span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">);</span><span class="w">  </span>
-<span class="c1">// On 'a' i 'b' són els valors que s'assignaran a la coordenada x i y respectivament.</span>
+<span class="c1">// On 'a' i 'b' són els valors que s'assignaran a la coordenada x i y respectivament.</span><span class="w"></span>
 
-<span class="c1">// També es podria declarar un vector buit i assignar-li les coordenades a posteriori</span>
-<span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">();</span>
-<span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
-<span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span>
+<span class="c1">// També es podria declarar un vector buit i assignar-li les coordenades a posteriori</span><span class="w"></span>
+<span class="n">nomVector</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">();</span><span class="w"></span>
+<span class="n">nomVector</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="p">;</span><span class="w"></span>
+<span class="n">nomVector</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">b</span><span class="p">;</span><span class="w"></span>
 </code></pre></div></td></tr></table></div>
 </div>
 <div class="tabbed-block">
@@ -1136,7 +1141,7 @@ Has d'utilitzar un array de PVectors com s'ha comentat abans amb capacitat per a
 </ul>
 <p><strong>3. <ins>A cada element, quines operacions associarem?</ins></strong></p>
 <ul>
-<li><strong>Boleta:</strong> mostrar-se, actualitzar-se, moure's cap amunt, avall, dreta i esquerra, colisionar amb Enemics, rebotar, parar..</li>
+<li><strong>Boleta:</strong> mostrar-se, actualitzar-se, moure's cap amunt, avall, dreta i esquerra, col·lisionar amb Enemics, rebotar, parar..</li>
 <li><strong>Enemic:</strong> mostrar-se, morir.</li>
 <li><strong>Marcador:</strong> mostrar-se, actualitzar-se, controlar el temps i els marcadors dividits en dos: puntsA que serà el total d'enemics mostrats i puntsB que seran els que ja hem eliminat.</li>
 </ul>
@@ -1207,27 +1212,25 @@ Has d'utilitzar un array de PVectors com s'ha comentat abans amb capacitat per a
 Per tal de poder utilitzar les classes creades al pas anterior, podriem implementar una aplicació <strong>main</strong> com la que mostra el següent diagrama de flux:</p>
 <div class="mermaid">graph LR
 
-    subgraph 1
+    subgraph "GESTIÓ MARCADOR"
         style Ini fill:#0F0;    
         Ini((Inici))--&gt;A[Mostra Marcador];
         A--&gt;B{Queden enemics<br/>per matar?};
         B--&gt;|Si|C[Actualitza Marcador];
-    end
-
-    subgraph 2
         C--&gt;D{Queden enemics<br/>per mostrar<br/>Y<br/>Ha passat<br/>un interval?};
         D--&gt;|Si|E[Crea Enemic<br/>Afegeix-lo<br/>Suma Apareguts];
-        E--&gt;F[Mostra Bola<br/>Actualitza Bola];
-        D--&gt;|No|F;
+
     end
 
-    subgraph 3
+    subgraph "GESTIÓ DE LA BOLETA"
+        D--&gt;|No|F;
+        E--&gt;F[Mostra Bola<br/>Actualitza Bola];
         F--&gt;G{Supera Limits?};
         G--&gt;|Si|H[Rebota];
-        G--&gt;|No|H;
     end
 
-    subgraph 4
+    subgraph "GESTIÓ DELS ENEMICS"
+        G--&gt;|No|I;
         H--&gt;I{Hi han enemics<br/>per mostrar?};
         I--&gt;|Si|J[Mostra Enemic];
         I--&gt;|No|B;
@@ -1237,7 +1240,7 @@ Per tal de poder utilitzar les classes creades al pas anterior, podriem implemen
         K--&gt;|No|I;
     end
 
-    classDef primer fill:#F84E68, clear:both, display:none
+    classDef primer fill:#EFF, clear:both, display:inline, clear: both
     class 1 primer
     class 2 primer
     class 3 primer
@@ -1246,7 +1249,7 @@ Per tal de poder utilitzar les classes creades al pas anterior, podriem implemen
 </div>
 <p>Al final el resultat podria ser de la següent manera:</p>
 <p><center>
-<img alt="Joc de les boletes amb Eneimcs (POO)" src="assets/JocBoleta17.gif" style="height:350px;border:1px solid silver;"/>
+<img alt="Joc de les boletes amb Enemics (POO)" src="assets/JocBoleta17.gif" style="height:350px;border:1px solid silver;"/>
 </center></p>
 <details class="question">
 <summary>Activitat 17. Conversió a POO</summary>
@@ -1261,7 +1264,151 @@ Per tal de poder utilitzar les classes creades al pas anterior, podriem implemen
 </div>
 </div>
 </details>
-<!--## Classe Animator - Reutilització de classes-->
+<h2 id="classe-animator-reutilitzacio-de-classes">Classe Animator - Reutilització de classes</h2>
+<p>Fins ara els elements que hem usat per fer el nostre joc de la boleta són figures geomètriques estàtiques el que fa que en general siga un poc avorrit. En aquest següent apartat aprendrem com convertir els nostres objectes en figures animades. Aprofitant una de les característiques principals del paradigma de Programació Orientada a Objectes, la reutlització del codi, incorporarem una nova classe al nostre joc: la classe <strong>Animation</strong> que podeu descarregar <a href="assets/Animation.pde">Ací</a>. Aquesta classe ens permet mitjançant l'ús de <strong>sprite sheets</strong> crear animacions per al nostre personatge com la següent:</p>
+<p><center>
+<img alt="Exemple d'ús de la classe Animation" src="assets/Trump.gif" style="height:250px;border:1px solid silver;"/>
+</center></p>
+<p>Utlitzar aqueta classe és relativament senzill:</p>
+<ol>
+<li>Incorporem la classe al nostre projecte copiant-la a la mateixa carpeta com una classe pròpia més.</li>
+<li>Declarem un atribut Animation a qualsevol classe del nostre projecte que vulgam animar.</li>
+<li>Al constructor de la classe que volem animar instanciem l'objecte animation seguint les instruccions de la classe.</li>
+</ol>
+<h3 id="exemple-dus-de-la-classe-animation">Exemple d'ús de la classe Animation</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Animation</span><span class="w"> </span><span class="n">trump</span><span class="p">;</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">trump</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span><span class="w"></span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">235</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">    </span><span class="n">trump</span><span class="p">.</span><span class="na">display</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">trump</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>Senzill no? Però com aconseguim que la nostra boleta es converteixca en un personatge animat com el de l'exemple anterior? Hem d'afegir un nou atribut a la nostra classe Boleta, aquest nou membre s'instanciarà al constructor de la classe Boleta i finalment al mètode mostrar de la boleta és on cridarem al mètode display de l'animació, finalment al mètode actualitza de la boleta és des d'on cridarem al mètode update de l'animació.</p>
+<p>Però abans d'anar per feina, observem bé l'spritesheet:</p>
+<p><center>
+<img alt="Sprite Sheet Trump" src="assets/trump_run.png" style="height:350px;border:1px solid silver;"/>
+</center></p>
+<p>Amb el constructor amb el que hem instanciat el nostre objecte trump li indiquem els següents arguments: 
+- "Trump": etiqueta que s'utilitza per identificar els frames de l'animació.
+- "./imt/trump_run.png": ruta del nostre full d'sprites.
+- 100: ample de cada frame de l'animació (cada Trumpet)
+- 100: alt de cada frame de l'animació (cada Trumpet)
+- 4: files de l'sprite sheet
+- 6: columnes de l'sprite sheet
+- 0: aquest argument ens indica si només volem agafar una fila (nombre de la fila que volem) per full o totes les files (zero). Al nostre cas hem posta zero el que significa que volem que l'animació carregue tots els frames de l'spritesheet.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">Animation</span><span class="w"> </span><span class="n">trump</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>Com he dit, el que hem fet ha sigut carregar tot l'sprite sheet en una sola animació quan en realitat el que tenim és un full d'sprites amb quatre animacions com mostra la següent imatge. Cada fila és una animació diferent.</p>
+<p><center>
+<img alt="Sprite Sheet Trump - Explicació de les animacions" src="assets/trump_run_explicat.png" style="height:350px;border:1px solid silver;"/>
+</center></p>
+<p>El que hauriem de fer per tant és que la nostra classe Trump no tinga només un atribut animation com fins ara sino que tinga quatre atributs de la classe Animation per a simular cadascun dels diferents moviments que pot fer el nostre personatge. També necessitarem una última animació que ens servirà per indicar quina és l'animació actual o la que s'estiga executant en un moment concret. Finalment ens quedaria implementar el codi necessari per que quan el personatge canvie de direcció ho faja també l'animació que s'està executant. Això ho fariem als diferents mètodes <strong>gira</strong> que hem implementat a la classe boleta.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Teniu en compte que animAvall, animDreta, animAmunt, currentAnim són nous atributs de la classe Bola</span><span class="w"></span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">carregaAnimacions</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animAvall</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animDreta</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animAmunt</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animEsquerra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">animAvall</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraDreta</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animDreta</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraEsquerra</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">    </span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animEsquerra</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraDalt</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animAmunt</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraBaix</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animAvall</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostra</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">fill</span><span class="p">(</span><span class="n">pinta</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">strokeWeight</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="p">.</span><span class="na">display</span><span class="p">(</span><span class="n">posicio</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualitza</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posicio</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="p">.</span><span class="na">copy</span><span class="p">().</span><span class="na">mult</span><span class="p">(</span><span class="n">velocitat</span><span class="p">));</span><span class="w"></span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="p">.</span><span class="na">update</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</code></pre></div></td></tr></table></div>
+<p>El resultat de les modificacions al codi anteriors seria el següent:</p>
+<p><center>
+<img alt="Sprite Sheet Trump - Ús de les animacions" src="assets/trumpAnims.gif" style="height:350px;border:1px solid silver;"/>
+</center></p>
+<!--## Herència i polimorfisme
+
+Apliquem ara les tècniques d'herència i polimorfisme vistes al tema 7-->
 </article>
 </div>
 </div>
@@ -1284,8 +1431,8 @@ Per tal de poder utilitzar les classes creades al pas anterior, podriem implemen
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="assets/javascripts/bundle.b4d07000.min.js"></script>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+<script src="assets/javascripts/bundle.48f2be22.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({
     theme: "neutral"
