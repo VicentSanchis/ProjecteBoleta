@@ -154,6 +154,16 @@
     Herència i polimorfisme
   </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#afegim-pantalles-al-projecte">
+    Afegim Pantalles al Projecte
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#guardem-el-progres-del-joc">
+    Guardem el progrés del joc
+  </a>
+</li>
 </ul>
 </nav>
 </li>
@@ -1463,11 +1473,11 @@ Per tal de poder utilitzar les classes creades al pas anterior, podriem implemen
     Trump: float velocitat
     Trump: PVector posicio
     Trump: PVector direccio
-    Trump Animation animAmunt
-    Trump Animation animAvall
-    Trump Animation animDreta
-    Trump Animation animEsquerra
-    Trump Animation currentAnim
+    Trump: Animation animAmunt
+    Trump: Animation animAvall
+    Trump: Animation animDreta
+    Trump: Animation animEsquerra
+    Trump: Animation currentAnim
 
     Trump: Trump(PVector pos)
     Trump: Trump(Pvector pos, Pvector dir, float vel, int tam)
@@ -1544,6 +1554,138 @@ Per tal de poder utilitzar les classes creades al pas anterior, podriem implemen
 </div>
 </div>
 </details>
+<h2 id="afegim-pantalles-al-projecte">Afegim Pantalles al Projecte</h2>
+<p>A continuació el que farem serà afegir nivells que vagen augmentant la seua dificultat, però, com es fa? Encara que no es veja clar per ser un concepte un poc abstracte, una pantalla al nostre projecte serà una nova classe, per tant hem de plantejar la seua realització seguint el mètode que hem vist al tema 6 de programació orientada a objectes. </p>
+<p>Però analitzem bé que és o què fa una <strong>pantalla</strong>. Una pantalla hauria de tindre control sobre el nombre d'enemics que apareixen i també els que queden per apareixer siguen de la subclasse que siguen, és a dir, si per exemple a la nostra pantalla han d'apareixer (màxim) 5 mexicans, 2 boosters i 1 robot, en tot moment es sabrà quants han aparegut i quants queden per apareixer.</p>
+<p>La pantalla també podrà augmentar la dificultat conforme el nostre jugador va passant nivells simplement modificant el nombre màxim de cada classe d'enemic que poden apareixer. També hauria de tindre control sobre el temps (Marcador) fent que unes pantalles tinguen un temps il·limitat o un temps límit per acomplir els objectius. Tota pantalla o nivell tindrà uns objectius que quan s'acomplisquen s'haurà de passar de nivell.</p>
+<p>Però primer analitzarem quines són les característiques i accions que podria realitzar un suposat objecte pantalla. Recorda que les característiques es convertiran eventualment en atributs de la classe i les possibles accions esdevindran mètodes. Tampoc oblides que una de les fortaleses del paradigma POO és la reutilització del codi per tal d'evitar la redundància, per tant és molt probable que hages de moure part del codi de les classes ja existents a la nova classe <strong>Pantalla</strong>. Bàsicament la majoria del codi que acabarà a la classe Pantalla es troba actualment al <strong>main</strong> del nostre projecte.</p>
+<ul>
+<li>Número (ordre)</li>
+<li>Conjunt d'enemics</li>
+<li>Total o màxim de cadascuna de les subclasses d'enemics</li>
+<li>Temps màxim</li>
+<li>Marcador del joc</li>
+<li>Objectius del joc: nombre d'enemics, temps màxim...</li>
+<li>Podem passar pantalles, saber quina és la pantalla següent</li>
+<li>Hem de saber el resultat: guanyar o perdre el pantalla. Objectius acomplits.</li>
+<li>Fons de la pantalla que distingisca una pantalla d'una altra.</li>
+</ul>
+<p>Un exemple de <strong>classe Pantalla</strong> podria ser el següent:</p>
+<p><center>
+<div class="mermaid">    classDiagram
+    direction LR
+    Pantalla: numero
+    Pantalla: nom
+    Pantalla: instruccions
+    Pantalla: maxMexicans
+    Pantalla: totalMexicansApareguts
+    Pantalla: totalMexicansCapturats
+    Pantalla: maxChilli
+    Pantalla: totalChilliApareguts
+    Pantalla: maxRobots
+    Pantalla: totalRobotsApareguts
+    Pantalla: passada
+    Pantalla: imatgeFons
+    Pantalla "1" --&gt; "1" Marcador
+    Pantalla "1" --&gt; "N" Enemic
+    Pantalla: Pantalla(int nivell)
+    Pantalla: inicia ()
+    Pantalla: paraMarcador ()
+    Pantalla: bool objectiuAcomplit()
+    Pantalla: addEnemic ()
+</div>
+</center></p>
+<p>A banda de les diferents pantalles que formaran part del nostre joc, cada pantalla estarà dividida en tres sub fases:</p>
+<ul>
+<li><strong>Inici:</strong> Sub fase inicial en la que es mostrarien les instruccions (objectius) per tal de poder passar la pantalla.</li>
+<li><strong>Joc:</strong> fase en la que s'està jugant i s'han d'aconseguir els objectius marcats per a la pantalla.</li>
+<li><strong>Final:</strong> Mostra el resultat final</li>
+</ul>
+<p>Per tant al nostre programa principal podriem afegir un codi com el següent:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">subFase</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">INICI</span><span class="p">:</span>
+<span class="w">            </span><span class="n">pantalla</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Pantalla</span><span class="w"> </span><span class="p">(</span><span class="n">numeroPantalla</span><span class="p">);</span>
+<span class="w">            </span><span class="n">mostraPantallaInici</span><span class="p">();</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">JOC</span><span class="p">:</span>
+<span class="w">            </span><span class="n">pantalla</span><span class="p">.</span><span class="na">mostraMarcador</span><span class="p">();</span>
+<span class="w">            </span><span class="n">gestionaAlarmes</span><span class="p">();</span>
+<span class="w">            </span><span class="n">trump</span><span class="p">.</span><span class="na">mostra</span><span class="p">();</span>
+<span class="w">            </span><span class="n">trump</span><span class="p">.</span><span class="na">actaulitza</span><span class="p">();</span>
+<span class="w">            </span><span class="n">gestionaColisions</span><span class="p">();</span>
+<span class="w">            </span><span class="n">mostraEnemics</span><span class="p">();</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+
+<span class="w">        </span><span class="k">case</span><span class="w"> </span><span class="n">FINAL</span><span class="p">:</span>
+<span class="w">            </span><span class="n">mostraPantallaFinal</span><span class="p">();</span>
+<span class="w">        </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition danger">
+<p class="admonition-title">Com canviem d'una sub fase a una altra<p>El mateix switch que hem posat al nostre programa principal (draw) l'haurem de posara a la gestió dels esdeveniments, és a dir, mouseclicked i keyPressed, ja que si estem a la pantalla d'inici on es mostra la info i fem clic o premem una tecla del teclat, deurien deixar eixa primera sub fase per passar a la segona, la del joc.</p>
+</p>
+</div>
+<h2 id="guardem-el-progres-del-joc">Guardem el progrés del joc</h2>
+<p>Per guardar el progrés del joc hem de crear una classe amb extensió <strong>.java</strong> ja que si ho fem amb un fitxer <strong>.pde</strong> no es va a poder guardar en un fitxer com un objecte, ja que els fitxers <strong>.pde</strong> (Processing IDE) són PApplets i aquestos no són serializables. De la mateixa forma, a la nostra nova classe <strong>Partida</strong> que és la que guardarem en fitxers, no podrem posar com a membres de la classe cap altra classe creada amb Processing, és a dir, cap classe amb extensió <strong>.pde</strong></p>
+<p>De moment no anem a complicar-ho massa i farem una classe que puga guardar: el número de pantalla a la que hem arribat, el total de punts acumulats i el temps que hem necessitat.</p>
+<details class="question">
+<summary>Activitat 19. Pantalles i guardar</summary>
+<div class="tabbed-set tabbed-alternate" data-tabs="19:2"><input checked="checked" id="__tabbed_19_1" name="__tabbed_19" type="radio"/><input id="__tabbed_19_2" name="__tabbed_19" type="radio"/><div class="tabbed-labels"><label for="__tabbed_19_1">Problema</label><label for="__tabbed_19_2">Solució</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Amplia el joc de forma que es puguen passar pantalles i que les guarde en un fitxer"</p>
+</div>
+<div class="tabbed-block">
+<p><a href="assets/Activitat19.zip">Descarrega la solució de l'activitat 18</a> </p>
+</div>
+</div>
+</div>
+</details>
+<h3 id="controls-dinterficie-controlp5">Controls d'interfície ControlP5</h3>
+<p>Fins ara el nostre joc s'iniciava a la pantalla que ens haviem quedat (si guardem de forma correcte l'objecte partida). Per tal de veure un poc més sobre interfícies utilitzant la llibreria ControlP5 que ens proporciona Processing IDE, farem una pantalla inicial com la següent:</p>
+<div class="admonition danger">
+<p class="admonition-title">Herència de PApplet<p>Per tal que els controls de ControlP5 funcionen, hauràs de fer que aquella classe que dibuixe la interfície (no deuria ser el main) siga una extensió de la classe PApplet</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="kn">import</span><span class="w"> </span><span class="nn">controlP5.*</span><span class="p">;</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Menu</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">PApplet</span><span class="w"> </span><span class="p">{</span>
+
+<span class="w">        </span><span class="kd">private</span><span class="w"> </span><span class="n">ControlP5</span><span class="w"> </span><span class="n">cp5</span><span class="p">;</span>
+
+<span class="w">        </span><span class="kd">public</span><span class="w"> </span><span class="nf">Menu</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="n">cp5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ControlP5</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="w">        </span><span class="p">}</span><span class="w"> </span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</p>
+</div>
 </article>
 </div>
 </div>
