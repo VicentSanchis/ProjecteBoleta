@@ -1,41 +1,80 @@
-/**
-* Activitat 4. Ús de constants al nostre projecte
-* -------------------------------------------------------------------------------------------
-* Ja tenim variables declarades i inicialitzades. Ara usem les constants.
-* @author Vicent Sanchis
-* @since  10 octubre de 2023
-* @version 1.0
-*/
-// Constants
-// ------------------------------------------------------------------------------------------
-final static float GRV = 0.098f;  // Força de la gravetat
-final static int   TAM = 20;      // Grandaria de la nostra boleta
-// ------------------------------------------------------------------------------------------
-// Variables Globals
-// ------------------------------------------------------------------------------------------
-int posX, posY;       // Dos enters que ens indicaran la posició de la boleta
-float velX, velY;     // Dos decimals que ens indicaran la velocitat de la boleta
-color colorRGB;       // Tipus especial que ens serveix per establir colors RGB
-// ------------------------------------------------------------------------------------------
-/**
-* Mètode setup: Mètode de cnfiguració i inicialització de la nostra aplicació. 
-* Aquest mètode només s'executa una vegada a l'inici de l'aplicaciò.
-* @return void
-*/
-void setup () {
-  size (640, 480);
-  posX = 320;                 // Coordenada X inicial
-  posY = 50;                  // Coordenada Y inicial
-  velX = 0;                   // Velocitat X inicial
-  velY = 0;                   // Velocitat Y inicial
-  colorRGB  = color (0,0,0);  // Li assignem a colorRGB el color negre
-}
-/**
-* Metode draw: aquest mètode funciona com una espècies de bucle del joc. 
-* S'executa a 60Hz, és a dir, 60 vegades o frames per segon.
-* És en aquest mètode on s'aprofita per fer animacions
-*/
-void draw () {
-  clear();
-  background(255);
-}
+fileFormatVersion: 2
+guid: 53c84f3dfe8b04b6db1fb80443fafbaf
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQualit
