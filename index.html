@@ -144,34 +144,6 @@
     </span>
 </a>
 </li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#entrada-eixida-i-grafics">
-<span class="md-ellipsis">
-      Entrada eixida i gràfics
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#colleccions">
-<span class="md-ellipsis">
-      Col·leccions
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#herencia-polimorfisme-i-interficies">
-<span class="md-ellipsis">
-      Herència, polimorfisme i interfícies
-    </span>
-</a>
-</li>
-<li class="md-nav__item">
-<a class="md-nav__link" href="#bases-de-dades-relacionals">
-<span class="md-ellipsis">
-      Bases de dades relacionals
-    </span>
-</a>
-</li>
 </ul>
 </nav>
 </li>
@@ -210,10 +182,126 @@
 <li><strong>Nivell 10:</strong> Lliure per a l'alumne.</li>
 </ul>
 <h2 id="desenvolupament-de-classes">Desenvolupament de classes</h2>
-<h2 id="entrada-eixida-i-grafics">Entrada eixida i gràfics</h2>
-<h2 id="colleccions">Col·leccions</h2>
-<h2 id="herencia-polimorfisme-i-interficies">Herència, polimorfisme i interfícies</h2>
-<h2 id="bases-de-dades-relacionals">Bases de dades relacionals</h2>
+<details class="question">
+<summary>Activitat 1. Identificació de classes i estructura</summary>
+<p>📌 Analitzar el joc i identificar quins elements del joc es poden convertir en classes.
+Per exemple:</p>
+<ul>
+<li>NauPlayer</li>
+<li>Enemic</li>
+<li>Meteorit</li>
+<li>Accelerador</li>
+<li>HUD</li>
+<li>Dispar</li>
+</ul>
+<p><strong>Objectiu:</strong> Documentar quines parts del joc serien classes, quin serà el seu estat i comportament.</p>
+<p><strong>Entregable:</strong> Diagrama UML / llista amb atributs i mètodes previstos.</p>
+</details>
+<details class="question">
+<summary>Activitat 2. Crear les classes</summary>
+<p>📌 Crear les classes buides identificades amb els seus atributs bàsics.
+Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NauPlayer</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vida</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">viu</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Objectiu:</strong> Assentar la base de classes del joc amb sintaxi correcta.</p>
+</details>
+<details class="question">
+<summary>Activitat 3. Propietats i mètodes</summary>
+<p>🌟 Afegir funcionalitats simples a les classes:</p>
+<ul>
+<li>moure(), disparar() per NauPlayer</li>
+<li>desplaçar() per enemics o meteorits</li>
+<li>mostrar() per dibuixar-les</li>
+</ul>
+<p><strong>Entregable:</strong> Mètodes que modifiquen els atributs i retornen informació de l’estat de l’objecte.</p>
+</details>
+<details class="question">
+<summary>Activitat 4. Constructors</summary>
+<p>📌 Implementar constructors a totes les classes.
+Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">NauPlayer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">vida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Entregable:</strong> Constructors que inicialitzen objectes amb valors per defecte o personalitzats.</p>
+</details>
+<details class="question">
+<summary>Activitat 5. Instanciació d'objectes</summary>
+<p>📌 Crear objectes al main/loop de joc i usar els seus mètodes.
+Exemple:</p>
+<ul>
+<li>Crear 1 nau player</li>
+<li>Crear una llista d’enemics</li>
+<li>Invocar moure(), mostrar() a cada fotograma</li>
+</ul>
+<p><strong>Objectiu:</strong> Mostrar interacció real entre els objectes.</p>
+</details>
+<details class="question">
+<summary>Activitat 6. Visibilitat i encapsulació</summary>
+<p>📌 Aplicar modificadors de visibilitat (private, public).</p>
+<ul>
+<li>Fer privats els atributs i exposar getters/setters si cal.</li>
+<li>Determinar què ha de ser públic i què privat a cada classe.</li>
+</ul>
+<p><strong>Entregable:</strong> Classes ben encapsulades, amb accés controlat.</p>
+</details>
+<details class="question">
+<summary>Activitat 7. Herència i classes</summary>
+<p>📌 Fer que alguns tipus d’enemics siguin subclasses d’una classe base Enemic.
+Exemple:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EnemicKamikaze</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Enemic</span><span class="w"> </span><span class="p">{</span><span class="err">…</span><span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">EnemicInterceptor</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">Enemic</span><span class="w"> </span><span class="p">{</span><span class="err">…</span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p><strong>Objectiu:</strong> Reutilitzar codi i especialitzar comportaments.</p>
+</details>
+<details class="question">
+<summary>Activitat 8. Mètodes estàtics</summary>
+<p>📌 Crear utilitats comunes, p. ex.:</p>
+<ul>
+<li>Classe Util amb mètodes estàtics per calcular col·lisions</li>
+<li>Comptador de puntuacions globals</li>
+</ul>
+<p><strong>Entregable:</strong> Mètodes static que no depenen d’instàncies.</p>
+</details>
+<details class="question">
+<summary>Activitat 9. Interfícies</summary>
+<p>Definir interfícies com Movible, Destruible que puguin implementar classes com Enemic, Meteorito.</p>
+<p><strong>Objectiu:</strong> Fer que diferents classes comparteixin comportament comú.</p>
+</details>
+<details class="question">
+<summary>Activitat 10. Col·leccion i llibreries de classes</summary>
+<p>📌 Utilitzar ArrayList, HashMap o altres col·leccions per gestionar conjunts d’objectes del joc.
+Exemples:</p>
+<ul>
+<li>Llista d’enemics ArrayList<enemic></enemic></li>
+<li>Llista de projectils actius</li>
+</ul>
+<p><strong>Objectiu:</strong> Aprendre a treballar amb conjunts d’objectes i llibreries de Java.    </p>
+</details>
+<!--
+## Entrada eixida i gràfics
+
+## Col·leccions
+
+## Herència, polimorfisme i interfícies
+
+## Bases de dades relacionals
+-->
 </article>
 </div>
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
