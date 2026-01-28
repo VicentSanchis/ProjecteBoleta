@@ -6,9 +6,9 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.6.14" name="generator"/>
+<meta content="mkdocs-1.6.1, mkdocs-material-9.5.50" name="generator"/>
 <title>Rescat a Proxima Centauri</title>
-<link href="assets/stylesheets/main.342714a4.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/main.a40c8224.min.css" rel="stylesheet"/>
 <link href="assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
@@ -114,14 +114,12 @@
 <label class="md-nav__link md-nav__link--active" for="__toc">
 <span class="md-ellipsis">
     Index
-    
   </span>
 <span class="md-nav__icon md-icon"></span>
 </label>
 <a class="md-nav__link md-nav__link--active" href=".">
 <span class="md-ellipsis">
     Index
-    
   </span>
 </a>
 <nav aria-label="Table of contents" class="md-nav md-nav--secondary">
@@ -130,6 +128,13 @@
       Table of contents
     </label>
 <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#introduccio">
+<span class="md-ellipsis">
+      Introducció
+    </span>
+</a>
+</li>
 <li class="md-nav__item">
 <a class="md-nav__link" href="#consideracions-inicials">
 <span class="md-ellipsis">
@@ -144,6 +149,13 @@
     </span>
 </a>
 </li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#classe-animator-reutilitzacio-de-classes">
+<span class="md-ellipsis">
+      Classe Animator - Reutilització de classes
+    </span>
+</a>
+</li>
 </ul>
 </nav>
 </li>
@@ -155,10 +167,11 @@
 <div class="md-content" data-md-component="content">
 <article class="md-content__inner md-typeset">
 <h1 id="rescat-a-proxima-centauri">Rescat a Pròxima Centauri</h1>
+<h2 id="introduccio">Introducció</h2>
 <p>El projecte <strong>Rescat a Pròxima Centauri</strong>, és un projecte per a aprendre a programar en Java utilitzant l’entorn de desenvolupament <strong>Processing IDE</strong> on bàsicament simularem un joc tipus <strong>accelerador</strong> que es dividirà en pantalles, enregistrarà una puntuació segons els nivells que es superen i els enemics que s’eliminen a més a més de totes les funcions clàssiques d’aquest tipus de joc.</p>
-<center>
+<p><center>
 <img src="./assets/Portada.jpg" width="80%"/>
-</center>
+</center></p>
 <h2 id="consideracions-inicials">Consideracions inicials</h2>
 <p><strong>1. El joc:</strong> una nau de la federació interestel·lar de comerç ha d’arribar de la terra a Plutó per des d’allà i per mitjà d’un portal multidimensional, viatjar a el sistema «Alpha Centauri» que es troba a 4,37 anys llum del sistema solar. En aquest sistema es troba el planeta «Pròxima Centauri b» on es troba la base «Minotaure» que ha sigut atacada per naus alienígenes. La nostra missió és arribar sans i estalvis a les proximitats de la base per protegir-la.</p>
 <p><strong>2. El personatge:</strong> es tracta d’una nau espacial model T800X que per tal de no ser destruïda es pot moure en les quatre direccions, disparar projectils o làsers que destrueixen els enemics o desviar els meteorits. Aquesta nau té una vida limitada i es pot veure afectada pels projectils de les naus enemigues, pels camps de mines, o pels meteorits i altres obstacles que es pot trobar pel camí. Cada impacte d’algun d’aquests elements restarà vida a la nau, si el percentatge de vida arriba a zero, es perd la partida.</p>
@@ -182,12 +195,13 @@
 <li><strong>Nivell 10:</strong> Lliure per a l'alumne.</li>
 </ul>
 <h2 id="desenvolupament-de-classes">Desenvolupament de classes</h2>
+<p>La primera activitat que has de fer en aquest projecte és una activitat molt bàsica i senzilla per començar. Es tracta que basan-t en l'enunciat anterior identifiques les classes i crees el projecte amb tots aquells fitxers buits que el formaran en un futur.</p>
 <details class="question">
-<summary>Activitat 1. Identificació de classes i estructura</summary>
+<summary>Activitat P01. Identificació de classes i estructura</summary>
 <p>📌 Analitzar el joc i identificar quins elements del joc es poden convertir en classes.
 Per exemple:</p>
 <ul>
-<li>NauPlayer</li>
+<li>Player</li>
 <li>Enemic</li>
 <li>Meteorit</li>
 <li>Accelerador</li>
@@ -197,15 +211,16 @@ Per exemple:</p>
 <p><strong>Objectiu:</strong> Documentar quines parts del joc serien classes, quin serà el seu estat i comportament.</p>
 <p><strong>Entregable:</strong> Diagrama UML / llista amb atributs i mètodes previstos.</p>
 </details>
+<p>Una vegada ja tenim l'estructura del nostre projecte passem a escriure el codi inicial de les classes, però com que no tenim pressa, seria millor que les classes de moment queden buides de codi</p>
 <details class="question">
-<summary>Activitat 2. Crear les classes</summary>
+<summary>Activitat P02. Crear les classes</summary>
 <p>📌 Crear les classes buides identificades amb els seus atributs bàsics.
 Exemple:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NauPlayer</span><span class="w"> </span><span class="p">{</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Player</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vida</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
 <span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">viu</span><span class="p">;</span>
@@ -213,8 +228,10 @@ Exemple:</p>
 </code></pre></div></td></tr></table></div>
 <p><strong>Objectiu:</strong> Assentar la base de classes del joc amb sintaxi correcta.</p>
 </details>
+<p>Una vegada tenim aquestes activitats inicials ja realitzades, és hora de passar a <strong>picar codi</strong>. A l'activitat segÜent comença a escriure els atributs i mètodes de les classes que hages decidit que ha de tindre el teu joc. En aquesta activitat és molt important que tingues en compte el tipus de dades dels atributs, que són procediments i que són funcions i per tant quin és el tipus de dades que haurien de retornar. </p>
+<p>No només has de codificar les interfícies dels mètodes sino també algo de codi, encara que siga simple.</p>
 <details class="question">
-<summary>Activitat 3. Propietats i mètodes</summary>
+<summary>Activitat P03. Propietats i mètodes</summary>
 <p>🌟 Afegir funcionalitats simples a les classes:</p>
 <ul>
 <li>moure(), disparar() per NauPlayer</li>
@@ -223,24 +240,29 @@ Exemple:</p>
 </ul>
 <p><strong>Entregable:</strong> Mètodes que modifiquen els atributs i retornen informació de l’estat de l’objecte.</p>
 </details>
+<p>Una vegada ja tenim els cossos bàsics de les nostre classes implementats, es hora de crear els constructors de les classes com hem vist al tema 6. Recorda que mínim serien necessaris el constructor per defecte i almenys un constructor parametritzat per classe.</p>
+<p>Aquest és el pas previ a la instanciació dels objectes i ja podrem començar a veure quin és el resultat de tot el treball fet fins ara.</p>
 <details class="question">
-<summary>Activitat 4. Constructors</summary>
+<summary>Activitat P04. Constructors</summary>
 <p>📌 Implementar constructors a totes les classes.
 Exemple:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
 <span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">NauPlayer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">NauPlayer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">vida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">;</span>
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="n">cionals</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">joc</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">ajuden</span><span class="w"> </span><span class="n">al</span><span class="w"> </span><span class="n">nostre</span><span class="w"> </span><span class="n">personatge</span><span class="p">.</span><span class="w"> </span><span class="n">Podem</span><span class="w"> </span><span class="n">trobar</span><span class="w"> </span><span class="n">acceleradors</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">incrementen</span><span class="w"> </span><span class="n">el</span><span class="w"> </span><span class="n">nivell</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">vida</span><span class="p">,</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">incrementen</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">potencia</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">dispar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">donen</span><span class="w"> </span><span class="n">algun</span><span class="w"> </span><span class="n">tipus</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">protecció</span><span class="w"> </span><span class="n">temporal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">nostra</span><span class="w"> </span><span class="n">nau</span><span class="w"> </span><span class="n">tipus</span><span class="w"> </span><span class="n">escut</span><span class="p">.</span>
+
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Entregable:</strong> Constructors que inicialitzen objectes amb valors per defecte o personalitzats.</p>
 </details>
+<p>Ja podem començar a jugar amb els objectes que hem creat. A l'activitat següent posa en funcionament el programa mitjançant la creació d'objectes i la interacció amb ells.</p>
 <details class="question">
-<summary>Activitat 5. Instanciació d'objectes</summary>
+<summary>Activitat P05. Instanciació d'objectes</summary>
 <p>📌 Crear objectes al main/loop de joc i usar els seus mètodes.
 Exemple:</p>
 <ul>
@@ -250,8 +272,9 @@ Exemple:</p>
 </ul>
 <p><strong>Objectiu:</strong> Mostrar interacció real entre els objectes.</p>
 </details>
+<p>Allò habitual és que els modificadors de visibilitat s'escriguen al mateix temps que es creen les classes, atributs i mètodes però com que aquest projecte és un projecte pedagògic s'ha separat en dues activitats diferents, però a partir d'ara en totes les activitats i projectes que feu és convenient que els modificadors de visibilitat es col·loquen al mateix temps i no després (un despropòsit).</p>
 <details class="question">
-<summary>Activitat 6. Visibilitat i encapsulació</summary>
+<summary>Activitat P06. Visibilitat i encapsulació</summary>
 <p>📌 Aplicar modificadors de visibilitat (private, public).</p>
 <ul>
 <li>Fer privats els atributs i exposar getters/setters si cal.</li>
@@ -259,8 +282,9 @@ Exemple:</p>
 </ul>
 <p><strong>Entregable:</strong> Classes ben encapsulades, amb accés controlat.</p>
 </details>
+<p>A continuació anem a ampliar el nostre ventall d'enemics utilitzant el mecanisme de l'herència des d'un punt de vista bàsic com hem vist al tema 6.</p>
 <details class="question">
-<summary>Activitat 7. Herència i classes</summary>
+<summary>Activitat P07. Herència i classes</summary>
 <p>📌 Fer que alguns tipus d’enemics siguin subclasses d’una classe base Enemic.
 Exemple:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
@@ -269,8 +293,10 @@ Exemple:</p>
 </code></pre></div></td></tr></table></div>
 <p><strong>Objectiu:</strong> Reutilitzar codi i especialitzar comportaments.</p>
 </details>
+<p>Ara has d'incorporar la classe Fisica2D al teu projecte si consideres que pot ser útil i també afegir una nova classe, <strong>Utils</strong> per exemple amb allò que consideres que podria ser interessant per al teu projecte.
+Marcador</p>
 <details class="question">
-<summary>Activitat 8. Mètodes estàtics</summary>
+<summary>Activitat P08. Mètodes estàtics</summary>
 <p>📌 Crear utilitats comunes, p. ex.:</p>
 <ul>
 <li>Classe Util amb mètodes estàtics per calcular col·lisions</li>
@@ -278,20 +304,205 @@ Exemple:</p>
 </ul>
 <p><strong>Entregable:</strong> Mètodes static que no depenen d’instàncies.</p>
 </details>
+<p>Quines interfícies consideres que es podrien adatpar al projecte "Proxima Centauri". Quines classes o quins objectes són susceptibles de tindre associada una interfícies.</p>
 <details class="question">
-<summary>Activitat 9. Interfícies</summary>
-<p>Definir interfícies com Movible, Destruible que puguin implementar classes com Enemic, Meteorito.</p>
+<summary>Activitat P09. Interfícies</summary>
+<p>Definir interfícies com Movible, Destruible que puguin implemenMarcadortar classes com Enemic, Meteorito.</p>
 <p><strong>Objectiu:</strong> Fer que diferents classes comparteixin comportament comú.</p>
 </details>
+<p>Una de les característiques més importants de la programació orientada a objectes és la <strong>reutilització</strong> del codi. A continuació incorporarem dues classes ja creades, <strong>Animator</strong> i <strong>Marcador</strong>, per un costat per poder animar els personatges del nostre joc i per l'altre per poder tindre un HUD més complet amb un marcador que mostra alguna informació de l'estat del joc. </p>
+<h2 id="classe-animator-reutilitzacio-de-classes">Classe Animator - Reutilització de classes</h2>
+<p>Fins ara els elements que hem usat per fer el nostre joc de la boleta són figures geomètriques estàtiques el que fa que en general siga un poc avorrit. En aquest següent apartat aprendrem com convertir els nostres objectes en figures animades. Aprofitant una de les característiques principals del paradigma de Programació Orientada a Objectes, la reutilització del codi, incorporarem una nova classe al nostre joc: la classe <strong>Animation</strong> que podeu descarregar <a href="assets/Animation.pde">Ací</a>. Aquesta classe ens permet mitjançant l'ús de <strong>sprite sheets</strong> crear animacions per al nostre personatge com la següent:</p>
+<p><center>
+<img alt="Exemple d'ús de la classe Animation" src="assets/Trump.gif" style="height:250px;border:1px solid silver;">
+</img></center></p>
+<p>Utilitzar aquesta classe és relativament senzill:</p>
+<ol>
+<li>Incorporem la classe al nostre projecte copiant-la a la mateixa carpeta com una classe pròpia més.</li>
+<li>Declarem un atribut Animation a qualsevol classe del nostre projecte que volem animar.</li>
+<li>Al constructor de la classe que volem animar instanciem l'objecte animation seguint les instruccions de la classe.</li>
+</ol>
+<h3 id="exemple-dus-de-la-classe-animation">Exemple d'ús de la classe Animation</h3>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Animation</span><span class="w"> </span><span class="n">trump</span><span class="p">;</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">setup</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">size</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span><span class="mi">200</span><span class="p">);</span>
+<span class="w">    </span><span class="n">trump</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">draw</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">clear</span><span class="p">();</span>
+<span class="w">    </span><span class="n">background</span><span class="p">(</span><span class="mi">235</span><span class="p">);</span>
+
+<span class="w">    </span><span class="n">trump</span><span class="p">.</span><span class="na">display</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="n">width</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span><span class="n">height</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="n">trump</span><span class="p">.</span><span class="na">update</span><span class="p">();</span>
+<span class="p">}</span><span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>Senzill no? Però com aconseguim que la nostra boleta es convertisca en un personatge animat com el de l'exemple anterior? Hem d'afegir un nou atribut a la nostra classe Boleta, aquest nou membre s'instanciarà al constructor de la classe Boleta i finalment al mètode mostrar de la boleta és on cridarem al mètode display de l'animació, finalment al mètode actualitza de la boleta és des d'on cridarem al mètode update de l'animació.</p>
+<p>Però abans d'anar per feina, observem bé l'spritesheet:</p>
+<p><center>
+<img alt="Sprite Sheet Trump" src="assets/trump_run.png" style="height:320px;border:1px solid silver;"/>
+</center></p>
+<p>Amb el constructor amb el que hem instanciat el nostre objecte trump li indiquem els següents arguments: 
+- "Trump": etiqueta que s'utilitza per identificar els frames de l'animació.
+- "./imt/trump_run.png": ruta del nostre full d'sprites.
+- 100: ample de cada frame de l'animació (cada Trumpet)
+- 100: alt de cada frame de l'animació (cada Trumpet)
+- 4: files de l'sprite sheet0,5 0,5</p>
+<ul>
+<li>6: columnes de l'sprite sheet</li>
+<li>0: aquest argument ens indica si només volem agafar una fila (nombre de la fila que volem) per full o totes les files (zero). Al nostre cas hem posta zero el que significa que volem que l'animació carregue tots els frames de l'spritesheet.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w">    </span><span class="n">Animation</span><span class="w"> </span><span class="n">trump</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+</code></pre></div></td></tr></table></div>
+<p>Com he dit, el que hem fet ha sigut carregar tot l'sprite sheet en una sola animació quan en realitat el que tenim és un full d'sprites amb quatre animacions com mostra la següent imatge. Cada fila és una animació diferent.</p>
+<p><center>
+<img alt="Sprite Sheet Trump - Explicació de les animacions" src="assets/trump_run_explicat.png" style="height:320px;border:1px solid silver;"/>
+</center></p>
+<p>El que hauriem de fer per tant és que la nostra classe Trump no tinga només un atribut animation com fins ara sino que tinga quatre atributs de la classe Animation per a simular cadascun dels diferents moviments que pot fer el nostre personatge. També necessitarem una última animació que ens servirà per indicar quina és l'animació actual o la que s'estiga executant en un moment concret. Finalment ens quedaria implementar el codi necessari per que quan el personatge canvie de direcció ho faja també l'animació que s'està executant. Això ho fariem als diferents mètodes <strong>gira</strong> que hem implementat a la classe boleta.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="c1">// Teniu en compte que animAvall, animDreta, animAmunt, currentAnim són nous atributs de la classe Bola</span>
+<span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">carregaAnimacions</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animAvall</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animDreta</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animAmunt</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">animEsquerra</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Animation</span><span class="w"> </span><span class="p">(</span><span class="s">"Trump"</span><span class="p">,</span><span class="w"> </span><span class="s">"./img/trump_run.png"</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="n">animAvall</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraDreta</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animDreta</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraEsquerra</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w">    </span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animEsquerra</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraDalt</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animAmunt</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">giraBaix</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">PVector</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">animAvall</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostra</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">fill</span><span class="p">(</span><span class="n">pinta</span><span class="p">);</span>
+<span class="w">    </span><span class="n">strokeWeight</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="mi">5</span>
+
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="p">.</span><span class="na">display</span><span class="p">(</span><span class="n">posicio</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualitza</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posicio</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">direccio</span><span class="p">.</span><span class="na">copy</span><span class="p">().</span><span class="na">mult</span><span class="p">(</span><span class="n">velocitat</span><span class="p">));</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">currentAnim</span><span class="p">.</span><span class="na">update</span><span class="p">();</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>El resultat de les modificacions al codi anteriors seria el següent:</p>
+<p><center>
+<img alt="Sprite Sheet Trump - Ús de les animacions" src="assets/trumpAnims.gif" style="height:350px;border:1px solid silver;"/>
+</center></p>
+<h3 id="ampliacio-del-marcador">Ampliació del marcador</h3>
+<p>Per als pròxims apartats d'aquest projecte s'ha ampliat la classe marcador i se li ha afegit una etiqueta extra i un compte enrere. Aquesta modificació es per a poder usar elements tipus booster que acceleren al nostre personatge només per un període de temps. Se li ha afegit també un sistema d'alarmes com un array d'objectes JSON per poder afegir més d'una alarma a diferència del que estava fent a l'activitat anterior. Observa el següent diagrama:</p>
+<p><center>
+<div class="mermaid">        classDiagram
+        direction LR
+        Marcador: PVector posicio
+        Marcador: int ample
+        Marcador: int alt
+        Marcador: int currentTime
+        Marcador: int currentCountDown
+        Marcador: int countDownFlag
+        Marcador: int score
+        Marcador: String lblPuntsA
+        Marcador: String lblPuntsB
+        Marcador: String lblExtra
+        Marcador: int puntsA
+        Marcador: int puntsB
+        Marcador: JSONArray alarmes
+        Marcador: Marcador()
+        Marcador: Marcador(String strA, String strB)
+        Marcador: void mostra()
+        Marcador: void actualitza()
+        Marcador: void afegirAlarma(String text, int durada, boolean esRepeteix)
+        Marcador: ArrayList obtenirAlarmesDisparades()
+        Marcador: void sumaPuntsA()
+        Marcador: void sumaPuntsB()
+        Marcador: int getPuntsA()
+        Marcador: int getPuntsB()
+        Marcador: String getTime()
+        Marcador: setlblExtra(String lbl)
+        Marcador: setCountDown(int milis)
+        Marcador: incrementScore(int inr)
+        Marcador: String getTime()
+</div>
+</center></p>
+<p><a href="assets/Marcador.pde">Pots descarregar la nova versió ací</a></p>
+<p>Per poder utilitzar la classe Marcador has de fer el mateix que has fet amb la classe Animation. Pots generar la documentació amb javadoc per tindre un manual d'ús més detallat.</p>
 <details class="question">
-<summary>Activitat 10. Col·leccion i llibreries de classes</summary>
+<summary>Activitat P10. Col·leccion i llibreries de classes</summary>
 <p>📌 Utilitzar ArrayList, HashMap o altres col·leccions per gestionar conjunts d’objectes del joc.
 Exemples:</p>
 <ul>
 <li>Llista d’enemics ArrayList<enemic></enemic></li>
 <li>Llista de projectils actius</li>
 </ul>
-<p><strong>Objectiu:</strong> Aprendre a treballar amb conjunts d’objectes i llibreries de Java.    </p>
+<p><strong>Objectiu:</strong> Aprendre a treballar amb conjunts d’objectes i llMarcadoribreries de Java.    </p>
 </details>
 <!--
 ## Entrada eixida i gràfics
@@ -325,8 +536,10 @@ Exemples:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
-<script src="assets/javascripts/bundle.13a4f30d.min.js"></script>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="assets/javascripts/bundle.60a45f97.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
-</body>
+<script>mermaid.initialize({
+    theme: "neutral"
+});</script></body>
 </html>
