@@ -6,16 +6,16 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width,initial-scale=1" name="viewport"/>
 <link href="assets/images/favicon.png" rel="icon"/>
-<meta content="mkdocs-1.6.1, mkdocs-material-9.5.50" name="generator"/>
+<meta content="mkdocs-1.5.3, mkdocs-material-9.5.12" name="generator"/>
 <title>Rescat a Proxima Centauri</title>
-<link href="assets/stylesheets/main.a40c8224.min.css" rel="stylesheet"/>
+<link href="assets/stylesheets/main.7e359304.min.css" rel="stylesheet"/>
 <link href="assets/stylesheets/palette.06af60db.min.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
 <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="stylesheet/extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/7.0.9/mermaid.neutral.css" rel="stylesheet"/>
-<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
 <body data-md-color-accent="indigo" data-md-color-primary="indigo" data-md-color-scheme="default" dir="ltr">
 <input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
@@ -31,10 +31,10 @@
 <header class="md-header md-header--shadow" data-md-component="header">
 <nav aria-label="Header" class="md-header__inner md-grid">
 <a aria-label="Rescat a Proxima Centauri" class="md-header__button md-logo" data-md-component="logo" href="." title="Rescat a Proxima Centauri">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
 <label class="md-header__button md-icon" for="__drawer">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
 </label>
 <div class="md-header__title" data-md-component="header-title">
 <div class="md-header__ellipsis">
@@ -55,16 +55,16 @@
 <form class="md-header__option" data-md-component="palette">
 <input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="indigo" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="indigo" data-md-color-scheme="default" id="__palette_0" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to dark mode">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18V6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18V6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69Z"></path></svg>
 </label>
 <input aria-label="Switch to system preference" class="md-option" data-md-color-accent="white" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="black" data-md-color-scheme="slate" id="__palette_1" name="__palette" type="radio"/>
 <label class="md-header__button md-icon" for="__palette_0" hidden="" title="Switch to system preference">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18V6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18V6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-2.69L23.31 12 20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69Z"></path></svg>
 </label>
 </form>
-<script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+<script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
 <label class="md-header__button md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
 </label>
 <div class="md-search" data-md-component="search" role="dialog">
 <label class="md-search__overlay" for="__search"></label>
@@ -72,17 +72,17 @@
 <form class="md-search__form" name="search">
 <input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
 <label class="md-search__icon md-icon" for="__search">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
 </label>
 <nav aria-label="Search" class="md-search__options">
 <button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
 </button>
 </nav>
 </form>
 <div class="md-search__output">
-<div class="md-search__scrollwrap" data-md-scrollfix="" tabindex="0">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
 <div class="md-search-result" data-md-component="search-result">
 <div class="md-search-result__meta">
             Initializing search
@@ -104,7 +104,7 @@
 <nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--integrated" data-md-level="0">
 <label class="md-nav__title" for="__drawer">
 <a aria-label="Rescat a Proxima Centauri" class="md-nav__button md-logo" data-md-component="logo" href="." title="Rescat a Proxima Centauri">
-<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
 </a>
     Rescat a Proxima Centauri
   </label>
@@ -175,7 +175,13 @@
 <h2 id="consideracions-inicials">Consideracions inicials</h2>
 <p><strong>1. El joc:</strong> una nau de la federació interestel·lar de comerç ha d’arribar de la terra a Plutó per des d’allà i per mitjà d’un portal multidimensional, viatjar a el sistema «Alpha Centauri» que es troba a 4,37 anys llum del sistema solar. En aquest sistema es troba el planeta «Pròxima Centauri b» on es troba la base «Minotaure» que ha sigut atacada per naus alienígenes. La nostra missió és arribar sans i estalvis a les proximitats de la base per protegir-la.</p>
 <p><strong>2. El personatge:</strong> es tracta d’una nau espacial model T800X que per tal de no ser destruïda es pot moure en les quatre direccions, disparar projectils o làsers que destrueixen els enemics o desviar els meteorits. Aquesta nau té una vida limitada i es pot veure afectada pels projectils de les naus enemigues, pels camps de mines, o pels meteorits i altres obstacles que es pot trobar pel camí. Cada impacte d’algun d’aquests elements restarà vida a la nau, si el percentatge de vida arriba a zero, es perd la partida.</p>
+<p><center>
+<img src="./assets/SpaceShip.gif" width="30%"/>
+</center></p>
 <p><strong>3. Els enemics:</strong> ens podem trobar tres tipus d’enemics diferents, els kamikaze que són enemics que no poden disparar però poden xocar contra nosaltres i llevar-nos vida, el fet de no poder disparar fa que aquests enemics siguen més ràpids i imprevisibles. Després tenim els interceptors que disparen míssils amb més o menys freqüència i que amb les col·lisions d’aquests, resten vida al personatge. Finalment també tindrem els miners que són enemics que es dediquen a posar mines de forma aleatòria per l’espai, en cas de xocar contra algun d’aquests enemics, tant la nostra nau com l’enemic quedarien destruïts produint una gran explosió.</p>
+<p><center>
+<img src="./assets/Enemies.jpg" width="80%"/>
+</center></p>
 <p><strong>4. Els monstres finals:</strong> com hem explicat abans, al final de cada fase apareixerà un enemic de més entitat, els monstres finals de pantalla. En aquestes parts del joc s’obrirà una espècie de batalla final amb un enemic de més entitat al qual haurem de vèncer si volem superar el nivell.</p>
 <p><strong>5. Els acceleradors:</strong> són elements addicionals del joc que ajuden al nostre personatge. Podem trobar acceleradors que incrementen el nivell de vida, que incrementen la potencia del dispar o que donen algun tipus de protecció temporal a la nostra nau tipus escut.</p>
 <p><strong>6. Els meteorits:</strong> obstacles neutres en forma de  roca que es mouen per l’espai de forma aleatòria. Si algun d’aquestes roques xoca contra la nostra nau o contra un enemic, depenent de la seua capacitat de destrucció li llevarà vida i modificarà la seua trajectòria segons les lleis físiques de les col·lisions.</p>
@@ -183,8 +189,12 @@
 <p><strong>8. Els HUD (head-Up Display):</strong> també conegut com barra d’estat. Mostra tota la informació necessària durant la partida com per exemple: vides, punts, nivell, salut, armadura,  mini mapa entre altres..  En el nostre cas seria interessant mostrar la informació de les vides restants del personatge principal, nivell o pantalla en el que es troba.</p>
 <p><strong>9. Les fases:</strong> com hem explicat i basant-nos en el «guió» del nostre joc, el viatge de la nostra nau estarà dividida en fases on cada pantalla tindrà uns objectius distints.</p>
 <ul>
-<li><strong>Nivell 1:</strong> Inici de l’expedició. Pantalla simple on l’objectiu seria aprendre el funcionament de la nau. Com es mou, com disparar, que fan els acceleradors...</li>
-<li><strong>Nivell 2:</strong> El camp de meteorits. Per arribar a Plutó primer hem de passar pel cinturó d’asteroides que orbita pròxim a Júpiter. Ací es posaran a prova les habilitats del nostre jugador i com de ràpid de reflexos és per esquivar tots els possibles obstacles.</li>
+<li>
+<p><strong>Nivell 1:</strong> Inici de l’expedició. Pantalla simple on l’objectiu seria aprendre el funcionament de la nau. Com es mou, com disparar, que fan els acceleradors...</p>
+</li>
+<li>
+<p><strong>Nivell 2:</strong> El camp de meteorits. Per arribar a Plutó primer hem de passar pel cinturó d’asteroides que orbita pròxim a Júpiter. Ací es posaran a prova les habilitats del nostre jugador i com de ràpid de reflexos és per esquivar tots els possibles obstacles.</p>
+</li>
 <li><strong>Nivell 3:</strong> Arribada a Plutó. Quan ja hem superat els asteroides i hem arribat a Plutó haurem de trobar el portal interestel·lar i accedir a ell.</li>
 <li><strong>Nivell 4:</strong> Viatge interestel·lar. Viatjar per un forat de cuc no és senzill ja que les velocitats són molt altes i ens podem trobar en obstacles imprevistos que s’haurien d’esquivar però sense perdre la trajectòria prèviament calculada que es portaria en perdre'ns per la profunditat de l’espai.</li>
 <li><strong>Nivell 5:</strong> Arribada a Pròxima Centauri. Finalitzat el viatge interestel·lar i arribats a les proximitats del planeta, hem de buscar la finestra d’entrada més a prop de la base que està sent atacada. En aquest viatge apareixeran els primers enemics alienígenes que haurem de matar.</li>
@@ -195,7 +205,16 @@
 <li><strong>Nivell 10:</strong> Lliure per a l'alumne.</li>
 </ul>
 <h2 id="desenvolupament-de-classes">Desenvolupament de classes</h2>
-<p>La primera activitat que has de fer en aquest projecte és una activitat molt bàsica i senzilla per començar. Es tracta que basan-t en l'enunciat anterior identifiques les classes i crees el projecte amb tots aquells fitxers buits que el formaran en un futur.</p>
+<p>La primera activitat que has de fer en aquest projecte és una activitat molt bàsica i senzilla per començar. Es tracta que basan-te en l'enunciat anterior identifiques les classes i crees el projecte amb tots aquells fitxers buits que el formaran en un futur.</p>
+<p>Per exemple:</p>
+<div class="mermaid">    graph TD
+        A[📁ProximaCentauri] --&gt; B[🧩ProximaCentauri.pde]
+        A --&gt; C[☕ Player.java]
+        A --&gt; D[☕ Enemic.java]
+        A --&gt; E[☕ HUD.java]
+        A --&gt; H[☕ Obstacle.java]
+        A --&gt; I[...]
+</div>
 <details class="question">
 <summary>Activitat P01. Identificació de classes i estructura</summary>
 <p>📌 Analitzar el joc i identificar quins elements del joc es poden convertir en classes.
@@ -212,36 +231,101 @@ Per exemple:</p>
 <p><strong>Entregable:</strong> Diagrama UML / llista amb atributs i mètodes previstos.</p>
 </details>
 <p>Una vegada ja tenim l'estructura del nostre projecte passem a escriure el codi inicial de les classes, però com que no tenim pressa, seria millor que les classes de moment queden buides de codi</p>
+<div class="admonition example">
+<p class="admonition-title">Classe buida en java</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">class</span> <span class="nc">Buida</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Ací va el codi de la Classe</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
 <details class="question">
 <summary>Activitat P02. Crear les classes</summary>
-<p>📌 Crear les classes buides identificades amb els seus atributs bàsics.
+<p>📌 Crear les classes buides.
 Exemple:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
-<span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Player</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vida</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">float</span><span class="w"> </span><span class="n">posX</span><span class="p">,</span><span class="w"> </span><span class="n">posY</span><span class="p">;</span>
-<span class="w">    </span><span class="kt">boolean</span><span class="w"> </span><span class="n">viu</span><span class="p">;</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">class</span> <span class="nc">Player</span><span class="w"> </span><span class="p">{</span>
+
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Objectiu:</strong> Assentar la base de classes del joc amb sintaxi correcta.</p>
 </details>
-<p>Una vegada tenim aquestes activitats inicials ja realitzades, és hora de passar a <strong>picar codi</strong>. A l'activitat segÜent comença a escriure els atributs i mètodes de les classes que hages decidit que ha de tindre el teu joc. En aquesta activitat és molt important que tingues en compte el tipus de dades dels atributs, que són procediments i que són funcions i per tant quin és el tipus de dades que haurien de retornar. </p>
-<p>No només has de codificar les interfícies dels mètodes sino també algo de codi, encara que siga simple.</p>
+<p>Una vegada tenim aquestes activitats inicials ja realitzades, és hora de passar a <strong>picar codi</strong>. A l'activitat següent comença a escriure els atributs i mètodes de les classes que hages decidit que ha de tindre el teu joc. En aquesta activitat és molt important que tingues en compte el tipus de dades dels atributs, que són procediments i que són funcions i per tant quin és el tipus de dades que haurien de retornar. </p>
+<p>No només has de codificar els prototips dels mètodes sino també algo de codi, encara que siga simple.</p>
+<div class="admonition example">
+<p class="admonition-title">Clase amb atributs i mètodes en java</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">class</span> <span class="nc">Player</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PVector</span><span class="w"> </span><span class="n">posicio</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vida</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualitzar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
 <details class="question">
 <summary>Activitat P03. Propietats i mètodes</summary>
 <p>🌟 Afegir funcionalitats simples a les classes:</p>
 <ul>
-<li>moure(), disparar() per NauPlayer</li>
-<li>desplaçar() per enemics o meteorits</li>
-<li>mostrar() per dibuixar-les</li>
+<li>mostrar(), disparar(), actualitzar() per Player</li>
+<li>desplaçar() per Enemic o Meteorit</li>
+<li>mostrar() per dibuixar-les totes</li>
 </ul>
+<p>Al mètode mostrar (al qual li hauràs de passar el PApplet com a argument) escriu que dibuixe un cercle de color negre de moment.
+De moment deixa el codi del mètode moure de la classe Player per més endavant i no poses res.</p>
 <p><strong>Entregable:</strong> Mètodes que modifiquen els atributs i retornen informació de l’estat de l’objecte.</p>
 </details>
-<p>Una vegada ja tenim els cossos bàsics de les nostre classes implementats, es hora de crear els constructors de les classes com hem vist al tema 6. Recorda que mínim serien necessaris el constructor per defecte i almenys un constructor parametritzat per classe.</p>
+<p>Quan ja tenim els cossos bàsics de les nostre classes implementats, es hora de crear els constructors de les classes com hem vist al tema 6. Recorda que mínim serien necessaris el constructor per defecte i almenys un constructor parametritzat per classe.</p>
 <p>Aquest és el pas previ a la instanciació dels objectes i ja podrem començar a veure quin és el resultat de tot el treball fet fins ara.</p>
+<div class="admonition example">
+<p class="admonition-title">Clase amb atributs i mètodes en java</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">class</span> <span class="nc">Player</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">PVector</span><span class="w"> </span><span class="n">posicio</span><span class="p">;</span>
+<span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">vida</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+
+<span class="w">    </span><span class="n">Player</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="n">Player</span><span class="w"> </span><span class="p">(</span><span class="c1">//Paràmetres) {</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualitzar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
 <details class="question">
 <summary>Activitat P04. Constructors</summary>
 <p>📌 Implementar constructors a totes les classes.
@@ -249,30 +333,67 @@ Exemple:</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
 <span class="normal">2</span>
 <span class="normal">3</span>
-<span class="normal">4</span>
-<span class="normal">5</span>
-<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="nf">NauPlayer</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">x</span><span class="p">,</span><span class="w"> </span><span class="kt">float</span><span class="w"> </span><span class="n">y</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="n">Player</span><span class="p">(</span><span class="n">PVector</span><span class="w"> </span><span class="n">pos</span><span class="p">,</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
 <span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">vida</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">vidaInicial</span><span class="p">;</span>
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posX</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">x</span><span class="p">;</span><span class="n">cionals</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">joc</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">ajuden</span><span class="w"> </span><span class="n">al</span><span class="w"> </span><span class="n">nostre</span><span class="w"> </span><span class="n">personatge</span><span class="p">.</span><span class="w"> </span><span class="n">Podem</span><span class="w"> </span><span class="n">trobar</span><span class="w"> </span><span class="n">acceleradors</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">incrementen</span><span class="w"> </span><span class="n">el</span><span class="w"> </span><span class="n">nivell</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">vida</span><span class="p">,</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">incrementen</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">potencia</span><span class="w"> </span><span class="n">del</span><span class="w"> </span><span class="n">dispar</span><span class="w"> </span><span class="n">o</span><span class="w"> </span><span class="n">que</span><span class="w"> </span><span class="n">donen</span><span class="w"> </span><span class="n">algun</span><span class="w"> </span><span class="n">tipus</span><span class="w"> </span><span class="n">de</span><span class="w"> </span><span class="n">protecció</span><span class="w"> </span><span class="n">temporal</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">la</span><span class="w"> </span><span class="n">nostra</span><span class="w"> </span><span class="n">nau</span><span class="w"> </span><span class="n">tipus</span><span class="w"> </span><span class="n">escut</span><span class="p">.</span>
-
-<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posY</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">y</span><span class="p">;</span>
+<span class="w">    </span><span class="k">this</span><span class="p">.</span><span class="na">posicio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pos</span><span class="p">.</span><span class="na">copy</span><span class="w"> </span><span class="p">();</span>
 <span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>Entregable:</strong> Constructors que inicialitzen objectes amb valors per defecte o personalitzats.</p>
 </details>
-<p>Ja podem començar a jugar amb els objectes que hem creat. A l'activitat següent posa en funcionament el programa mitjançant la creació d'objectes i la interacció amb ells.</p>
+<p>Ja podem començar a jugar amb els objectes que hem creat. A l'activitat següent posa en funcionament el programa mitjançant la creació d'objectes i la interacció amb ells. Al l'executar el codi deuria apareixer el següent:</p>
+<p><center>
+<img src="./assets/Player.png" style="border:1px solid gray" width="40%"/>
+</center></p>
+<p>Sí, encara és un poc bàsic el que fa el nostre projecte i encara no es pot interactuar amb el nostre jugador però, com ja he explicat en alguna activitat anterior encara hem d'esperar un poc a implementar el mètode moure més endvant.</p>
 <details class="question">
 <summary>Activitat P05. Instanciació d'objectes</summary>
 <p>📌 Crear objectes al main/loop de joc i usar els seus mètodes.
 Exemple:</p>
 <ul>
-<li>Crear 1 nau player</li>
-<li>Crear una llista d’enemics</li>
+<li>Crear 1 jugador (classe Player)</li>
+<li>Crear una llista d’enemics (almenys 3)</li>
 <li>Invocar moure(), mostrar() a cada fotograma</li>
 </ul>
 <p><strong>Objectiu:</strong> Mostrar interacció real entre els objectes.</p>
 </details>
 <p>Allò habitual és que els modificadors de visibilitat s'escriguen al mateix temps que es creen les classes, atributs i mètodes però com que aquest projecte és un projecte pedagògic s'ha separat en dues activitats diferents, però a partir d'ara en totes les activitats i projectes que feu és convenient que els modificadors de visibilitat es col·loquen al mateix temps i no després (un despropòsit).</p>
+<div class="admonition example">
+<p class="admonition-title">Clase amb atributs i mètodes en java</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Player</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">PVector</span><span class="w"> </span><span class="n">posicio</span><span class="p">;</span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">vida</span><span class="p">;</span>
+<span class="w">    </span><span class="c1">// ...</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Player</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"> </span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">Player</span><span class="w"> </span><span class="p">(</span><span class="c1">//Paràmetres) {</span>
+<span class="w">        </span><span class="c1">// ...</span>
+<span class="w">    </span><span class="p">}</span>
+
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">mostrar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualitzar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<span class="w">    </span><span class="c1">// ...</span>
+<span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+</div>
 <details class="question">
 <summary>Activitat P06. Visibilitat i encapsulació</summary>
 <p>📌 Aplicar modificadors de visibilitat (private, public).</p>
@@ -282,7 +403,90 @@ Exemple:</p>
 </ul>
 <p><strong>Entregable:</strong> Classes ben encapsulades, amb accés controlat.</p>
 </details>
-<p>A continuació anem a ampliar el nostre ventall d'enemics utilitzant el mecanisme de l'herència des d'un punt de vista bàsic com hem vist al tema 6.</p>
+<h3 id="programem-el-moviment-de-la-nau">Programem el moviment de la nau</h3>
+<p>Fins ara el nostre joc no fa massa coses i ha arribat el moment de escriure el codi necessari per poder interactuar amb el nostre jugador. Com a conseqÜència de l'entorn de desenvolupament que estem utilitzant <strong>Processing IDE</strong>, i les seues pecualiaritats, la forma més eficient d'aconseguir una interacció fluida amb el nostre jugador és la següent.</p>
+<p>Primer hem de saber quin codi hem de posar als controladors d'esdeveniments <strong>keyPressed</strong> i <strong>keyReleased</strong> del nostre fitxer principal. Amb aquestos mètodes i la variable de l'entorn de Processing IDE <strong>keyCode</strong> hem de poder enviar missatges al nostre jugador per a que és moga.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kt">void</span><span class="w"> </span><span class="nf">keyPressed</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keyCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">RIGHT</span><span class="p">:</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">moureDreta</span><span class="w">    </span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">LEFT</span><span class="p">:</span><span class="w">  </span><span class="n">player</span><span class="p">.</span><span class="na">moureEsquerra</span><span class="w"> </span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">UP</span><span class="p">:</span><span class="w">    </span><span class="n">player</span><span class="p">.</span><span class="na">moureAmunt</span><span class="w">    </span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">DOWN</span><span class="p">:</span><span class="w">  </span><span class="n">player</span><span class="p">.</span><span class="na">moureAvall</span><span class="w">    </span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kt">void</span><span class="w"> </span><span class="nf">keyReleased</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="k">switch</span><span class="w"> </span><span class="p">(</span><span class="n">keyCode</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">RIGHT</span><span class="p">:</span><span class="w"> </span><span class="n">player</span><span class="p">.</span><span class="na">moureDreta</span><span class="w">    </span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">LEFT</span><span class="p">:</span><span class="w">  </span><span class="n">player</span><span class="p">.</span><span class="na">moureEsquerra</span><span class="w"> </span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">UP</span><span class="p">:</span><span class="w">    </span><span class="n">player</span><span class="p">.</span><span class="na">moureAmunt</span><span class="w">    </span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">    </span><span class="k">case</span><span class="w"> </span><span class="n">DOWN</span><span class="p">:</span><span class="w">  </span><span class="n">player</span><span class="p">.</span><span class="na">moureAvall</span><span class="w">    </span><span class="p">(</span><span class="kc">false</span><span class="p">);</span><span class="w"> </span><span class="k">break</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition warning">
+<p class="admonition-title">Mêtodes per moure al jugador</p>
+<p>Com has pogut observar al codi anterior, hi han un mètode moure per a cada direcció i té un paràmetre de tipus booleà. Per tant, si has ideat una classe Player amb un sol mètode moure, l'has de modificar i adaptar-la al codi anterior.</p>
+</div>
+<p>Una vegada tenim el codi del fitxer principal desenvolupat, toca saber què és el que han de fer els diferents mètodes moure de la classe Player. Aquestos mètodes han de modificar uns atributs privats de tipus <strong>flag</strong> (booleans) de la classe Player que són: <strong>up, down, left i right</strong> i que hauràs d'afegir a la teua classe a la secció d'atributs.</p>
+<p>Una vegada ja tens aquestos atributs, que per defecte s'inicialitzen a false, els mètodes per a moure al jugador han de fer el següent:</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="w"> </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">moureAvall</span><span class="w"> </span><span class="p">(</span><span class="kt">boolean</span><span class="w"> </span><span class="n">estat</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="n">down</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">estat</span><span class="p">;</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>Què aconseguim amb açò? Amb aquest codi aconseguim que quan premem una tecla de direcció al nostre teclat, s'activa automàticament la variable d'estat del Player que indica que ha d'anar en eixa direcció (dir=true) i quan soltem alguna de les tecles de direcció el programa li indica a la nostra classe que ha de parar d'anar en eixa direcció (dir=false).</p>
+<p>Significa això que la nostra nau ja es mou per l'escenari? No, ecara no. Encara ens queda aplicar eixos flags a moviment real dins del mètode actualitzar de la classe Player que si no has implementat, ho hauràs de fer.</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">actualitzar</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Resetejem la direcció</span>
+<span class="w">    </span><span class="n">direccio</span><span class="p">.</span><span class="na">set</span><span class="w"> </span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span>
+
+<span class="w">    </span><span class="c1">// Actualitzem l'estat de la direcció</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">up</span><span class="w">   </span><span class="p">)</span><span class="w"> </span><span class="n">direccio</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">down</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">direccio</span><span class="p">.</span><span class="na">y</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">left</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="n">direccio</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">-=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">right</span><span class="p">)</span><span class="w"> </span><span class="n">direccio</span><span class="p">.</span><span class="na">x</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+
+<span class="w">    </span><span class="c1">// Si hi ha moviment</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">direccio</span><span class="p">.</span><span class="na">mag</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">      </span><span class="n">direccio</span><span class="p">.</span><span class="na">normalize</span><span class="w"> </span><span class="p">();</span>
+<span class="w">      </span><span class="n">velocitat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PVector</span><span class="p">.</span><span class="na">mult</span><span class="w"> </span><span class="p">(</span><span class="n">direccio</span><span class="p">,</span><span class="w"> </span><span class="n">velocitatEscalar</span><span class="p">);</span>
+<span class="w">      </span><span class="n">posicio</span><span class="p">.</span><span class="na">add</span><span class="w"> </span><span class="p">(</span><span class="n">velocitat</span><span class="p">);</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>A continuació implementarem la interacció de l'usuari amb la nau i també ampliarem el nostre ventall d'enemics utilitzant el mecanisme de l'herència des d'un punt de vista bàsic com hem vist al tema 6. Has de fer que cada enemic es mostre de forma diferent.</p>
 <details class="question">
 <summary>Activitat P07. Herència i classes</summary>
 <p>📌 Fer que alguns tipus d’enemics siguin subclasses d’una classe base Enemic.
@@ -293,8 +497,7 @@ Exemple:</p>
 </code></pre></div></td></tr></table></div>
 <p><strong>Objectiu:</strong> Reutilitzar codi i especialitzar comportaments.</p>
 </details>
-<p>Ara has d'incorporar la classe Fisica2D al teu projecte si consideres que pot ser útil i també afegir una nova classe, <strong>Utils</strong> per exemple amb allò que consideres que podria ser interessant per al teu projecte.
-Marcador</p>
+<p>Ara has d'incorporar la classe Fisica2D al teu projecte si consideres que pot ser útil i també afegir una nova classe, <strong>Utils</strong> per exemple amb allò que consideres que podria ser interessant per al teu projecte.</p>
 <details class="question">
 <summary>Activitat P08. Mètodes estàtics</summary>
 <p>📌 Crear utilitats comunes, p. ex.:</p>
@@ -354,8 +557,8 @@ Marcador</p>
 <p>Senzill no? Però com aconseguim que la nostra boleta es convertisca en un personatge animat com el de l'exemple anterior? Hem d'afegir un nou atribut a la nostra classe Boleta, aquest nou membre s'instanciarà al constructor de la classe Boleta i finalment al mètode mostrar de la boleta és on cridarem al mètode display de l'animació, finalment al mètode actualitza de la boleta és des d'on cridarem al mètode update de l'animació.</p>
 <p>Però abans d'anar per feina, observem bé l'spritesheet:</p>
 <p><center>
-<img alt="Sprite Sheet Trump" src="assets/trump_run.png" style="height:320px;border:1px solid silver;"/>
-</center></p>
+<img alt="Sprite Sheet Trump" src="assets/trump_run.png" style="height:320px;border:1px solid silver;">
+</img></center></p>
 <p>Amb el constructor amb el que hem instanciat el nostre objecte trump li indiquem els següents arguments: 
 - "Trump": etiqueta que s'utilitza per identificar els frames de l'animació.
 - "./imt/trump_run.png": ruta del nostre full d'sprites.
@@ -370,8 +573,8 @@ Marcador</p>
 </code></pre></div></td></tr></table></div>
 <p>Com he dit, el que hem fet ha sigut carregar tot l'sprite sheet en una sola animació quan en realitat el que tenim és un full d'sprites amb quatre animacions com mostra la següent imatge. Cada fila és una animació diferent.</p>
 <p><center>
-<img alt="Sprite Sheet Trump - Explicació de les animacions" src="assets/trump_run_explicat.png" style="height:320px;border:1px solid silver;"/>
-</center></p>
+<img alt="Sprite Sheet Trump - Explicació de les animacions" src="assets/trump_run_explicat.png" style="height:320px;border:1px solid silver;">
+</img></center></p>
 <p>El que hauriem de fer per tant és que la nostra classe Trump no tinga només un atribut animation com fins ara sino que tinga quatre atributs de la classe Animation per a simular cadascun dels diferents moviments que pot fer el nostre personatge. També necessitarem una última animació que ens servirà per indicar quina és l'animació actual o la que s'estiga executant en un moment concret. Finalment ens quedaria implementar el codi necessari per que quan el personatge canvie de direcció ho faja també l'animació que s'està executant. Això ho fariem als diferents mètodes <strong>gira</strong> que hem implementat a la classe boleta.</p>
 <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
 <span class="normal"> 2</span>
@@ -455,8 +658,8 @@ Marcador</p>
 </code></pre></div></td></tr></table></div>
 <p>El resultat de les modificacions al codi anteriors seria el següent:</p>
 <p><center>
-<img alt="Sprite Sheet Trump - Ús de les animacions" src="assets/trumpAnims.gif" style="height:350px;border:1px solid silver;"/>
-</center></p>
+<img alt="Sprite Sheet Trump - Ús de les animacions" src="assets/trumpAnims.gif" style="height:350px;border:1px solid silver;">
+</img></center></p>
 <h3 id="ampliacio-del-marcador">Ampliació del marcador</h3>
 <p>Per als pròxims apartats d'aquest projecte s'ha ampliat la classe marcador i se li ha afegit una etiqueta extra i un compte enrere. Aquesta modificació es per a poder usar elements tipus booster que acceleren al nostre personatge només per un període de temps. Se li ha afegit també un sistema d'alarmes com un array d'objectes JSON per poder afegir més d'una alarma a diferència del que estava fent a l'activitat anterior. Observa el següent diagrama:</p>
 <p><center>
@@ -495,7 +698,12 @@ Marcador</p>
 <p><a href="assets/Marcador.pde">Pots descarregar la nova versió ací</a></p>
 <p>Per poder utilitzar la classe Marcador has de fer el mateix que has fet amb la classe Animation. Pots generar la documentació amb javadoc per tindre un manual d'ús més detallat.</p>
 <details class="question">
-<summary>Activitat P10. Col·leccion i llibreries de classes</summary>
+<summary>Activitat P10. Llibreries de classes</summary>
+<p>📌 Incorpora les llibreries Animator i Marcador al teu projecte</p>
+<p><strong>Objectiu:</strong> Aprendre a treballar amb classes ja implementades</p>
+</details>
+<details class="question">
+<summary>Activitat P11. Col·leccions</summary>
 <p>📌 Utilitzar ArrayList, HashMap o altres col·leccions per gestionar conjunts d’objectes del joc.
 Exemples:</p>
 <ul>
@@ -536,8 +744,8 @@ Exemples:</p>
 <div class="md-dialog" data-md-component="dialog">
 <div class="md-dialog__inner md-typeset"></div>
 </div>
-<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
-<script src="assets/javascripts/bundle.60a45f97.min.js"></script>
+<script id="__config" type="application/json">{"base": ".", "features": ["navigation.expand", "toc.integrate"], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="assets/javascripts/bundle.c8d2eff1.min.js"></script>
 <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
 <script>mermaid.initialize({
     theme: "neutral"
